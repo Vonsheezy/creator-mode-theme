@@ -38,363 +38,363 @@ class Settings_Header extends Tab_Base {
 	protected function register_tab_controls() {
 		$this->start_controls_section(
 			'vonsheezy_header_section',
-			[
-				'tab' => 'vonsheezy-settings-header',
+			array(
+				'tab'   => 'vonsheezy-settings-header',
 				'label' => esc_html__( 'Header', 'holy-vonsheezy' ),
-			]
+			)
 		);
 
 		$this->add_control(
 			'vonsheezy_header_logo_display',
-			[
-				'type' => Controls_Manager::SWITCHER,
-				'label' => esc_html__( 'Site Logo', 'holy-vonsheezy' ),
-				'default' => 'yes',
-				'label_on' => esc_html__( 'Show', 'holy-vonsheezy' ),
+			array(
+				'type'      => Controls_Manager::SWITCHER,
+				'label'     => esc_html__( 'Site Logo', 'holy-vonsheezy' ),
+				'default'   => 'yes',
+				'label_on'  => esc_html__( 'Show', 'holy-vonsheezy' ),
 				'label_off' => esc_html__( 'Hide', 'holy-vonsheezy' ),
-			]
+			)
 		);
 
 		$this->add_control(
 			'vonsheezy_header_tagline_display',
-			[
-				'type' => Controls_Manager::SWITCHER,
-				'label' => esc_html__( 'Tagline', 'holy-vonsheezy' ),
-				'default' => 'yes',
-				'label_on' => esc_html__( 'Show', 'holy-vonsheezy' ),
+			array(
+				'type'      => Controls_Manager::SWITCHER,
+				'label'     => esc_html__( 'Tagline', 'holy-vonsheezy' ),
+				'default'   => 'yes',
+				'label_on'  => esc_html__( 'Show', 'holy-vonsheezy' ),
 				'label_off' => esc_html__( 'Hide', 'holy-vonsheezy' ),
-			]
+			)
 		);
 
 		$this->add_control(
 			'vonsheezy_header_menu_display',
-			[
-				'type' => Controls_Manager::SWITCHER,
-				'label' => esc_html__( 'Menu', 'holy-vonsheezy' ),
-				'default' => 'yes',
-				'label_on' => esc_html__( 'Show', 'holy-vonsheezy' ),
+			array(
+				'type'      => Controls_Manager::SWITCHER,
+				'label'     => esc_html__( 'Menu', 'holy-vonsheezy' ),
+				'default'   => 'yes',
+				'label_on'  => esc_html__( 'Show', 'holy-vonsheezy' ),
 				'label_off' => esc_html__( 'Hide', 'holy-vonsheezy' ),
-			]
+			)
 		);
 
 		$this->add_control(
 			'vonsheezy_header_disable_note',
-			[
-				'type' => Controls_Manager::RAW_HTML,
-				'raw' => sprintf(
+			array(
+				'type'            => Controls_Manager::RAW_HTML,
+				'raw'             => sprintf(
 					/* translators: %s: Link that opens the theme settings page. */
 					__( 'Note: Hiding all the elements, only hides them visually. To disable them completely go to <a href="%s">Theme Settings</a> .', 'holy-vonsheezy' ),
 					admin_url( 'themes.php?page=holy-vonsheezy-theme-settings' )
 				),
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
-				'condition' => [
-					'vonsheezy_header_logo_display' => '',
+				'condition'       => array(
+					'vonsheezy_header_logo_display'    => '',
 					'vonsheezy_header_tagline_display' => '',
-					'vonsheezy_header_menu_display' => '',
-				],
-			]
+					'vonsheezy_header_menu_display'    => '',
+				),
+			)
 		);
 
 		$this->add_control(
 			'vonsheezy_header_layout',
-			[
-				'type' => Controls_Manager::SELECT,
-				'label' => esc_html__( 'Layout', 'holy-vonsheezy' ),
-				'options' => [
-					'default' => esc_html__( 'Default', 'holy-vonsheezy' ),
+			array(
+				'type'      => Controls_Manager::SELECT,
+				'label'     => esc_html__( 'Layout', 'holy-vonsheezy' ),
+				'options'   => array(
+					'default'  => esc_html__( 'Default', 'holy-vonsheezy' ),
 					'inverted' => esc_html__( 'Inverted', 'holy-vonsheezy' ),
-					'stacked' => esc_html__( 'Centered', 'holy-vonsheezy' ),
-				],
-				'selector' => '.site-header',
-				'default' => 'default',
+					'stacked'  => esc_html__( 'Centered', 'holy-vonsheezy' ),
+				),
+				'selector'  => '.site-header',
+				'default'   => 'default',
 				'separator' => 'before',
-			]
+			)
 		);
 
 		$this->add_control(
 			'vonsheezy_header_width',
-			[
-				'type' => Controls_Manager::SELECT,
-				'label' => esc_html__( 'Width', 'holy-vonsheezy' ),
-				'options' => [
-					'boxed' => esc_html__( 'Boxed', 'holy-vonsheezy' ),
+			array(
+				'type'     => Controls_Manager::SELECT,
+				'label'    => esc_html__( 'Width', 'holy-vonsheezy' ),
+				'options'  => array(
+					'boxed'      => esc_html__( 'Boxed', 'holy-vonsheezy' ),
 					'full-width' => esc_html__( 'Full Width', 'holy-vonsheezy' ),
-				],
+				),
 				'selector' => '.site-header',
-				'default' => 'boxed',
-			]
+				'default'  => 'boxed',
+			)
 		);
 
 		$this->add_responsive_control(
 			'vonsheezy_header_custom_width',
-			[
-				'type' => Controls_Manager::SLIDER,
-				'label' => esc_html__( 'Content Width', 'holy-vonsheezy' ),
-				'size_units' => [ '%', 'px', 'em', 'rem', 'vw', 'custom' ],
-				'range' => [
-					'px' => [
+			array(
+				'type'       => Controls_Manager::SLIDER,
+				'label'      => esc_html__( 'Content Width', 'holy-vonsheezy' ),
+				'size_units' => array( '%', 'px', 'em', 'rem', 'vw', 'custom' ),
+				'range'      => array(
+					'px'  => array(
 						'max' => 2000,
-					],
-					'em' => [
+					),
+					'em'  => array(
 						'max' => 100,
-					],
-					'rem' => [
+					),
+					'rem' => array(
 						'max' => 100,
-					],
-				],
-				'condition' => [
+					),
+				),
+				'condition'  => array(
 					'vonsheezy_header_width' => 'boxed',
-				],
-				'selectors' => [
+				),
+				'selectors'  => array(
 					'.site-header .header-inner' => 'width: {{SIZE}}{{UNIT}}; max-width: 100%;',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_responsive_control(
 			'vonsheezy_header_gap',
-			[
-				'type' => Controls_Manager::SLIDER,
-				'label' => esc_html__( 'Gap', 'holy-vonsheezy' ),
-				'size_units' => [ '%', 'px', 'em ', 'rem', 'vw', 'custom' ],
-				'default' => [
+			array(
+				'type'       => Controls_Manager::SLIDER,
+				'label'      => esc_html__( 'Gap', 'holy-vonsheezy' ),
+				'size_units' => array( '%', 'px', 'em ', 'rem', 'vw', 'custom' ),
+				'default'    => array(
 					'size' => '0',
-				],
-				'range' => [
-					'px' => [
+				),
+				'range'      => array(
+					'px'  => array(
 						'max' => 100,
-					],
-					'em' => [
+					),
+					'em'  => array(
 						'max' => 5,
-					],
-					'rem' => [
+					),
+					'rem' => array(
 						'max' => 5,
-					],
-				],
-				'selectors' => [
+					),
+				),
+				'selectors'  => array(
 					'.site-header' => 'padding-inline-end: {{SIZE}}{{UNIT}}; padding-inline-start: {{SIZE}}{{UNIT}}',
-				],
-				'conditions' => [
+				),
+				'conditions' => array(
 					'relation' => 'and',
-					'terms' => [
-						[
-							'name' => 'vonsheezy_header_layout',
+					'terms'    => array(
+						array(
+							'name'     => 'vonsheezy_header_layout',
 							'operator' => '!=',
-							'value' => 'stacked',
-						],
-					],
-				],
-			]
+							'value'    => 'stacked',
+						),
+					),
+				),
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
-			[
-				'name' => 'vonsheezy_header_background',
-				'label' => esc_html__( 'Background', 'holy-vonsheezy' ),
-				'types' => [ 'classic', 'gradient' ],
+			array(
+				'name'     => 'vonsheezy_header_background',
+				'label'    => esc_html__( 'Background', 'holy-vonsheezy' ),
+				'types'    => array( 'classic', 'gradient' ),
 				'selector' => '.site-header',
-			]
+			)
 		);
 
 		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'vonsheezy_header_logo_section',
-			[
-				'tab' => 'vonsheezy-settings-header',
-				'label' => esc_html__( 'Site Logo', 'holy-vonsheezy' ),
-				'conditions' => [
+			array(
+				'tab'        => 'vonsheezy-settings-header',
+				'label'      => esc_html__( 'Site Logo', 'holy-vonsheezy' ),
+				'conditions' => array(
 					'relation' => 'and',
-					'terms' => [
-						[
-							'name' => 'vonsheezy_header_logo_display',
+					'terms'    => array(
+						array(
+							'name'     => 'vonsheezy_header_logo_display',
 							'operator' => '=',
-							'value' => 'yes',
-						],
-					],
-				],
-			]
+							'value'    => 'yes',
+						),
+					),
+				),
+			)
 		);
 
 		$this->add_control(
 			'vonsheezy_header_logo_type',
-			[
-				'label' => esc_html__( 'Type', 'holy-vonsheezy' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => ( has_custom_logo() ? 'logo' : 'title' ),
-				'options' => [
-					'logo' => esc_html__( 'Logo', 'holy-vonsheezy' ),
+			array(
+				'label'              => esc_html__( 'Type', 'holy-vonsheezy' ),
+				'type'               => Controls_Manager::SELECT,
+				'default'            => ( has_custom_logo() ? 'logo' : 'title' ),
+				'options'            => array(
+					'logo'  => esc_html__( 'Logo', 'holy-vonsheezy' ),
 					'title' => esc_html__( 'Title', 'holy-vonsheezy' ),
-				],
+				),
 				'frontend_available' => true,
-			]
+			)
 		);
 
 		$this->add_responsive_control(
 			'vonsheezy_header_logo_width',
-			[
-				'type' => Controls_Manager::SLIDER,
-				'label' => esc_html__( 'Logo Width', 'holy-vonsheezy' ),
+			array(
+				'type'        => Controls_Manager::SLIDER,
+				'label'       => esc_html__( 'Logo Width', 'holy-vonsheezy' ),
 				'description' => sprintf(
 					/* translators: %s: Link that opens Elementor's "Site Identity" panel. */
 					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s logo', 'holy-vonsheezy' ),
 					"javascript:\$e.route('panel/global/settings-site-identity')"
 				),
-				'size_units' => [ '%', 'px', 'em', 'rem', 'vw', 'custom' ],
-				'range' => [
-					'px' => [
+				'size_units'  => array( '%', 'px', 'em', 'rem', 'vw', 'custom' ),
+				'range'       => array(
+					'px'  => array(
 						'max' => 1000,
-					],
-					'em' => [
+					),
+					'em'  => array(
 						'max' => 100,
-					],
-					'rem' => [
+					),
+					'rem' => array(
 						'max' => 100,
-					],
-				],
-				'condition' => [
+					),
+				),
+				'condition'   => array(
 					'vonsheezy_header_logo_display' => 'yes',
-					'vonsheezy_header_logo_type' => 'logo',
-				],
-				'selectors' => [
+					'vonsheezy_header_logo_type'    => 'logo',
+				),
+				'selectors'   => array(
 					'.site-header .site-branding .site-logo img' => 'width: {{SIZE}}{{UNIT}}; max-width: {{SIZE}}{{UNIT}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'vonsheezy_header_title_color',
-			[
-				'label' => esc_html__( 'Text Color', 'holy-vonsheezy' ),
-				'type' => Controls_Manager::COLOR,
-				'condition' => [
+			array(
+				'label'     => esc_html__( 'Text Color', 'holy-vonsheezy' ),
+				'type'      => Controls_Manager::COLOR,
+				'condition' => array(
 					'vonsheezy_header_logo_display' => 'yes',
-					'vonsheezy_header_logo_type' => 'title',
-				],
-				'selectors' => [
+					'vonsheezy_header_logo_type'    => 'title',
+				),
+				'selectors' => array(
 					'.site-header h1.site-title a' => 'color: {{VALUE}};',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
-			[
-				'name' => 'vonsheezy_header_title_typography',
-				'label' => esc_html__( 'Typography', 'holy-vonsheezy' ),
+			array(
+				'name'        => 'vonsheezy_header_title_typography',
+				'label'       => esc_html__( 'Typography', 'holy-vonsheezy' ),
 				'description' => sprintf(
 					/* translators: %s: Link that opens Elementor's "Site Identity" panel. */
 					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s title', 'holy-vonsheezy' ),
 					"javascript:\$e.route('panel/global/settings-site-identity')"
 				),
-				'condition' => [
+				'condition'   => array(
 					'vonsheezy_header_logo_display' => 'yes',
-					'vonsheezy_header_logo_type' => 'title',
-				],
-				'selector' => '.site-header h1.site-title',
-			]
+					'vonsheezy_header_logo_type'    => 'title',
+				),
+				'selector'    => '.site-header h1.site-title',
+			)
 		);
 
 		$this->add_control(
 			'vonsheezy_header_title_link',
-			[
-				'type' => Controls_Manager::RAW_HTML,
-				'raw' => sprintf(
+			array(
+				'type'            => Controls_Manager::RAW_HTML,
+				'raw'             => sprintf(
 					/* translators: %s: Link that opens Elementor's "Site Identity" panel. */
 					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s title', 'holy-vonsheezy' ),
 					"javascript:\$e.route('panel/global/settings-site-identity')"
 				),
 				'content_classes' => 'elementor-control-field-description',
-				'condition' => [
+				'condition'       => array(
 					'vonsheezy_header_logo_display' => 'yes',
-					'vonsheezy_header_logo_type' => 'title',
-				],
-			]
+					'vonsheezy_header_logo_type'    => 'title',
+				),
+			)
 		);
 
 		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'vonsheezy_header_tagline',
-			[
-				'tab' => 'vonsheezy-settings-header',
-				'label' => esc_html__( 'Tagline', 'holy-vonsheezy' ),
-				'conditions' => [
+			array(
+				'tab'        => 'vonsheezy-settings-header',
+				'label'      => esc_html__( 'Tagline', 'holy-vonsheezy' ),
+				'conditions' => array(
 					'relation' => 'and',
-					'terms' => [
-						[
-							'name' => 'vonsheezy_header_tagline_display',
+					'terms'    => array(
+						array(
+							'name'     => 'vonsheezy_header_tagline_display',
 							'operator' => '=',
-							'value' => 'yes',
-						],
-					],
-				],
-			]
+							'value'    => 'yes',
+						),
+					),
+				),
+			)
 		);
 
 		$this->add_control(
 			'vonsheezy_header_tagline_color',
-			[
-				'label' => esc_html__( 'Text Color', 'holy-vonsheezy' ),
-				'type' => Controls_Manager::COLOR,
-				'condition' => [
+			array(
+				'label'     => esc_html__( 'Text Color', 'holy-vonsheezy' ),
+				'type'      => Controls_Manager::COLOR,
+				'condition' => array(
 					'vonsheezy_header_tagline_display' => 'yes',
-				],
-				'selectors' => [
+				),
+				'selectors' => array(
 					'.site-header .site-description' => 'color: {{VALUE}};',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
-			[
-				'name' => 'vonsheezy_header_tagline_typography',
-				'label' => esc_html__( 'Typography', 'holy-vonsheezy' ),
-				'condition' => [
+			array(
+				'name'      => 'vonsheezy_header_tagline_typography',
+				'label'     => esc_html__( 'Typography', 'holy-vonsheezy' ),
+				'condition' => array(
 					'vonsheezy_header_tagline_display' => 'yes',
-				],
-				'selector' => '.site-header .site-description',
-			]
+				),
+				'selector'  => '.site-header .site-description',
+			)
 		);
 
 		$this->add_control(
 			'vonsheezy_header_tagline_link',
-			[
-				'type' => Controls_Manager::RAW_HTML,
-				'raw' => sprintf(
+			array(
+				'type'            => Controls_Manager::RAW_HTML,
+				'raw'             => sprintf(
 					/* translators: %s: Link that opens Elementor's "Site Identity" panel. */
 					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s tagline', 'holy-vonsheezy' ),
 					"javascript:\$e.route('panel/global/settings-site-identity')"
 				),
 				'content_classes' => 'elementor-control-field-description',
-			]
+			)
 		);
 
 		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'vonsheezy_header_menu_tab',
-			[
-				'tab' => 'vonsheezy-settings-header',
-				'label' => esc_html__( 'Menu', 'holy-vonsheezy' ),
-				'conditions' => [
+			array(
+				'tab'        => 'vonsheezy-settings-header',
+				'label'      => esc_html__( 'Menu', 'holy-vonsheezy' ),
+				'conditions' => array(
 					'relation' => 'and',
-					'terms' => [
-						[
-							'name' => 'vonsheezy_header_menu_display',
+					'terms'    => array(
+						array(
+							'name'     => 'vonsheezy_header_menu_display',
 							'operator' => '=',
-							'value' => 'yes',
-						],
-					],
-				],
-			]
+							'value'    => 'yes',
+						),
+					),
+				),
+			)
 		);
 
 		$available_menus = wp_get_nav_menus();
 
-		$menus = [ '0' => esc_html__( '— Select a Menu —', 'holy-vonsheezy' ) ];
+		$menus = array( '0' => esc_html__( '— Select a Menu —', 'holy-vonsheezy' ) );
 		foreach ( $available_menus as $available_menu ) {
 			$menus[ $available_menu->term_id ] = $available_menu->name;
 		}
@@ -402,108 +402,108 @@ class Settings_Header extends Tab_Base {
 		if ( 1 === count( $menus ) ) {
 			$this->add_control(
 				'vonsheezy_header_menu_notice',
-				[
-					'type' => Controls_Manager::RAW_HTML,
-					'raw' => '<strong>' . esc_html__( 'There are no menus in your site.', 'holy-vonsheezy' ) . '</strong><br>' . sprintf( __( 'Go to <a href="%s" target="_blank">Menus screen</a> to create one.', 'holy-vonsheezy' ), admin_url( 'nav-menus.php?action=edit&menu=0' ) ),
-					'separator' => 'after',
+				array(
+					'type'            => Controls_Manager::RAW_HTML,
+					'raw'             => '<strong>' . esc_html__( 'There are no menus in your site.', 'holy-vonsheezy' ) . '</strong><br>' . sprintf( __( 'Go to <a href="%s" target="_blank">Menus screen</a> to create one.', 'holy-vonsheezy' ), admin_url( 'nav-menus.php?action=edit&menu=0' ) ),
+					'separator'       => 'after',
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
-				]
+				)
 			);
 		} else {
 			$this->add_control(
 				'vonsheezy_header_menu',
-				[
-					'label' => esc_html__( 'Menu', 'holy-vonsheezy' ),
-					'type' => Controls_Manager::SELECT,
-					'options' => $menus,
-					'default' => array_keys( $menus )[0],
+				array(
+					'label'       => esc_html__( 'Menu', 'holy-vonsheezy' ),
+					'type'        => Controls_Manager::SELECT,
+					'options'     => $menus,
+					'default'     => array_keys( $menus )[0],
 					'description' => sprintf( __( 'Go to the <a href="%s" target="_blank">Menus screen</a> to manage your menus.', 'holy-vonsheezy' ), admin_url( 'nav-menus.php' ) ),
-				]
+				)
 			);
 
 			$this->add_control(
 				'vonsheezy_header_menu_warning',
-				[
-					'type' => Controls_Manager::RAW_HTML,
-					'raw' => esc_html__( 'Changes will be reflected in the preview only after the page reloads.', 'holy-vonsheezy' ),
+				array(
+					'type'            => Controls_Manager::RAW_HTML,
+					'raw'             => esc_html__( 'Changes will be reflected in the preview only after the page reloads.', 'holy-vonsheezy' ),
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
-				]
+				)
 			);
 
 			$this->add_control(
 				'vonsheezy_header_menu_layout',
-				[
-					'label' => esc_html__( 'Menu Layout', 'holy-vonsheezy' ),
-					'type' => Controls_Manager::SELECT,
-					'default' => 'horizontal',
-					'options' => [
+				array(
+					'label'              => esc_html__( 'Menu Layout', 'holy-vonsheezy' ),
+					'type'               => Controls_Manager::SELECT,
+					'default'            => 'horizontal',
+					'options'            => array(
 						'horizontal' => esc_html__( 'Horizontal', 'holy-vonsheezy' ),
-						'dropdown' => esc_html__( 'Dropdown', 'holy-vonsheezy' ),
-					],
+						'dropdown'   => esc_html__( 'Dropdown', 'holy-vonsheezy' ),
+					),
 					'frontend_available' => true,
-				]
+				)
 			);
 
 			$breakpoints = Responsive::get_breakpoints();
 
 			$this->add_control(
 				'vonsheezy_header_menu_dropdown',
-				[
-					'label' => esc_html__( 'Breakpoint', 'holy-vonsheezy' ),
-					'type' => Controls_Manager::SELECT,
-					'default' => 'tablet',
-					'options' => [
+				array(
+					'label'     => esc_html__( 'Breakpoint', 'holy-vonsheezy' ),
+					'type'      => Controls_Manager::SELECT,
+					'default'   => 'tablet',
+					'options'   => array(
 						/* translators: %d: Breakpoint number. */
 						'mobile' => sprintf( esc_html__( 'Mobile (< %dpx)', 'holy-vonsheezy' ), $breakpoints['md'] ),
 						/* translators: %d: Breakpoint number. */
 						'tablet' => sprintf( esc_html__( 'Tablet (< %dpx)', 'holy-vonsheezy' ), $breakpoints['lg'] ),
-						'none' => esc_html__( 'None', 'holy-vonsheezy' ),
-					],
-					'selector' => '.site-header',
-					'condition' => [
+						'none'   => esc_html__( 'None', 'holy-vonsheezy' ),
+					),
+					'selector'  => '.site-header',
+					'condition' => array(
 						'vonsheezy_header_menu_layout!' => 'dropdown',
-					],
-				]
+					),
+				)
 			);
 
 			$this->add_control(
 				'vonsheezy_header_menu_color',
-				[
-					'label' => esc_html__( 'Color', 'holy-vonsheezy' ),
-					'type' => Controls_Manager::COLOR,
-					'condition' => [
+				array(
+					'label'     => esc_html__( 'Color', 'holy-vonsheezy' ),
+					'type'      => Controls_Manager::COLOR,
+					'condition' => array(
 						'vonsheezy_header_menu_display' => 'yes',
-					],
-					'selectors' => [
+					),
+					'selectors' => array(
 						'.site-header .site-navigation ul.menu li a' => 'color: {{VALUE}};',
-					],
-				]
+					),
+				)
 			);
 
 			$this->add_control(
 				'vonsheezy_header_menu_toggle_color',
-				[
-					'label' => esc_html__( 'Toggle Color', 'holy-vonsheezy' ),
-					'type' => Controls_Manager::COLOR,
-					'condition' => [
+				array(
+					'label'     => esc_html__( 'Toggle Color', 'holy-vonsheezy' ),
+					'type'      => Controls_Manager::COLOR,
+					'condition' => array(
 						'vonsheezy_header_menu_display' => 'yes',
-					],
-					'selectors' => [
+					),
+					'selectors' => array(
 						'.site-header .site-navigation-toggle i' => 'color: {{VALUE}};',
-					],
-				]
+					),
+				)
 			);
 
 			$this->add_group_control(
 				Group_Control_Typography::get_type(),
-				[
-					'name' => 'vonsheezy_header_menu_typography',
-					'label' => esc_html__( 'Typography', 'holy-vonsheezy' ),
-					'condition' => [
+				array(
+					'name'      => 'vonsheezy_header_menu_typography',
+					'label'     => esc_html__( 'Typography', 'holy-vonsheezy' ),
+					'condition' => array(
 						'vonsheezy_header_menu_display' => 'yes',
-					],
-					'selector' => '.site-header .site-navigation .menu li',
-				]
+					),
+					'selector'  => '.site-header .site-navigation .menu li',
+				)
 			);
 		}
 
@@ -513,8 +513,8 @@ class Settings_Header extends Tab_Base {
 	public function on_save( $data ) {
 		// Save chosen header menu to the WP settings.
 		if ( isset( $data['settings']['vonsheezy_header_menu'] ) ) {
-			$menu_id = $data['settings']['vonsheezy_header_menu'];
-			$locations = get_theme_mod( 'nav_menu_locations' );
+			$menu_id             = $data['settings']['vonsheezy_header_menu'];
+			$locations           = get_theme_mod( 'nav_menu_locations' );
 			$locations['menu-1'] = (int) $menu_id;
 			set_theme_mod( 'nav_menu_locations', $locations );
 		}

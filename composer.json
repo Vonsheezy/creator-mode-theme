@@ -1,0 +1,26 @@
+{
+    "name": "eliasu/holy-canvas",
+    "description": "A minimalist WordPress theme",
+    "type": "wordpress-theme",
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.7.2",
+        "vimeo/psalm": "^6.5",
+        "wp-coding-standards/wpcs": "^3.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "classmap": ["./includes"]
+    },
+    "authors": [
+        {
+            "name": "Eliasu Abraman",
+            "email": "sabalisfi@yahoo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

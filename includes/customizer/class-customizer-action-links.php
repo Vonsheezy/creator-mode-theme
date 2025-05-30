@@ -36,8 +36,8 @@ class Holy_VonsheezyCustomizer_Action_Links extends \WP_Customize_Control {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 
-		$action_link_data = [];
-		$action_link_type = '';
+		$action_link_data  = array();
+		$action_link_type  = '';
 		$installed_plugins = get_plugins();
 
 		if ( ! isset( $installed_plugins['elementor/elementor.php'] ) ) {
@@ -52,53 +52,53 @@ class Holy_VonsheezyCustomizer_Action_Links extends \WP_Customize_Control {
 
 		switch ( $action_link_type ) {
 			case 'install-elementor':
-				$action_link_data = [
-					'image' => get_template_directory_uri() . '/assets/images/elementor.svg',
-					'alt' => esc_attr__( 'Elementor', 'holy-vonsheezy' ),
-					'title' => esc_html__( 'Install Elementor', 'holy-vonsheezy' ),
+				$action_link_data = array(
+					'image'   => get_template_directory_uri() . '/assets/images/elementor.svg',
+					'alt'     => esc_attr__( 'Elementor', 'holy-vonsheezy' ),
+					'title'   => esc_html__( 'Install Elementor', 'holy-vonsheezy' ),
 					'message' => esc_html__( 'Create cross-site header & footer using Elementor.', 'holy-vonsheezy' ),
-					'button' => esc_html__( 'Install Elementor', 'holy-vonsheezy' ),
-					'link' => wp_nonce_url(
+					'button'  => esc_html__( 'Install Elementor', 'holy-vonsheezy' ),
+					'link'    => wp_nonce_url(
 						add_query_arg(
-							[
+							array(
 								'action' => 'install-plugin',
 								'plugin' => 'elementor',
-							],
+							),
 							admin_url( 'update.php' )
 						),
 						'install-plugin_elementor'
 					),
-				];
+				);
 				break;
 			case 'activate-elementor':
-				$action_link_data = [
-					'image' => get_template_directory_uri() . '/assets/images/elementor.svg',
-					'alt' => esc_attr__( 'Elementor', 'holy-vonsheezy' ),
-					'title' => esc_html__( 'Activate Elementor', 'holy-vonsheezy' ),
+				$action_link_data = array(
+					'image'   => get_template_directory_uri() . '/assets/images/elementor.svg',
+					'alt'     => esc_attr__( 'Elementor', 'holy-vonsheezy' ),
+					'title'   => esc_html__( 'Activate Elementor', 'holy-vonsheezy' ),
 					'message' => esc_html__( 'Create cross-site header & footer using Elementor.', 'holy-vonsheezy' ),
-					'button' => esc_html__( 'Activate Elementor', 'holy-vonsheezy' ),
-					'link' => wp_nonce_url( 'plugins.php?action=activate&plugin=elementor/elementor.php', 'activate-plugin_elementor/elementor.php' ),
-				];
+					'button'  => esc_html__( 'Activate Elementor', 'holy-vonsheezy' ),
+					'link'    => wp_nonce_url( 'plugins.php?action=activate&plugin=elementor/elementor.php', 'activate-plugin_elementor/elementor.php' ),
+				);
 				break;
 			case 'activate-header-footer-experiment':
-				$action_link_data = [
-					'image' => get_template_directory_uri() . '/assets/images/elementor.svg',
-					'alt' => esc_attr__( 'Elementor', 'holy-vonsheezy' ),
-					'title' => esc_html__( 'Style using Elementor', 'holy-vonsheezy' ),
+				$action_link_data = array(
+					'image'   => get_template_directory_uri() . '/assets/images/elementor.svg',
+					'alt'     => esc_attr__( 'Elementor', 'holy-vonsheezy' ),
+					'title'   => esc_html__( 'Style using Elementor', 'holy-vonsheezy' ),
 					'message' => esc_html__( 'Design your cross-site header & footer from Elementor’s "Site Settings" panel.', 'holy-vonsheezy' ),
-					'button' => esc_html__( 'Activate header & footer experiment', 'holy-vonsheezy' ),
-					'link' => wp_nonce_url( 'admin.php?page=elementor#tab-experiments' ),
-				];
+					'button'  => esc_html__( 'Activate header & footer experiment', 'holy-vonsheezy' ),
+					'link'    => wp_nonce_url( 'admin.php?page=elementor#tab-experiments' ),
+				);
 				break;
 			case 'style-header-footer':
-				$action_link_data = [
-					'image' => get_template_directory_uri() . '/assets/images/elementor.svg',
-					'alt' => esc_attr__( 'Elementor', 'holy-vonsheezy' ),
-					'title' => esc_html__( 'Style cross-site header & footer', 'holy-vonsheezy' ),
+				$action_link_data = array(
+					'image'   => get_template_directory_uri() . '/assets/images/elementor.svg',
+					'alt'     => esc_attr__( 'Elementor', 'holy-vonsheezy' ),
+					'title'   => esc_html__( 'Style cross-site header & footer', 'holy-vonsheezy' ),
 					'message' => esc_html__( 'Customize your cross-site header & footer from Elementor’s "Site Settings" panel.', 'holy-vonsheezy' ),
-					'button' => esc_html__( 'Start Designing', 'holy-vonsheezy' ),
-					'link' => wp_nonce_url( 'post.php?post=' . get_option( 'elementor_active_kit' ) . '&action=elementor' ),
-				];
+					'button'  => esc_html__( 'Start Designing', 'holy-vonsheezy' ),
+					'link'    => wp_nonce_url( 'post.php?post=' . get_option( 'elementor_active_kit' ) . '&action=elementor' ),
+				);
 				break;
 		}
 
