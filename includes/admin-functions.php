@@ -155,5 +155,5 @@ function ajax_vonsheezy_elementor_set_admin_notice_viewed() {
 add_action( 'wp_ajax_vonsheezy_elementor_set_admin_notice_viewed', 'ajax_vonsheezy_elementor_set_admin_notice_viewed' );
 
 if ( ! did_action( 'elementor/loaded' ) ) {
-	add_action( 'admin_notices', 'vonsheezy_elementor_fail_load_admin_notice' );
+	add_action( 'admin_notices', __NAMESPACE__ . '\vonsheezy_elementor_fail_load_admin_notice' );
 }
