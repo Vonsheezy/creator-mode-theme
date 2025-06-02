@@ -1,23 +1,30 @@
 /*
-Theme Name: Holy Vonsheezy
-URI: https://vonsheezy.com
-Author: Vonsheezy Team
-Author URI: https://vonsheezy.com
-Description: Holy Vonsheezy is a super lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor Pro site builder plugin. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
-Version: 1.0
+	Theme Name: Holy Canvas
+	URI: https://vonsheezy.com
+	Author: Vonsheezy Team
+	Author URI: https://vonsheezy.com
+	Description: Holy Vonsheezy is a super lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor Pro site builder plugin. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
+	Stable tag: 1.0.0
+	Requires at least: 6.0
+	Tested up to: 6.8
+	Requires PHP: 7.4
+	License: GNU General Public License v3 or later.
+	License URI: https://www.gnu.org/licenses/gpl-3.0.html
+	Text Domain: holy-canvas-theme
+	Version: 1.0.0
+	Tag: Tags: accessibility-ready, flexible-header, custom-colors, custom-menu, custom-logo, featured-images, translation-ready,
 */
+
 /**
- * Loading first in the style.scss & classic-editor.scss
- */
-/**
-* Document basic styling
-* Inspired by Normalize.css, HTML5 Boilerplate & Bootstrap Reboot Projects under MIT License
- */
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- * 3. Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`.
- */
+ * This file is used to load the style.scss & classic-editor.scss
+ * Inspired by Normalize.css, HTML5 Boilerplate & Bootstrap Reboot Projects under MIT License
+ * Correct the line height in all browsers.
+ * Prevent adjustments of font size after orientation changes in iOS.
+ * Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`.
+
+ * @package Holy Canvas
+ **/
+
 html {
 	line-height: 1.15; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
