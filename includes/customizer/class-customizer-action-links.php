@@ -9,6 +9,8 @@
 
 namespace HolyVonsheezy\Includes\Customizer;
 
+use HolyVonsheezy\Elementor_Integration;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -61,7 +63,7 @@ class Customizer_Action_Links extends \WP_Customize_Control {
 			$action_link_type = 'install-elementor';
 		} elseif ( ! defined( 'ELEMENTOR_VERSION' ) ) {
 			$action_link_type = 'activate-elementor';
-		} elseif ( ! vonsheezy_header_footer_experiment_active() ) {
+		} elseif ( ! Elementor_Integration::header_footer_experiment_active() ) {
 			$action_link_type = 'activate-header-footer-experiment';
 		} else {
 			$action_link_type = 'style-header-footer';

@@ -8,6 +8,7 @@
 namespace HolyVonsheezy\Includes\Customizer;
 
 use Error;
+use HolyVonsheezy\Elementor_Integration;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -92,10 +93,10 @@ function vonsheezy_elementor_settings_page_scripts() {
 	} elseif ( ! defined( 'ELEMENTOR_VERSION' ) ) {
 		$action_link_type = 'activate-elementor';
 		$action_link_url  = wp_nonce_url( 'plugins.php?action=activate&plugin=elementor/elementor.php', 'activate-plugin_elementor/elementor.php' );
-	} elseif ( vonsheezy_header_footer_experiment_active() && ! vonsheezy_header_footer_experiment_active() ) {
+	} elseif ( Elementor_Integration::header_footer_experiment_active() && ! Elementor_Integration::header_footer_experiment_active() ) {
 		$action_link_type = 'activate-header-footer-experiment';
 		$action_link_url  = wp_nonce_url( 'admin.php?page=elementor#tab-experiments' );
-	} elseif ( vonsheezy_header_footer_experiment_active() ) {
+	} elseif ( Elementor_Integration::header_footer_experiment_active() ) {
 		$action_link_type = 'style-header-footer';
 		$action_link_url  = wp_nonce_url( 'post.php?post=' . get_option( 'elementor_active_kit' ) . '&action=elementor' );
 	} else {

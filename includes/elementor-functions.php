@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register Site Settings Controls.
  */
 
-add_action( 'elementor/init', __NAMESPACE__. '\elementor_settings_init' );
+// add_action( 'elementor/init', __NAMESPACE__. '\elementor_settings_init' );
 
 /**
  * Initializes custom Elementor settings for header and footer management.
@@ -60,22 +60,22 @@ function elementor_settings_init() {
  * @param  string $setting_id Setting ID.
  * @return string|array same as the Elementor internal function does.
  */
-function elementor_get_setting($setting_id ) {
-	global $vonsheezy_elementor_settings;
-
-	$return = '';
-
-	if ( ! isset( $vonsheezy_elementor_settings['kit_settings'] ) ) {
-		$kit = \Elementor\Plugin::$instance->kits_manager->get_active_kit();
-		$vonsheezy_elementor_settings['kit_settings'] = $kit->get_settings();
-	}
-
-	if ( isset( $vonsheezy_elementor_settings['kit_settings'][ $setting_id ] ) ) {
-		$return = $vonsheezy_elementor_settings['kit_settings'][ $setting_id ];
-	}
-
-	return apply_filters( 'vonsheezy_elementor_' . $setting_id, $return );
-}
+//function elementor_get_setting($setting_id ) {
+//	global $vonsheezy_elementor_settings;
+//
+//	$return = '';
+//
+//	if ( ! isset( $vonsheezy_elementor_settings['kit_settings'] ) ) {
+//		$kit = \Elementor\Plugin::$instance->kits_manager->get_active_kit();
+//		$vonsheezy_elementor_settings['kit_settings'] = $kit->get_settings();
+//	}
+//
+//	if ( isset( $vonsheezy_elementor_settings['kit_settings'][ $setting_id ] ) ) {
+//		$return = $vonsheezy_elementor_settings['kit_settings'][ $setting_id ];
+//	}
+//
+//	return apply_filters( 'vonsheezy_elementor_' . $setting_id, $return );
+//}
 
 /**
  * Helper function to show/hide elements
@@ -97,7 +97,7 @@ function show_or_hide($setting_id ) {
 function get_header_layout_class(): string {
 	$layout_classes = array();
 
-	$header_layout = elementor_get_setting( 'vonsheezy_header_layout' );
+	$header_layout = get_setting( 'vonsheezy_header_layout' );
 	if ( 'inverted' === $header_layout ) {
 		$layout_classes[] = 'header-inverted';
 	} elseif ( 'stacked' === $header_layout ) {

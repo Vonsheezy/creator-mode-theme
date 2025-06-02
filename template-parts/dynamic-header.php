@@ -5,8 +5,7 @@
  * @package HolyVonsheezy
  */
 
-use function HolyVonsheezy\Includes\elementor_get_setting;
-use function HolyVonsheezy\Includes\get_header_display;
+use HolyVonsheezy\Elementor_Integration;
 use function HolyVonsheezy\Includes\get_header_layout_class;
 use function HolyVonsheezy\Includes\show_or_hide;
 
@@ -14,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! get_header_display() ) {
+if ( ! Elementor_Integration::get_header_display() ) {
 	return;
 }
 
@@ -29,19 +28,19 @@ $header_nav_menu = wp_nav_menu(
 	)
 );
 ?>
-<header id="site-header" class="site-header dynamic-header <?php echo esc_attr( get_header_layout_class() ); ?>">
+<header id="site-header" class="site-header dynamic-header <?php echo esc_attr( Elementor_Integration::get_header_layout_class() ); ?>">
 	<div class="header-inner">
-		<div class="site-branding show-<?php echo esc_attr( elementor_get_setting( 'vonsheezy_header_logo_type' ) ); ?>">
-			<?php if ( has_custom_logo() && ( 'title' !== elementor_get_setting( 'vonsheezy_header_logo_type' ) || $is_editor ) ) : ?>
-				<div class="site-logo <?php echo esc_attr( show_or_hide( 'vonsheezy_header_logo_display' ) ); ?>">
+		<div class="site-branding show-<?php echo esc_attr( Elementor_Integration::get_setting( 'vonsheezy_header_logo_type' ) ); ?>">
+			<?php if ( has_custom_logo() && ( 'title' !== Elementor_Integration::get_setting( 'vonsheezy_header_logo_type' ) || $is_editor ) ) : ?>
+				<div class="site-logo <?php echo esc_attr( Elementor_Integration::show_or_hide( 'vonsheezy_header_logo_display' ) ); ?>">
 					<?php the_custom_logo(); ?>
 				</div>
 				<?php
 			endif;
 
-			if ( $site_name && ( 'logo' !== elementor_get_setting( 'vonsheezy_header_logo_type' ) || $is_editor ) ) :
+			if ( $site_name && ( 'logo' !== Elementor_Integration::get_setting( 'vonsheezy_header_logo_type' ) || $is_editor ) ) :
 				?>
-				<h1 class="site-title <?php echo esc_attr( show_or_hide( 'vonsheezy_header_logo_display' ) ); ?>">
+				<h1 class="site-title <?php echo esc_attr( Elementor_Integration::show_or_hide( 'vonsheezy_header_logo_display' ) ); ?>">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr__( 'Home', 'holy-vonsheezy' ); ?>" rel="home">
 						<?php echo esc_html( $site_name ); ?>
 					</a>
@@ -49,9 +48,9 @@ $header_nav_menu = wp_nav_menu(
 				<?php
 			endif;
 
-			if ( $tagline && ( elementor_get_setting( 'vonsheezy_header_tagline_display' ) || $is_editor ) ) :
+			if ( $tagline && ( Elementor_Integration::get_setting( 'vonsheezy_header_tagline_display' ) || $is_editor ) ) :
 				?>
-				<p class="site-description <?php echo esc_attr( show_or_hide( 'vonsheezy_header_tagline_display' ) ); ?>">
+				<p class="site-description <?php echo esc_attr( Elementor_Integration::show_or_hide( 'vonsheezy_header_tagline_display' ) ); ?>">
 					<?php echo esc_html( $tagline ); ?>
 				</p>
 			<?php endif; ?>

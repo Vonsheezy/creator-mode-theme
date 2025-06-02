@@ -7,6 +7,8 @@
  * @package HolyVonsheezy
  */
 
+use HolyVonsheezy\Elementor_Integration;
+use HolyVonsheezy\Theme;
 use function HolyVonsheezy\Includes\header_footer_experiment_active;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -34,8 +36,8 @@ $skip_link_url    = apply_filters( 'vonsheezy_elementor_skip_link_url', '#conten
 
 <?php
 if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'header' ) ) {
-	if ( vonsheezy_elementor_display_header_footer() ) {
-		if ( did_action( 'elementor/loaded' ) && header_footer_experiment_active() ) {
+	if ( Theme::display_header_footer() ) {
+		if ( did_action( 'elementor/loaded' ) && Elementor_Integration::header_footer_experiment_active() ) {
 			get_template_part( 'template-parts/dynamic-header' );
 		} else {
 			get_template_part( 'template-parts/header' );
