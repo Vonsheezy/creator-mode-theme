@@ -1,4 +1,11 @@
 <?php
+/**
+ * Class Holy_VonsheezyCustomizer_Action_Links
+ *
+ * Extends WP_Customize_Control for rendering customizer action links.
+ *
+ * @package HolyVonsheezy\Includes\Customizer\Holy_VonsheezyCustomizer_Action_Links
+ */
 
 namespace HolyVonsheezy\Includes\Customizer;
 
@@ -6,10 +13,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-class Holy_VonsheezyCustomizer_Action_Links extends \WP_Customize_Control {
+/**
+ * Class representing a custom WordPress Customizer control to display action links for managing Elementor-related settings.
+ *
+ * Extends the WP_Customize_Control class to integrate custom logic for rendering specific links and actions
+ * based on the availability and status of the Elementor plugin and associated features.
+ */
+class Customizer_Action_Links extends \WP_Customize_Control {
 
-	// Whitelist content parameter
-	public $content = '';
+	/**
+	 * Content property of WP_Customize_Control.
+	 *
+	 * @var string
+	 */
+	public string $content = '';
 
 	/**
 	 * Render the control's content.
@@ -108,13 +125,25 @@ class Holy_VonsheezyCustomizer_Action_Links extends \WP_Customize_Control {
 	}
 
 	/**
-	 * Get the customizer action links HTML.
+	 * Generate the HTML for customizer action links.
 	 *
-	 * @param array $data
+	 * This method constructs HTML markup for a customizer-related action link component,
+	 * provided the required data fields are set. If the necessary data is missing,
+	 * the method returns without generating HTML.
 	 *
-	 * @return string
+	 * @param array $data {
+	 *     An associative array containing the necessary data for generating the HTML.
+	 *
+	 * @type string $image URL for the image to be displayed.
+	 * @type string $alt Alt text for the image.
+	 * @type string $title Title text displayed in the action links.
+	 * @type string $message Message text displayed in the action links.
+	 * @type string $link URL for the primary link.
+	 * @type string $button The button text to be displayed.
+	 * }
+	 * @return string|null The generated HTML string for the action links, or null if the required data is incomplete.
 	 */
-	private function get_customizer_action_links_html( $data ) {
+	private function get_customizer_action_links_html( array $data ): ?string {
 		if (
 			empty( $data )
 			|| ! isset( $data['image'] )
@@ -124,7 +153,7 @@ class Holy_VonsheezyCustomizer_Action_Links extends \WP_Customize_Control {
 			|| ! isset( $data['link'] )
 			|| ! isset( $data['button'] )
 		) {
-			return;
+			return '';
 		}
 
 		return sprintf(

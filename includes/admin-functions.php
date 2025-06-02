@@ -1,11 +1,24 @@
 <?php
+/**
+ *  File that contains functions for elementor admin notices
+ *
+ * @package HolyVonsheezy\Includes
+ */
+
+namespace HolyVonsheezy\Includes;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
 /**
- * Show in WP Dashboard notice about the plugin is not activated.
+ * Displays an admin notice prompting the user to activate or install the Elementor plugin if it is not currently active or installed.
+ *
+ * The notice is shown only to users with proper permissions (install or activate plugins) and under specific conditions:
+ * - Elementor Pro is not already managing the plugin.
+ * - The notice has not been previously dismissed by the user.
+ *
+ * The notice includes a message about the compatibility of the HolyVonsheezy Theme with the Elementor plugin. It also provides actionable buttons to install or activate Elementor, depending on its installation status. If dismissed, it triggers an AJAX request to mark the notice as viewed.
  *
  * @return void
  */
@@ -142,7 +155,7 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 }
 
 /**
- * Set dismissed admin notice as viewed.
+ * Set the dismissed admin notice as viewed.
  *
  * @return void
  */

@@ -1,4 +1,11 @@
 <?php
+/**
+ * Implement Elementor functions
+ *
+ * @package HolyVonsheezy\Includes
+ */
+
+namespace HolyVonsheezy\Includes;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -10,22 +17,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 add_action( 'elementor/init', 'vonsheezy_elementor_settings_init' );
 
+/**
+ * Initializes custom Elementor settings for header and footer management.
+ *
+ * This function checks the activation status of the header and footer experiment
+ * and registers the necessary settings classes. It also hooks into Elementor's
+ * kit registration process to add custom settings tabs for managing headers and footers.
+ *
+ * @return void
+ */
 function vonsheezy_elementor_settings_init() {
 	if ( ! vonsheezy_header_footer_experiment_active() ) {
 		return;
 	}
 
-	require 'settings/settings-header.php';
-	require 'settings/settings-footer.php';
+	require 'settings/class-settings-header.php';
+	require 'settings/class-settings-footer.php';
 
-	add_action( 'elementor/kit/register_tabs', function( \Elementor\Core\Kits\Documents\Kit $kit ) {
-		if ( ! vonsheezy_elementor_display_header_footer() ) {
-			return;
-		}
+	add_action(
+		'elementor/kit/register_tabs',
+		function ( \Elementor\Core\Kits\Documents\Kit $kit ) {
+			if ( ! vonsheezy_elementor_display_header_footer() ) {
+				return;
+			}
 
-		$kit->register_tab( 'vonsheezy-settings-header', HolyVonsheezy\Includes\Settings\Settings_Header::class );
-		$kit->register_tab( 'vonsheezy-settings-footer', HolyVonsheezy\Includes\Settings\Settings_Footer::class );
-	}, 1, 40 );
+			$kit->register_tab( 'vonsheezy-settings-header', HolyVonsheezy\Includes\Settings\Settings_Header::class );
+			$kit->register_tab( 'vonsheezy-settings-footer', HolyVonsheezy\Includes\Settings\Settings_Footer::class );
+		},
+		1,
+		40
+	);
 }
 
 /**
@@ -33,7 +54,7 @@ function vonsheezy_elementor_settings_init() {
  *
  * Saves 2 lines to get kit, then get setting. Also caches the kit and setting.
  *
- * @param  string $setting_id
+ * @param  string $setting_id Setting ID.
  * @return string|array same as the Elementor internal function does.
  */
 function vonsheezy_elementor_get_setting( $setting_id ) {
@@ -58,7 +79,7 @@ function vonsheezy_elementor_get_setting( $setting_id ) {
  *
  * This works with switches, if the setting ID that has been passed is toggled on, we'll return show, otherwise we'll return hide
  *
- * @param  string $setting_id
+ * @param  string $setting_id Setting ID.
  * @return string|array same as the Elementor internal function does.
  */
 function vonsheezy_show_or_hide( $setting_id ) {
@@ -70,8 +91,8 @@ function vonsheezy_show_or_hide( $setting_id ) {
  *
  * @return string
  */
-function vonsheezy_get_header_layout_class() {
-	$layout_classes = [];
+function vonsheezy_get_header_layout_class(): string {
+	$layout_classes = array();
 
 	$header_layout = vonsheezy_elementor_get_setting( 'vonsheezy_header_layout' );
 	if ( 'inverted' === $header_layout ) {
@@ -110,7 +131,7 @@ function vonsheezy_get_header_layout_class() {
 function vonsheezy_get_footer_layout_class() {
 	$footer_layout = vonsheezy_elementor_get_setting( 'vonsheezy_footer_layout' );
 
-	$layout_classes = [];
+	$layout_classes = array();
 
 	if ( 'inverted' === $footer_layout ) {
 		$layout_classes[] = 'footer-inverted';
@@ -131,50 +152,56 @@ function vonsheezy_get_footer_layout_class() {
 	return implode( ' ', $layout_classes );
 }
 
-add_action( 'elementor/editor/after_enqueue_scripts', function() {
-	if ( ! vonsheezy_header_footer_experiment_active() ) {
-		return;
+add_action(
+	'elementor/editor/after_enqueue_scripts',
+	function () {
+		if ( ! vonsheezy_header_footer_experiment_active() ) {
+			return;
+		}
+
+		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+		wp_enqueue_script(
+			'holy-vonsheezy-theme-editor',
+			get_template_directory_uri() . '/assets/js/vonsheezy-editor' . $suffix . '.js',
+			array( 'jquery', 'elementor-editor' ),
+			HELLO_ELEMENTOR_VERSION,
+			true
+		);
+
+		wp_enqueue_style(
+			'vonsheezy-editor',
+			get_template_directory_uri() . '/editor' . $suffix . '.css',
+			array(),
+			HELLO_ELEMENTOR_VERSION
+		);
 	}
+);
 
-	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+add_action(
+	'wp_enqueue_scripts',
+	function () {
+		if ( ! vonsheezy_elementor_display_header_footer() ) {
+			return;
+		}
 
-	wp_enqueue_script(
-		'holy-vonsheezy-theme-editor',
-		get_template_directory_uri() . '/assets/js/vonsheezy-editor' . $suffix . '.js',
-		[ 'jquery', 'elementor-editor' ],
-		HELLO_ELEMENTOR_VERSION,
-		true
-	);
+		if ( ! vonsheezy_header_footer_experiment_active() ) {
+			return;
+		}
 
-	wp_enqueue_style(
-		'vonsheezy-editor',
-		get_template_directory_uri() . '/editor' . $suffix . '.css',
-		[],
-		HELLO_ELEMENTOR_VERSION
-	);
-} );
+		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-add_action( 'wp_enqueue_scripts', function() {
-	if ( ! vonsheezy_elementor_display_header_footer() ) {
-		return;
+		wp_enqueue_script(
+			'holy-vonsheezy-theme-frontend',
+			get_template_directory_uri() . '/assets/js/vonsheezy-frontend' . $suffix . '.js',
+			array(),
+			HELLO_ELEMENTOR_VERSION,
+			true
+		);
+
+		\Elementor\Plugin::$instance->kits_manager->frontend_before_enqueue_styles();
 	}
-
-	if ( ! vonsheezy_header_footer_experiment_active() ) {
-		return;
-	}
-
-	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-
-	wp_enqueue_script(
-		'holy-vonsheezy-theme-frontend',
-		get_template_directory_uri() . '/assets/js/vonsheezy-frontend' . $suffix . '.js',
-		[],
-		HELLO_ELEMENTOR_VERSION,
-		true
-	);
-
-	\Elementor\Plugin::$instance->kits_manager->frontend_before_enqueue_styles();
-} );
+);
 
 
 /**
@@ -182,7 +209,7 @@ add_action( 'wp_enqueue_scripts', function() {
  *
  * @return bool
  */
-function vonsheezy_get_header_display() {
+function vonsheezy_get_header_display(): bool {
 	$is_editor = isset( $_GET['elementor-preview'] );
 
 	return (
@@ -198,7 +225,7 @@ function vonsheezy_get_header_display() {
  *
  * @return bool
  */
-function vonsheezy_get_footer_display() {
+function vonsheezy_get_footer_display(): bool {
 	$is_editor = isset( $_GET['elementor-preview'] );
 
 	return (
@@ -213,29 +240,36 @@ function vonsheezy_get_footer_display() {
 /**
  * Add Holy Vonsheezy theme Header & Footer to Experiments.
  */
-add_action( 'elementor/experiments/default-features-registered', function( \Elementor\Core\Experiments\Manager $experiments_manager ) {
-	$experiments_manager->add_feature( [
-		'name' => 'holy-vonsheezy-theme-header-footer',
-		'title' => esc_html__( 'HolyVonsheezy Theme Header & Footer', 'holy-vonsheezy' ),
-		'description' => sprintf(
-			'%1$s <a href="%2$s" target="_blank">%3$s</a>',
-			esc_html__( 'Customize and style the builtin HolyVonsheezy Theme’s cross-site header & footer from the Elementor "Site Settings" panel.', 'holy-vonsheezy' ),
-			'https://go.elementor.com/wp-dash-header-footer',
-			esc_html__( 'Learn More', 'holy-vonsheezy' )
-		),
-		'release_status' => $experiments_manager::RELEASE_STATUS_STABLE,
-		'new_site' => [
-			'minimum_installation_version' => '3.3.0',
-			'default_active' => $experiments_manager::STATE_ACTIVE,
-		],
-	] );
-} );
+add_action(
+	'elementor/experiments/default-features-registered',
+	function ( \Elementor\Core\Experiments\Manager $experiments_manager ) {
+		$experiments_manager->add_feature(
+			array(
+				'name'           => 'holy-vonsheezy-theme-header-footer',
+				'title'          => esc_html__( 'HolyVonsheezy Theme Header & Footer', 'holy-vonsheezy' ),
+				'description'    => sprintf(
+					'%1$s <a href="%2$s" target="_blank">%3$s</a>',
+					esc_html__( 'Customize and style the builtin HolyVonsheezy Theme’s cross-site header & footer from the Elementor "Site Settings" panel.', 'holy-vonsheezy' ),
+					'https://go.elementor.com/wp-dash-header-footer',
+					esc_html__( 'Learn More', 'holy-vonsheezy' )
+				),
+				'release_status' => $experiments_manager::RELEASE_STATUS_STABLE,
+				'new_site'       => array(
+					'minimum_installation_version' => '3.3.0',
+					'default_active'               => $experiments_manager::STATE_ACTIVE,
+				),
+			)
+		);
+	}
+);
 
 /**
- * Helper function to check if Header & Footer Experiment is Active/Inactive
+ * Helper function to check if Header & Footer Experiment is Active/Inactive.
+ *
+ * @return true
  */
-function vonsheezy_header_footer_experiment_active() {
-	// If Elementor is not active, return false
+function vonsheezy_header_footer_experiment_active(): bool {
+	// If Elementor is not active, return false.
 	if ( ! did_action( 'elementor/loaded' ) ) {
 		return false;
 	}

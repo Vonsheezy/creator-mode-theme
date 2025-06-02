@@ -27,8 +27,8 @@ if ( ! function_exists( 'vonsheezy_elementor_setup' ) ) {
 		}
 
 		if ( apply_filters( 'vonsheezy_elementor_register_menus', true ) ) {
-			register_nav_menus( [ 'menu-1' => esc_html__( 'Header', 'holy-vonsheezy' ) ] );
-			register_nav_menus( [ 'menu-2' => esc_html__( 'Footer', 'holy-vonsheezy' ) ] );
+			register_nav_menus( array( 'menu-1' => esc_html__( 'Header', 'holy-vonsheezy' ) ) );
+			register_nav_menus( array( 'menu-2' => esc_html__( 'Footer', 'holy-vonsheezy' ) ) );
 		}
 
 		if ( apply_filters( 'vonsheezy_elementor_post_type_support', true ) ) {
@@ -41,7 +41,7 @@ if ( ! function_exists( 'vonsheezy_elementor_setup' ) ) {
 			add_theme_support( 'title-tag' );
 			add_theme_support(
 				'html5',
-				[
+				array(
 					'search-form',
 					'comment-form',
 					'comment-list',
@@ -49,16 +49,16 @@ if ( ! function_exists( 'vonsheezy_elementor_setup' ) ) {
 					'caption',
 					'script',
 					'style',
-				]
+				)
 			);
 			add_theme_support(
 				'custom-logo',
-				[
+				array(
 					'height'      => 100,
 					'width'       => 350,
 					'flex-height' => true,
 					'flex-width'  => true,
-				]
+				)
 			);
 
 			/*
@@ -90,6 +90,15 @@ if ( ! function_exists( 'vonsheezy_elementor_setup' ) ) {
 }
 add_action( 'after_setup_theme', 'vonsheezy_elementor_setup' );
 
+/**
+ * Updates the theme version stored in the database if it is outdated or not set.
+ *
+ * This function checks the current theme version saved in the database. If the version
+ * does not exist or is older than the defined theme version, it updates the database
+ * with the latest theme version.
+ *
+ * @return void
+ */
 function vonsheezy_maybe_update_theme_version_in_db() {
 	$theme_version_option_name = 'vonsheezy_theme_version';
 	// The theme version saved in the database.
@@ -127,7 +136,7 @@ if ( ! function_exists( 'vonsheezy_elementor_scripts_styles' ) ) {
 			wp_enqueue_style(
 				'holy-vonsheezy',
 				get_template_directory_uri() . '/style' . $min_suffix . '.css',
-				[],
+				array(),
 				HELLO_ELEMENTOR_VERSION
 			);
 		}
@@ -136,7 +145,7 @@ if ( ! function_exists( 'vonsheezy_elementor_scripts_styles' ) ) {
 			wp_enqueue_style(
 				'holy-vonsheezy-theme-style',
 				get_template_directory_uri() . '/theme' . $min_suffix . '.css',
-				[],
+				array(),
 				HELLO_ELEMENTOR_VERSION
 			);
 		}
@@ -145,7 +154,7 @@ if ( ! function_exists( 'vonsheezy_elementor_scripts_styles' ) ) {
 			wp_enqueue_style(
 				'holy-vonsheezy-header-footer',
 				get_template_directory_uri() . '/header-footer' . $min_suffix . '.css',
-				[],
+				array(),
 				HELLO_ELEMENTOR_VERSION
 			);
 		}
@@ -206,19 +215,27 @@ if ( ! function_exists( 'vonsheezy_elementor_add_description_meta_tag' ) ) {
 }
 add_action( 'wp_head', 'vonsheezy_elementor_add_description_meta_tag' );
 
-// Admin notice
+// Admin notice.
 if ( is_admin() ) {
 	require get_template_directory() . '/includes/admin-functions.php';
 }
 
-// Settings page
+// Settings page.
 require get_template_directory() . '/includes/settings-functions.php';
 
-// Header & footer styling option, inside Elementor
+// Header & footer styling option, inside Elementor.
 require get_template_directory() . '/includes/elementor-functions.php';
 
 if ( ! function_exists( 'vonsheezy_elementor_customizer' ) ) {
-	// Customizer controls
+	/**
+	 * Loads customizer functions for Elementor integration if conditions are met.
+	 *
+	 * This function checks whether the site is in customize preview mode and if the
+	 * Elementor header and footer display logic allows customizer functionality. If both
+	 * conditions are satisfied, it includes the necessary customizer-functions file.
+	 *
+	 * @return void
+	 */
 	function vonsheezy_elementor_customizer() {
 		if ( ! is_customize_preview() ) {
 			return;
@@ -259,6 +276,16 @@ add_filter( 'vonsheezy_elementor_page_title', 'vonsheezy_elementor_check_hide_ti
  * The following code prevents fatal errors in child themes that still use this function.
  */
 if ( ! function_exists( 'vonsheezy_elementor_body_open' ) ) {
+
+	/**
+	 * Outputs the wp_body_open action hook.
+	 *
+	 * This function calls the wp_body_open function to trigger the 'wp_body_open'
+	 * action hook. It should be called at the very beginning of the body tag in a theme
+	 * to allow developers to add content or scripts.
+	 *
+	 * @return void
+	 */
 	function vonsheezy_elementor_body_open() {
 		wp_body_open();
 	}

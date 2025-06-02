@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $viewport_content = apply_filters( 'vonsheezy_elementor_viewport_content', 'width=device-width, initial-scale=1' );
 $enable_skip_link = apply_filters( 'vonsheezy_elementor_enable_skip_link', true );
-$skip_link_url = apply_filters( 'vonsheezy_elementor_skip_link_url', '#content' );
+$skip_link_url    = apply_filters( 'vonsheezy_elementor_skip_link_url', '#content' );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>

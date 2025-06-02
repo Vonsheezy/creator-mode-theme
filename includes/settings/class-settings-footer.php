@@ -1,4 +1,13 @@
 <?php
+/**
+ * Class Settings_Footer
+ *
+ * Handles the customization options for the footer section of the Holy Canvas theme.
+ *
+ * @package HolyVonsheezy\Includes\Settings\Settings_Footer
+ */
+
+declare(strict_types=1);
 
 namespace HolyVonsheezy\Includes\Settings;
 
@@ -8,31 +17,72 @@ use Elementor\Group_Control_Typography;
 use Elementor\Core\Kits\Documents\Tabs\Tab_Base;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
+/**
+ * Class responsible for managing and customizing the settings for the footer
+ * section in the Holy Canvas theme. This class extends the core functionality
+ * of the Tab_Base class to provide specific controls for footer-related
+ * appearance and behavior.
+ */
 class Settings_Footer extends Tab_Base {
 
+	/**
+	 * Retrieves the unique identifier for the settings footer.
+	 *
+	 * @return string The unique identifier for the settings footer.
+	 */
 	public function get_id() {
-		return 'vonsheezy-settings-footer';
+		return 'holy-canvas-settings-footer';
 	}
 
-	public function get_title() {
+	/**
+	 * Retrieves the title for the Holy Canvas theme footer.
+	 *
+	 * @return string Returns the escaped HTML title of the Holy Canvas theme footer.
+	 */
+	public function get_title(): string {
 		return esc_html__( 'HolyVonsheezy Theme Footer', 'holy-vonsheezy' );
 	}
 
-	public function get_icon() {
+	/**
+	 * Retrieves the icon associated with the element.
+	 *
+	 * @return string Returns the icon as a string identifier.
+	 */
+	public function get_icon(): string {
 		return 'eicon-footer';
 	}
 
-	public function get_help_url() {
+	/**
+	 * Retrieves the help URL associated with the element.
+	 *
+	 * @return string Returns the help URL as a string.
+	 */
+	public function get_help_url(): string {
 		return '';
 	}
 
+	/**
+	 * Retrieves the group associated with the element.
+	 *
+	 * @return string Returns the group as a string identifier.
+	 */
 	public function get_group() {
 		return 'theme-style';
 	}
 
+	/**
+	 * Registers and configures the controls necessary for customizing the footer tab settings.
+	 *
+	 * This method defines various UI controls for managing the visibility, layout, content width,
+	 * background, and other appearance attributes of the footer section. Controls include toggles
+	 * for displaying specific elements (logo, tagline, menu, copyright), layout options, width,
+	 * responsive adjustments, and background settings, among others.
+	 *
+	 * @return void
+	 */
 	protected function register_tab_controls() {
 
 		$this->start_controls_section(
@@ -384,6 +434,7 @@ class Settings_Footer extends Tab_Base {
 				'vonsheezy_footer_menu_notice',
 				array(
 					'type'            => Controls_Manager::RAW_HTML,
+					/* translators: %s: A link to edit navigation menus. */
 					'raw'             => '<strong>' . esc_html__( 'There are no menus in your site.', 'holy-vonsheezy' ) . '</strong><br>' . sprintf( __( 'Go to <a href="%s" target="_blank">Menus screen</a> to create one.', 'holy-vonsheezy' ), admin_url( 'nav-menus.php?action=edit&menu=0' ) ),
 					'separator'       => 'after',
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
@@ -397,6 +448,7 @@ class Settings_Footer extends Tab_Base {
 					'type'        => Controls_Manager::SELECT,
 					'options'     => $menus,
 					'default'     => array_keys( $menus )[0],
+					/* translators: %s: A link to edit navigation menus. */
 					'description' => sprintf( __( 'Go to the <a href="%s" target="_blank">Menus screen</a> to manage your menus.', 'holy-vonsheezy' ), admin_url( 'nav-menus.php' ) ),
 				)
 			);
@@ -488,7 +540,13 @@ class Settings_Footer extends Tab_Base {
 		$this->end_controls_section();
 	}
 
-	public function on_save( $data ) {
+	/**
+	 * Handles the save action for the footer menu settings.
+	 *
+	 * @param array $data The data containing settings for the footer menu.
+	 * @return void
+	 */
+	public function on_save( array $data ): void {
 		// Save chosen footer menu to the WP settings.
 		if ( isset( $data['settings']['vonsheezy_footer_menu'] ) ) {
 			$menu_id             = $data['settings']['vonsheezy_footer_menu'];
@@ -498,7 +556,12 @@ class Settings_Footer extends Tab_Base {
 		}
 	}
 
-	public function get_additional_tab_content() {
+	/**
+	 * Generates additional tab content dynamically based on Elementor Pro version status.
+	 *
+	 * @return string Returns the formatted HTML content as a string based on the availability of Elementor Pro.
+	 */
+	public function get_additional_tab_content(): string {
 		$content_template = '
 			<div class="holy-vonsheezy elementor-nerd-box">
 				<img src="%1$s" class="elementor-nerd-box-icon" alt="%2$s">

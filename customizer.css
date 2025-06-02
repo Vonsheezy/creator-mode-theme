@@ -2,20 +2,20 @@
  * Style for your Customizer editor.
  */
 #accordion-section-vonsheezy-options .accordion-section-title {
-  color: #c36;
+	color: #c36;
 }
 #accordion-section-vonsheezy-options .accordion-section-title:after {
-  color: #c36;
+	color: #c36;
 }
 
 #customize-control-vonsheezy-header-footer .vonsheezy-action-links {
-  margin: 15px auto;
-  text-align: center;
+	margin: 15px auto;
+	text-align: center;
 }
 #customize-control-vonsheezy-header-footer .vonsheezy-action-links-title {
-  font-weight: 600;
-  margin: 10px 0;
+	font-weight: 600;
+	margin: 10px 0;
 }
 #customize-control-vonsheezy-header-footer .vonsheezy-action-links-message {
-  margin: 0 0 20px;
+	margin: 0 0 20px;
 }

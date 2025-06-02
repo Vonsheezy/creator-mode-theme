@@ -1,4 +1,16 @@
 <?php
+/**
+ * Class Settings_Header
+ * This class is responsible for defining the custom header settings for the Holy Canvas theme
+ * specifically for Elementor plugin customizations.
+ *
+ * Extends the Elementor Tab_Base class to create a customizable header settings tab.
+ *
+ * @package HolyVonsheezy\Includes\Settings\Settings_Header
+ */
+
+declare(strict_types=1);
+
 
 namespace HolyVonsheezy\Includes\Settings;
 
@@ -10,31 +22,69 @@ use Elementor\Core\Responsive\Responsive;
 use Elementor\Core\Kits\Documents\Tabs\Tab_Base;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
+/**
+ * Class Settings_Header
+ *
+ * Extends Tab_Base to manage the settings for the theme header configuration in the HolyVonsheezy theme.
+ * Provides controls for customizing header layout, visibility of elements, and other styling options.
+ */
 class Settings_Header extends Tab_Base {
 
-	public function get_id() {
+	/**
+	 * Retrieves the unique identifier.
+	 *
+	 * @return string The unique identifier.
+	 */
+	public function get_id(): string {
 		return 'vonsheezy-settings-header';
 	}
 
-	public function get_title() {
+	/**
+	 * Retrieves the title of the Holy Canvas Theme Header.
+	 *
+	 * @return string Returns the localized and escaped theme header title.
+	 */
+	public function get_title(): string {
 		return esc_html__( 'HolyVonsheezy Theme Header', 'holy-vonsheezy' );
 	}
 
-	public function get_icon() {
+	/**
+	 * Retrieves the icon identifier associated with this element or component.
+	 *
+	 * @return string The icon identifier as a string.
+	 */
+	public function get_icon(): string {
 		return 'eicon-header';
 	}
 
-	public function get_help_url() {
+	/**
+	 * Retrieves the URL for the help or support documentation.
+	 *
+	 * @return string The help URL as a string.
+	 */
+	public function get_help_url(): string {
 		return '';
 	}
 
-	public function get_group() {
+	/**
+	 * Retrieves the group identifier associated with this element or component.
+	 *
+	 * @return string The group identifier as a string.
+	 */
+	public function get_group(): string {
 		return 'theme-style';
 	}
 
+	/**
+	 * Registers controls for configuring the tab settings related to the header section.
+	 * These controls allow users to customize various elements of the header, including
+	 * logo display, tagline, layout, background, width, and responsive settings.
+	 *
+	 * @return void This method does not return any value.
+	 */
 	protected function register_tab_controls() {
 		$this->start_controls_section(
 			'vonsheezy_header_section',
@@ -404,6 +454,7 @@ class Settings_Header extends Tab_Base {
 				'vonsheezy_header_menu_notice',
 				array(
 					'type'            => Controls_Manager::RAW_HTML,
+					/* translators: %s: A link to edit navigation menus. */
 					'raw'             => '<strong>' . esc_html__( 'There are no menus in your site.', 'holy-vonsheezy' ) . '</strong><br>' . sprintf( __( 'Go to <a href="%s" target="_blank">Menus screen</a> to create one.', 'holy-vonsheezy' ), admin_url( 'nav-menus.php?action=edit&menu=0' ) ),
 					'separator'       => 'after',
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
@@ -417,6 +468,7 @@ class Settings_Header extends Tab_Base {
 					'type'        => Controls_Manager::SELECT,
 					'options'     => $menus,
 					'default'     => array_keys( $menus )[0],
+					/* translators: %s: A link to edit navigation menus. */
 					'description' => sprintf( __( 'Go to the <a href="%s" target="_blank">Menus screen</a> to manage your menus.', 'holy-vonsheezy' ), admin_url( 'nav-menus.php' ) ),
 				)
 			);
@@ -510,8 +562,14 @@ class Settings_Header extends Tab_Base {
 		$this->end_controls_section();
 	}
 
-	public function on_save( $data ) {
-		// Save chosen header menu to the WP settings.
+	/**
+	 * Handles the save operation for the chosen header menu and updates WordPress settings accordingly.
+	 *
+	 * @param array $data An associative array containing the settings data, including the header menu identifier.
+	 * @return void
+	 */
+	public function on_save( array $data ) {
+		// Save the chosen header menu to the WP settings.
 		if ( isset( $data['settings']['vonsheezy_header_menu'] ) ) {
 			$menu_id             = $data['settings']['vonsheezy_header_menu'];
 			$locations           = get_theme_mod( 'nav_menu_locations' );
@@ -520,7 +578,16 @@ class Settings_Header extends Tab_Base {
 		}
 	}
 
-	public function get_additional_tab_content() {
+	/**
+	 * Generates and retrieves the additional tab content for the Elementor editor.
+	 *
+	 * The method returns a formatted HTML content block, varying based on the defined state
+	 * of the Elementor Pro plugin. If Elementor Pro is not active, a prompt to upgrade is displayed.
+	 * When Elementor Pro is active, it offers links for creating a custom header using the Theme Builder.
+	 *
+	 * @return string The HTML content for the additional tab, prompting an upgrade or providing access to Theme Builder features.
+	 */
+	public function get_additional_tab_content(): string {
 		$content_template = '
 			<div class="holy-vonsheezy elementor-nerd-box">
 				<img src="%1$s" class="elementor-nerd-box-icon" alt="%2$s">
