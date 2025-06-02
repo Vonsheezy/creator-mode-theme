@@ -7,6 +7,7 @@
 
 namespace HolyVonsheezy\Includes;
 
+use HolyVonsheezy\Includes\Customizer\Customizer_Action_Links;
 use WP_Customize_Manager;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param WP_Customize_Manager $wp_customize Instance of the WordPress Customizer manager.
  * @return void
  */
-function vonsheezy_customizer_register( $wp_customize ) {
+function customizer_register( $wp_customize ) {
 	require get_template_directory() . '/includes/customizer/class-customizer-action-links.php';
 
 	$wp_customize->add_section(
@@ -39,7 +40,7 @@ function vonsheezy_customizer_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new HolyVonsheezy\Includes\Customizer\Holy_VonsheezyCustomizer_Action_Links(
+		new Customizer_Action_Links(
 			$wp_customize,
 			'vonsheezy-header-footer',
 			array(
@@ -49,14 +50,14 @@ function vonsheezy_customizer_register( $wp_customize ) {
 		)
 	);
 }
-add_action( 'customize_register', 'vonsheezy_customizer_register' );
+add_action( 'customize_register', __NAMESPACE__ . '\customizer_register' );
 
 /**
  * Enqueue Customizer CSS.
  *
  * @return void
  */
-function vonsheezy_customizer_styles() {
+function customizer_styles() {
 
 	$min_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
@@ -67,4 +68,4 @@ function vonsheezy_customizer_styles() {
 		HELLO_ELEMENTOR_VERSION
 	);
 }
-add_action( 'admin_enqueue_scripts', 'vonsheezy_customizer_styles' );
+add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\customizer_styles' );

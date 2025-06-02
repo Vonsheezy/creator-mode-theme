@@ -5,6 +5,10 @@
  * @package HolyVonsheezy
  */
 
+use function HolyVonsheezy\Includes\elementor_get_setting;
+use function HolyVonsheezy\Includes\get_footer_layout_class;
+use function HolyVonsheezy\Includes\show_or_hide;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -12,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $is_editor       = isset( $_GET['elementor-preview'] );
 $site_name       = get_bloginfo( 'name' );
 $tagline         = get_bloginfo( 'description', 'display' );
-$footer_class    = did_action( 'elementor/loaded' ) ? esc_attr( vonsheezy_get_footer_layout_class() ) : '';
+$footer_class    = did_action( 'elementor/loaded' ) ? esc_attr( get_footer_layout_class() ) : '';
 $footer_nav_menu = wp_nav_menu(
 	array(
 		'theme_location' => 'menu-2',
@@ -23,17 +27,17 @@ $footer_nav_menu = wp_nav_menu(
 ?>
 <footer id="site-footer" class="site-footer dynamic-footer <?php echo esc_attr( $footer_class ); ?>">
 	<div class="footer-inner">
-		<div class="site-branding show-<?php echo esc_attr( vonsheezy_elementor_get_setting( 'vonsheezy_footer_logo_type' ) ); ?>">
-			<?php if ( has_custom_logo() && ( 'title' !== vonsheezy_elementor_get_setting( 'vonsheezy_footer_logo_type' ) || $is_editor ) ) : ?>
-				<div class="site-logo <?php echo esc_attr( vonsheezy_show_or_hide( 'vonsheezy_footer_logo_display' ) ); ?>">
+		<div class="site-branding show-<?php echo esc_attr( elementor_get_setting( 'vonsheezy_footer_logo_type' ) ); ?>">
+			<?php if ( has_custom_logo() && ( 'title' !== elementor_get_setting( 'vonsheezy_footer_logo_type' ) || $is_editor ) ) : ?>
+				<div class="site-logo <?php echo esc_attr( show_or_hide( 'vonsheezy_footer_logo_display' ) ); ?>">
 					<?php the_custom_logo(); ?>
 				</div>
 				<?php
 			endif;
 
-			if ( $site_name && ( 'logo' !== vonsheezy_elementor_get_setting( 'vonsheezy_footer_logo_type' ) ) || $is_editor ) :
+			if ( $site_name && ( 'logo' !== elementor_get_setting( 'vonsheezy_footer_logo_type' ) ) || $is_editor ) :
 				?>
-				<h4 class="site-title <?php echo esc_attr( vonsheezy_show_or_hide( 'vonsheezy_footer_logo_display' ) ); ?>">
+				<h4 class="site-title <?php echo esc_attr( show_or_hide( 'vonsheezy_footer_logo_display' ) ); ?>">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr__( 'Home', 'holy-vonsheezy' ); ?>" rel="home">
 						<?php echo esc_html( $site_name ); ?>
 					</a>
@@ -43,14 +47,14 @@ $footer_nav_menu = wp_nav_menu(
 
 			if ( $tagline || $is_editor ) :
 				?>
-				<p class="site-description <?php echo esc_attr( vonsheezy_show_or_hide( 'vonsheezy_footer_tagline_display' ) ); ?>">
+				<p class="site-description <?php echo esc_attr( show_or_hide( 'vonsheezy_footer_tagline_display' ) ); ?>">
 					<?php echo esc_html( $tagline ); ?>
 				</p>
 			<?php endif; ?>
 		</div>
 
 		<?php if ( $footer_nav_menu ) : ?>
-			<nav class="site-navigation <?php echo esc_attr( vonsheezy_show_or_hide( 'vonsheezy_footer_menu_display' ) ); ?>">
+			<nav class="site-navigation <?php echo esc_attr( show_or_hide( 'vonsheezy_footer_menu_display' ) ); ?>">
 				<?php
 				// PHPCS - escaped by WordPress with "wp_nav_menu".
 				echo $footer_nav_menu; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -58,9 +62,9 @@ $footer_nav_menu = wp_nav_menu(
 			</nav>
 		<?php endif; ?>
 
-		<?php if ( '' !== vonsheezy_elementor_get_setting( 'vonsheezy_footer_copyright_text' ) || $is_editor ) : ?>
-			<div class="copyright <?php echo esc_attr( vonsheezy_show_or_hide( 'vonsheezy_footer_copyright_display' ) ); ?>">
-				<p><?php echo wp_kses_post( vonsheezy_elementor_get_setting( 'vonsheezy_footer_copyright_text' ) ); ?></p>
+		<?php if ( '' !== elementor_get_setting( 'vonsheezy_footer_copyright_text' ) || $is_editor ) : ?>
+			<div class="copyright <?php echo esc_attr( show_or_hide( 'vonsheezy_footer_copyright_display' ) ); ?>">
+				<p><?php echo wp_kses_post( elementor_get_setting( 'vonsheezy_footer_copyright_text' ) ); ?></p>
 			</div>
 		<?php endif; ?>
 	</div>

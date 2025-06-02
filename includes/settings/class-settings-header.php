@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Settings_Header
  *
- * Extends Tab_Base to manage the settings for the theme header configuration in the HolyVonsheezy theme.
+ * Extends Tab_Base to manage the settings for the theme header configuration in the Holy Canvas theme.
  * Provides controls for customizing header layout, visibility of elements, and other styling options.
  */
 class Settings_Header extends Tab_Base {
@@ -568,7 +568,7 @@ class Settings_Header extends Tab_Base {
 	 * @param array $data An associative array containing the settings data, including the header menu identifier.
 	 * @return void
 	 */
-	public function on_save( array $data ) {
+	public function on_save( $data ) {
 		// Save the chosen header menu to the WP settings.
 		if ( isset( $data['settings']['vonsheezy_header_menu'] ) ) {
 			$menu_id             = $data['settings']['vonsheezy_header_menu'];

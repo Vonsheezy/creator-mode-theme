@@ -7,6 +7,9 @@
 
 namespace HolyVonsheezy\Includes;
 
+use HolyVonsheezy\Includes\Settings\Settings_Footer;
+use HolyVonsheezy\Includes\Settings\Settings_Header;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -15,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register Site Settings Controls.
  */
 
-add_action( 'elementor/init', 'vonsheezy_elementor_settings_init' );
+add_action( 'elementor/init', __NAMESPACE__. '\elementor_settings_init' );
 
 /**
  * Initializes custom Elementor settings for header and footer management.
@@ -26,8 +29,8 @@ add_action( 'elementor/init', 'vonsheezy_elementor_settings_init' );
  *
  * @return void
  */
-function vonsheezy_elementor_settings_init() {
-	if ( ! vonsheezy_header_footer_experiment_active() ) {
+function elementor_settings_init() {
+	if ( ! header_footer_experiment_active() ) {
 		return;
 	}
 
@@ -41,8 +44,8 @@ function vonsheezy_elementor_settings_init() {
 				return;
 			}
 
-			$kit->register_tab( 'vonsheezy-settings-header', HolyVonsheezy\Includes\Settings\Settings_Header::class );
-			$kit->register_tab( 'vonsheezy-settings-footer', HolyVonsheezy\Includes\Settings\Settings_Footer::class );
+			$kit->register_tab( 'vonsheezy-settings-header', Settings_Header::class );
+			$kit->register_tab( 'vonsheezy-settings-footer', Settings_Footer::class );
 		},
 		1,
 		40
@@ -57,7 +60,7 @@ function vonsheezy_elementor_settings_init() {
  * @param  string $setting_id Setting ID.
  * @return string|array same as the Elementor internal function does.
  */
-function vonsheezy_elementor_get_setting( $setting_id ) {
+function elementor_get_setting($setting_id ) {
 	global $vonsheezy_elementor_settings;
 
 	$return = '';
@@ -82,8 +85,8 @@ function vonsheezy_elementor_get_setting( $setting_id ) {
  * @param  string $setting_id Setting ID.
  * @return string|array same as the Elementor internal function does.
  */
-function vonsheezy_show_or_hide( $setting_id ) {
-	return ( 'yes' === vonsheezy_elementor_get_setting( $setting_id ) ? 'show' : 'hide' );
+function show_or_hide($setting_id ) {
+	return ( 'yes' === elementor_get_setting( $setting_id ) ? 'show' : 'hide' );
 }
 
 /**
@@ -91,22 +94,22 @@ function vonsheezy_show_or_hide( $setting_id ) {
  *
  * @return string
  */
-function vonsheezy_get_header_layout_class(): string {
+function get_header_layout_class(): string {
 	$layout_classes = array();
 
-	$header_layout = vonsheezy_elementor_get_setting( 'vonsheezy_header_layout' );
+	$header_layout = elementor_get_setting( 'vonsheezy_header_layout' );
 	if ( 'inverted' === $header_layout ) {
 		$layout_classes[] = 'header-inverted';
 	} elseif ( 'stacked' === $header_layout ) {
 		$layout_classes[] = 'header-stacked';
 	}
 
-	$header_width = vonsheezy_elementor_get_setting( 'vonsheezy_header_width' );
+	$header_width = elementor_get_setting( 'vonsheezy_header_width' );
 	if ( 'full-width' === $header_width ) {
 		$layout_classes[] = 'header-full-width';
 	}
 
-	$header_menu_dropdown = vonsheezy_elementor_get_setting( 'vonsheezy_header_menu_dropdown' );
+	$header_menu_dropdown = elementor_get_setting( 'vonsheezy_header_menu_dropdown' );
 	if ( 'tablet' === $header_menu_dropdown ) {
 		$layout_classes[] = 'menu-dropdown-tablet';
 	} elseif ( 'mobile' === $header_menu_dropdown ) {
@@ -115,7 +118,7 @@ function vonsheezy_get_header_layout_class(): string {
 		$layout_classes[] = 'menu-dropdown-none';
 	}
 
-	$vonsheezy_header_menu_layout = vonsheezy_elementor_get_setting( 'vonsheezy_header_menu_layout' );
+	$vonsheezy_header_menu_layout = elementor_get_setting( 'vonsheezy_header_menu_layout' );
 	if ( 'dropdown' === $vonsheezy_header_menu_layout ) {
 		$layout_classes[] = 'menu-layout-dropdown';
 	}
@@ -128,8 +131,8 @@ function vonsheezy_get_header_layout_class(): string {
  *
  * @return string
  */
-function vonsheezy_get_footer_layout_class() {
-	$footer_layout = vonsheezy_elementor_get_setting( 'vonsheezy_footer_layout' );
+function get_footer_layout_class() {
+	$footer_layout = elementor_get_setting( 'vonsheezy_footer_layout' );
 
 	$layout_classes = array();
 
@@ -139,13 +142,13 @@ function vonsheezy_get_footer_layout_class() {
 		$layout_classes[] = 'footer-stacked';
 	}
 
-	$footer_width = vonsheezy_elementor_get_setting( 'vonsheezy_footer_width' );
+	$footer_width = elementor_get_setting( 'vonsheezy_footer_width' );
 
 	if ( 'full-width' === $footer_width ) {
 		$layout_classes[] = 'footer-full-width';
 	}
 
-	if ( vonsheezy_elementor_get_setting( 'vonsheezy_footer_copyright_display' ) && '' !== vonsheezy_elementor_get_setting( 'vonsheezy_footer_copyright_text' ) ) {
+	if ( elementor_get_setting( 'vonsheezy_footer_copyright_display' ) && '' !== elementor_get_setting( 'vonsheezy_footer_copyright_text' ) ) {
 		$layout_classes[] = 'footer-has-copyright';
 	}
 
@@ -155,7 +158,7 @@ function vonsheezy_get_footer_layout_class() {
 add_action(
 	'elementor/editor/after_enqueue_scripts',
 	function () {
-		if ( ! vonsheezy_header_footer_experiment_active() ) {
+		if ( ! header_footer_experiment_active() ) {
 			return;
 		}
 
@@ -185,7 +188,7 @@ add_action(
 			return;
 		}
 
-		if ( ! vonsheezy_header_footer_experiment_active() ) {
+		if ( ! header_footer_experiment_active() ) {
 			return;
 		}
 
@@ -209,14 +212,14 @@ add_action(
  *
  * @return bool
  */
-function vonsheezy_get_header_display(): bool {
+function get_header_display(): bool {
 	$is_editor = isset( $_GET['elementor-preview'] );
 
 	return (
 		$is_editor
-		|| vonsheezy_elementor_get_setting( 'vonsheezy_header_logo_display' )
-		|| vonsheezy_elementor_get_setting( 'vonsheezy_header_tagline_display' )
-		|| vonsheezy_elementor_get_setting( 'vonsheezy_header_menu_display' )
+		|| elementor_get_setting( 'vonsheezy_header_logo_display' )
+		|| elementor_get_setting( 'vonsheezy_header_tagline_display' )
+		|| elementor_get_setting( 'vonsheezy_header_menu_display' )
 	);
 }
 
@@ -225,15 +228,15 @@ function vonsheezy_get_header_display(): bool {
  *
  * @return bool
  */
-function vonsheezy_get_footer_display(): bool {
+function get_footer_display(): bool {
 	$is_editor = isset( $_GET['elementor-preview'] );
 
 	return (
 		$is_editor
-		|| vonsheezy_elementor_get_setting( 'vonsheezy_footer_logo_display' )
-		|| vonsheezy_elementor_get_setting( 'vonsheezy_footer_tagline_display' )
-		|| vonsheezy_elementor_get_setting( 'vonsheezy_footer_menu_display' )
-		|| vonsheezy_elementor_get_setting( 'vonsheezy_footer_copyright_display' )
+		|| elementor_get_setting( 'vonsheezy_footer_logo_display' )
+		|| elementor_get_setting( 'vonsheezy_footer_tagline_display' )
+		|| elementor_get_setting( 'vonsheezy_footer_menu_display' )
+		|| elementor_get_setting( 'vonsheezy_footer_copyright_display' )
 	);
 }
 
@@ -268,7 +271,7 @@ add_action(
  *
  * @return true
  */
-function vonsheezy_header_footer_experiment_active(): bool {
+function header_footer_experiment_active(): bool {
 	// If Elementor is not active, return false.
 	if ( ! did_action( 'elementor/loaded' ) ) {
 		return false;

@@ -546,7 +546,7 @@ class Settings_Footer extends Tab_Base {
 	 * @param array $data The data containing settings for the footer menu.
 	 * @return void
 	 */
-	public function on_save( array $data ): void {
+	public function on_save( $data ): void {
 		// Save chosen footer menu to the WP settings.
 		if ( isset( $data['settings']['vonsheezy_footer_menu'] ) ) {
 			$menu_id             = $data['settings']['vonsheezy_footer_menu'];

@@ -4,7 +4,7 @@
  *
  * Extends WP_Customize_Control for rendering customizer action links.
  *
- * @package HolyVonsheezy\Includes\Customizer\Holy_VonsheezyCustomizer_Action_Links
+ * @package HolyVonsheezy\Includes\Customizer\Customizer_Action_Links
  */
 
 namespace HolyVonsheezy\Includes\Customizer;
