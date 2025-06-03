@@ -5,8 +5,7 @@
  * @package HolyCanvas
  */
 
-use HolyCanvas\Elementor_Integration;
-use function HolyCanvas\Includes\get_header_layout_class;
+use HolyCanvas\Includes\Elementor_Integration;
 use function HolyCanvas\Includes\show_or_hide;
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -7,8 +7,8 @@
  * @package HolyCanvas
  */
 
-use HolyCanvas\Elementor_Integration;
-use HolyCanvas\Theme;
+use HolyCanvas\Includes\Elementor_Integration;
+use HolyCanvas\Includes\Theme;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

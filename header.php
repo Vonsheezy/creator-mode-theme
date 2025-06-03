@@ -7,8 +7,9 @@
  * @package HolyCanvas
  */
 
-use HolyCanvas\Elementor_Integration;
-use HolyCanvas\Theme;
+
+use HolyCanvas\Includes\Elementor_Integration;
+use HolyCanvas\Includes\Theme;
 use function HolyCanvas\Includes\header_footer_experiment_active;
 
 if ( ! defined( 'ABSPATH' ) ) {
