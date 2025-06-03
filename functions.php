@@ -8,6 +8,10 @@ declare(strict_types=1);
  */
 namespace HolyCanvas;
 
+use HolyCanvas\Includes\Customizer\Customizer;
+use HolyCanvas\Includes\Elementor_Integration;
+use HolyCanvas\Includes\Theme;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -20,6 +24,7 @@ if(file_exists(get_template_directory() . '/vendor/autoload.php')) {
 
 Theme::instance();
 Elementor_Integration::instance();
+Customizer::instance();
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 800; // Pixels.
@@ -31,6 +36,3 @@ if ( ! isset( $content_width ) ) {
 if ( is_admin() ) {
 	require get_template_directory() . '/includes/admin-functions.php';
 }
-
-//// Settings page.
-//require get_template_directory() . '/includes/settings-functions.php';

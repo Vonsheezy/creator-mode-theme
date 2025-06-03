@@ -1,16 +1,20 @@
 <?php
+/**
+ *
+ * @package HolyCanvas\Includes\Customizer
+ *
+ */
 declare(strict_types=1);
 
 namespace HolyCanvas\Includes\Customizer;
 
-use HolyCanvas\Includes\Customizer\Customizer_Action_Links;
-
 class Customizer {
-    private static Customizer $instance;
+    private static ?Customizer $instance = null;
 
     private function __construct()
     {
         add_action( 'customize_register', [$this, 'register'] );
+        add_action( 'admin_enqueue_scripts', [$this, 'customizer_styles'] );
     }
 
     public static function instance(): Customizer
@@ -46,6 +50,23 @@ class Customizer {
                     'priority' => 20,
                 )
             )
+        );
+    }
+
+    /**
+     * Enqueue Customizer CSS.
+     *
+     * @return void
+     */
+    public function customizer_styles() {
+
+        $min_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+        wp_enqueue_style(
+            'holy-vonsheezy-customizer',
+            get_template_directory_uri() . '/customizer' . $min_suffix . '.css',
+            array(),
+            HELLO_ELEMENTOR_VERSION
         );
     }
 }
