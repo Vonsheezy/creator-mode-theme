@@ -314,6 +314,16 @@ class Theme {
             add_theme_support( 'align-wide' );
 
             /*
+             * Add support for responsive embeds.
+             */
+            add_theme_support( "responsive-embeds" );
+
+            /*
+             * Add support for wp block styles.
+             */
+            add_theme_support( "wp-block-styles" );
+
+            /*
              * WooCommerce.
              */
             if ( apply_filters( 'vonsheezy_elementor_add_woocommerce_support', true ) ) {
