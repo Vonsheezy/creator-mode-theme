@@ -16,7 +16,6 @@ class Theme {
         add_action( 'wp_enqueue_scripts', [$this, 'register_assets'] );
         add_action( 'after_setup_theme', [$this, 'content_width'], 0 );
         add_action( 'after_setup_theme', [$this, 'setup'] );
-        add_action( 'init', [$this, 'register_customizer'] );
         add_action( 'wp_head', [$this, 'add_description_meta_tag'] );
         add_action( 'init', [$this, 'tweak_settings'], 0 );
         add_action( 'admin_menu', [$this, 'settings_page'] );
@@ -352,26 +351,9 @@ class Theme {
     }
 
     /**
-     * Loads customizer functions for Elementor integration if conditions are met.
-     *
-     * This function checks whether the site is in customize preview mode and if the
-     * Elementor header and footer display logic allows customizer functionality. If both
-     * conditions are satisfied, it includes the necessary customizer-functions file.
      *
      * @return void
      */
-    public function register_customizer() {
-        if ( ! is_customize_preview() ) {
-            return;
-        }
-
-        if ( ! $this->display_header_footer() ) {
-            return;
-        }
-
-        require get_template_directory() . '/includes/customizer-functions.php';
-    }
-
     public function add_description_meta_tag()
     {
         if ( ! apply_filters( 'vonsheezy_elementor_description_meta_tag', true ) ) {

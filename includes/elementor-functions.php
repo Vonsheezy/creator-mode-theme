@@ -34,9 +34,6 @@ function elementor_settings_init() {
 		return;
 	}
 
-	require 'settings/class-settings-header.php';
-	require 'settings/class-settings-footer.php';
-
 	add_action(
 		'elementor/kit/register_tabs',
 		function ( \Elementor\Core\Kits\Documents\Kit $kit ) {

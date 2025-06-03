@@ -34,5 +34,5 @@ if ( ! isset( $content_width ) ) {
 
 // Admin notice.
 if ( is_admin() ) {
-	require get_template_directory() . '/includes/admin-functions.php';
+	//require get_template_directory() . '/includes/admin-functions.php';
 }

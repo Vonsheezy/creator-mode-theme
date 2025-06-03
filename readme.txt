@@ -8,3 +8,14 @@ Description: Holy Vonsheezy is a super lightweight and minimalist WordPress them
 Version: 1.0
 
 A lightweight and minimalist WordPress theme for Elementor site builder.
+
+== Copyright ==
+
+This theme, like WordPress, is distributed under the terms of GPL.
+Use it as your springboard to building a site with or without an Elementor plugin.
+
+Holy Canvas bundles the following third-party resources:
+
+Font Awesome icons for theme screenshot
+License: SIL Open Font License, version 1.1.
+Source: https://fontawesome.com/v4.7.0/

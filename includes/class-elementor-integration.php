@@ -125,9 +125,6 @@ class Elementor_Integration {
             return;
         }
 
-        require 'settings/class-settings-header.php';
-        require 'settings/class-settings-footer.php';
-
         add_action(
             'elementor/kit/register_tabs',
             function ( \Elementor\Core\Kits\Documents\Kit $kit ) {

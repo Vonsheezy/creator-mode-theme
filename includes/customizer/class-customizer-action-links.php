@@ -9,7 +9,7 @@
 
 namespace HolyCanvas\Includes\Customizer;
 
-use HolyCanvas\Elementor_Integration;
+use HolyCanvas\Includes\Elementor_Integration;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

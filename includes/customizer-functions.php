@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return void
  */
 function customizer_register( $wp_customize ) {
-	require get_template_directory() . '/includes/customizer/class-customizer-action-links.php';
+	//require get_template_directory() . '/includes/customizer/class-customizer-action-links.php';
 
 	$wp_customize->add_section(
 		'vonsheezy-options',
