@@ -56,19 +56,19 @@ $header_nav_menu = wp_nav_menu(
 		</div>
 
 		<?php if ( $header_nav_menu ) : ?>
-			<nav class="site-navigation <?php echo esc_attr( show_or_hide( 'vonsheezy_header_menu_display' ) ); ?>">
+			<nav class="site-navigation <?php echo esc_attr( Elementor_Integration::show_or_hide( 'vonsheezy_header_menu_display' ) ); ?>">
 				<?php
 				// PHPCS - escaped by WordPress with "wp_nav_menu".
 				echo $header_nav_menu; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 			</nav>
-			<div class="site-navigation-toggle-holder <?php echo esc_attr( show_or_hide( 'vonsheezy_header_menu_display' ) ); ?>">
+			<div class="site-navigation-toggle-holder <?php echo esc_attr( Elementor_Integration::show_or_hide( 'vonsheezy_header_menu_display' ) ); ?>">
 				<div class="site-navigation-toggle" role="button" tabindex="0">
 					<i class="eicon-menu-bar" aria-hidden="true"></i>
 					<span class="screen-reader-text"><?php echo esc_html__( 'Menu', 'holy-canvas' ); ?></span>
 				</div>
 			</div>
-			<nav class="site-navigation-dropdown <?php echo esc_attr( show_or_hide( 'vonsheezy_header_menu_display' ) ); ?>">
+			<nav class="site-navigation-dropdown <?php echo esc_attr( Elementor_Integration::show_or_hide( 'vonsheezy_header_menu_display' ) ); ?>">
 				<?php
 				// PHPCS - escaped by WordPress with "wp_nav_menu".
 				echo $header_nav_menu; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
