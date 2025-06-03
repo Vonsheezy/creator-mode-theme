@@ -6,15 +6,14 @@
  *
  * Extends the Elementor Tab_Base class to create a customizable header settings tab.
  *
- * @package HolyVonsheezy\Includes\Settings\Settings_Header
+ * @package HolyCanvas\Includes\Settings\Settings_Header
  */
 
 declare(strict_types=1);
 
 
-namespace HolyVonsheezy\Includes\Settings;
+namespace HolyCanvas\Includes\Settings;
 
-use Elementor\Plugin;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Typography;
@@ -48,7 +47,7 @@ class Settings_Header extends Tab_Base {
 	 * @return string Returns the localized and escaped theme header title.
 	 */
 	public function get_title(): string {
-		return esc_html__( 'HolyVonsheezy Theme Header', 'holy-vonsheezy' );
+		return esc_html__( 'HolyCanvas Theme Header', 'holy-vonsheezy' );
 	}
 
 	/**

@@ -4,12 +4,12 @@
  *
  * Extends WP_Customize_Control for rendering customizer action links.
  *
- * @package HolyVonsheezy\Includes\Customizer\Customizer_Action_Links
+ * @package HolyCanvas\Includes\Customizer\Customizer_Action_Links
  */
 
-namespace HolyVonsheezy\Includes\Customizer;
+namespace HolyCanvas\Includes\Customizer;
 
-use HolyVonsheezy\Elementor_Integration;
+use HolyCanvas\Elementor_Integration;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

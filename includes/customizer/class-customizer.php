@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace HolyVonsheezy\Customizer;
+namespace HolyCanvas\Includes\Customizer;
 
-use HolyVonsheezy\Includes\Customizer\Customizer_Action_Links;
+use HolyCanvas\Includes\Customizer\Customizer_Action_Links;
 
-class Customizer{
+class Customizer {
     private static Customizer $instance;
 
     private function __construct()

@@ -4,12 +4,12 @@
  *
  * Handles the customization options for the footer section of the Holy Canvas theme.
  *
- * @package HolyVonsheezy\Includes\Settings\Settings_Footer
+ * @package HolyCanvas\Includes\Settings\Settings_Footer
  */
 
 declare(strict_types=1);
 
-namespace HolyVonsheezy\Includes\Settings;
+namespace HolyCanvas\Includes\Settings;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
@@ -43,7 +43,7 @@ class Settings_Footer extends Tab_Base {
 	 * @return string Returns the escaped HTML title of the Holy Canvas theme footer.
 	 */
 	public function get_title(): string {
-		return esc_html__( 'HolyVonsheezy Theme Footer', 'holy-vonsheezy' );
+		return esc_html__( 'HolyCanvas Theme Footer', 'holy-vonsheezy' );
 	}
 
 	/**

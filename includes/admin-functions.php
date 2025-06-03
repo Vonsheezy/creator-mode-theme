@@ -2,10 +2,10 @@
 /**
  *  File that contains functions for elementor admin notices
  *
- * @package HolyVonsheezy\Includes
+ * @package HolyCanvas\Includes
  */
 
-namespace HolyVonsheezy\Includes;
+namespace HolyCanvas\Includes;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * - Elementor Pro is not already managing the plugin.
  * - The notice has not been previously dismissed by the user.
  *
- * The notice includes a message about the compatibility of the HolyVonsheezy Theme with the Elementor plugin. It also provides actionable buttons to install or activate Elementor, depending on its installation status. If dismissed, it triggers an AJAX request to mark the notice as viewed.
+ * The notice includes a message about the compatibility of the HolyCanvas Theme with the Elementor plugin. It also provides actionable buttons to install or activate Elementor, depending on its installation status. If dismissed, it triggers an AJAX request to mark the notice as viewed.
  *
  * @return void
  */
@@ -43,7 +43,7 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 
 	$is_elementor_installed = isset( $installed_plugins[ $plugin ] );
 
-	$message = esc_html__( 'The HolyVonsheezy Theme is a lightweight starter theme that works perfectly with the Elementor award-winning site builder plugin.', 'holy-vonsheezy' );
+	$message = esc_html__( 'The HolyCanvas Theme is a lightweight starter theme that works perfectly with the Elementor award-winning site builder plugin.', 'holy-vonsheezy' );
 
 	if ( $is_elementor_installed ) {
 		if ( ! current_user_can( 'activate_plugins' ) ) {
@@ -145,7 +145,7 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/elementor-notice-icon.svg' ); ?>" alt="<?php echo esc_attr__( 'Get Elementor', 'holy-vonsheezy' ); ?>" />
 		</div>
 		<div class="holy-vonsheezy-notice-content">
-			<h3><?php echo esc_html__( 'Thanks for installing the HolyVonsheezy Theme!', 'holy-vonsheezy' ); ?></h3>
+			<h3><?php echo esc_html__( 'Thanks for installing the HolyCanvas Theme!', 'holy-vonsheezy' ); ?></h3>
 			<p><?php echo esc_html( $message ); ?></p>
 			<a class="holy-vonsheezy-information-link" href="https://vonsheezy.com/" target="_blank"><?php echo esc_html__( 'Explore Elementor Site Builder Plugin', 'holy-vonsheezy' ); ?></a>
 			<a class="holy-vonsheezy-install-button" href="<?php echo esc_attr( $button_link ); ?>"><?php echo esc_html( $button_text ); ?></a>

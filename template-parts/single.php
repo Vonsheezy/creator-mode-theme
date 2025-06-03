@@ -2,7 +2,7 @@
 /**
  * The template for displaying singular post-types: posts, pages and user-defined custom post types.
  *
- * @package HolyVonsheezy
+ * @package HolyCanvas
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

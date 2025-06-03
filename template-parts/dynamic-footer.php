@@ -2,10 +2,10 @@
 /**
  * The template for displaying footer.
  *
- * @package HolyVonsheezy
+ * @package HolyCanvas
  */
 
-use HolyVonsheezy\Elementor_Integration;
+use HolyCanvas\Elementor_Integration;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

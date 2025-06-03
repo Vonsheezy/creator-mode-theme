@@ -2,13 +2,13 @@
 /**
  * Implement Elementor functions
  *
- * @package HolyVonsheezy\Includes
+ * @package HolyCanvas\Includes
  */
 
-namespace HolyVonsheezy\Includes;
+namespace HolyCanvas\Includes;
 
-use HolyVonsheezy\Includes\Settings\Settings_Footer;
-use HolyVonsheezy\Includes\Settings\Settings_Header;
+use HolyCanvas\Includes\Settings\Settings_Footer;
+use HolyCanvas\Includes\Settings\Settings_Header;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -249,10 +249,10 @@ add_action(
 		$experiments_manager->add_feature(
 			array(
 				'name'           => 'holy-vonsheezy-theme-header-footer',
-				'title'          => esc_html__( 'HolyVonsheezy Theme Header & Footer', 'holy-vonsheezy' ),
+				'title'          => esc_html__( 'HolyCanvas Theme Header & Footer', 'holy-vonsheezy' ),
 				'description'    => sprintf(
 					'%1$s <a href="%2$s" target="_blank">%3$s</a>',
-					esc_html__( 'Customize and style the builtin HolyVonsheezy Theme’s cross-site header & footer from the Elementor "Site Settings" panel.', 'holy-vonsheezy' ),
+					esc_html__( 'Customize and style the builtin HolyCanvas Theme’s cross-site header & footer from the Elementor "Site Settings" panel.', 'holy-vonsheezy' ),
 					'https://go.elementor.com/wp-dash-header-footer',
 					esc_html__( 'Learn More', 'holy-vonsheezy' )
 				),

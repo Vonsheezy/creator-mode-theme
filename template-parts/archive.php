@@ -2,7 +2,7 @@
 /**
  * The template for displaying archive pages.
  *
- * @package HolyVonsheezy
+ * @package HolyCanvas
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

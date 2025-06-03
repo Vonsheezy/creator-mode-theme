@@ -5,7 +5,7 @@
  * Loads the relevant template part,
  * the loop is executed (when needed) by the relevant template part.
  *
- * @package HolyVonsheezy
+ * @package HolyCanvas
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

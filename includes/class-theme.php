@@ -5,7 +5,7 @@ declare(strict_types=1);
  *
  */
 
-namespace HolyVonsheezy;
+namespace HolyCanvas\Includes;
 
 class Theme {
     private static $instance = null;

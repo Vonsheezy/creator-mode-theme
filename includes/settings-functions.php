@@ -2,13 +2,13 @@
 /**
  * A file to register and init settings.
  *
- * @package HolyVonsheezy\Includes\Customizer
+ * @package HolyCanvas\Includes\Customizer
  */
 
-namespace HolyVonsheezy\Includes\Customizer;
+namespace HolyCanvas\Includes;
 
 use Error;
-use HolyVonsheezy\Elementor_Integration;
+use HolyCanvas\Elementor_Integration;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -25,7 +25,7 @@ function vonsheezy_elementor_settings_page() {
 	$menu_hook = '';
 
 	$menu_hook = add_theme_page(
-		esc_html__( 'HolyVonsheezy Theme Settings', 'holy-vonsheezy' ),
+		esc_html__( 'HolyCanvas Theme Settings', 'holy-vonsheezy' ),
 		esc_html__( 'Theme Settings', 'holy-vonsheezy' ),
 		'manage_options',
 		'holy-vonsheezy-theme-settings',

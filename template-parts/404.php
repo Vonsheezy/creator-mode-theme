@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package HolyVonsheezy
+ * @package HolyCanvas
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

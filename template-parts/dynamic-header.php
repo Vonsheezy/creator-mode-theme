@@ -2,12 +2,12 @@
 /**
  * The template for displaying header.
  *
- * @package HolyVonsheezy
+ * @package HolyCanvas
  */
 
-use HolyVonsheezy\Elementor_Integration;
-use function HolyVonsheezy\Includes\get_header_layout_class;
-use function HolyVonsheezy\Includes\show_or_hide;
+use HolyCanvas\Elementor_Integration;
+use function HolyCanvas\Includes\get_header_layout_class;
+use function HolyCanvas\Includes\show_or_hide;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

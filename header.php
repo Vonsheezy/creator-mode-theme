@@ -4,12 +4,12 @@
  *
  * This is the template that displays all of the <head> section, opens the <body> tag and adds the site's header.
  *
- * @package HolyVonsheezy
+ * @package HolyCanvas
  */
 
-use HolyVonsheezy\Elementor_Integration;
-use HolyVonsheezy\Theme;
-use function HolyVonsheezy\Includes\header_footer_experiment_active;
+use HolyCanvas\Elementor_Integration;
+use HolyCanvas\Theme;
+use function HolyCanvas\Includes\header_footer_experiment_active;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

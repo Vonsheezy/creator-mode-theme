@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results.
  *
- * @package HolyVonsheezy
+ * @package HolyCanvas
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -53,7 +53,7 @@ class ControlsHook extends $e.modules.hookUI.After {
   }
 
   /**
-   * Get HolyVonsheezy Theme Controls
+   * Get HolyCanvas Theme Controls
    *
    * Returns an object in which the keys are control IDs, and the values are the selectors of the elements that need
    * to be targeted in the apply() method.

@@ -2,12 +2,12 @@
 /**
  * A file that registers Customizer settings
  *
- * @package HolyVonsheezy\Includes
+ * @package HolyCanvas\Includes
  */
 
-namespace HolyVonsheezy\Includes;
+namespace HolyCanvas\Includes;
 
-use HolyVonsheezy\Includes\Customizer\Customizer_Action_Links;
+use HolyCanvas\Includes\Customizer\Customizer_Action_Links;
 use WP_Customize_Manager;
 
 if ( ! defined( 'ABSPATH' ) ) {

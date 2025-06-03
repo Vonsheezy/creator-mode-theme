@@ -2,7 +2,7 @@
 /**
  * The template for displaying header.
  *
- * @package HolyVonsheezy
+ * @package HolyCanvas
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

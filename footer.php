@@ -4,11 +4,11 @@
  *
  * Contains the body & html closing tags.
  *
- * @package HolyVonsheezy
+ * @package HolyCanvas
  */
 
-use HolyVonsheezy\Elementor_Integration;
-use HolyVonsheezy\Theme;
+use HolyCanvas\Elementor_Integration;
+use HolyCanvas\Theme;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

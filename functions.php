@@ -6,7 +6,7 @@ declare(strict_types=1);
  *
  * @package HolyCanvas
  */
-namespace HolyVonsheezy;
+namespace HolyCanvas;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
