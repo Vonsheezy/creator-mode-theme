@@ -32,7 +32,7 @@ $skip_link_url    = apply_filters( 'vonsheezy_elementor_skip_link_url', '#conten
 <?php wp_body_open(); ?>
 
 <?php if ( $enable_skip_link ) { ?>
-<a class="skip-link screen-reader-text" href="<?php echo esc_url( $skip_link_url ); ?>"><?php echo esc_html__( 'Skip to content', 'holy-vonsheezy' ); ?></a>
+<a class="skip-link screen-reader-text" href="<?php echo esc_url( $skip_link_url ); ?>"><?php echo esc_html__( 'Skip to content', 'holy-canvas' ); ?></a>
 <?php } ?>
 
 <?php

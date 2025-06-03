@@ -47,7 +47,7 @@ class Settings_Header extends Tab_Base {
 	 * @return string Returns the localized and escaped theme header title.
 	 */
 	public function get_title(): string {
-		return esc_html__( 'HolyCanvas Theme Header', 'holy-vonsheezy' );
+		return esc_html__( 'HolyCanvas Theme Header', 'holy-canvas' );
 	}
 
 	/**
@@ -89,7 +89,7 @@ class Settings_Header extends Tab_Base {
 			'vonsheezy_header_section',
 			array(
 				'tab'   => 'vonsheezy-settings-header',
-				'label' => esc_html__( 'Header', 'holy-vonsheezy' ),
+				'label' => esc_html__( 'Header', 'holy-canvas' ),
 			)
 		);
 
@@ -97,10 +97,10 @@ class Settings_Header extends Tab_Base {
 			'vonsheezy_header_logo_display',
 			array(
 				'type'      => Controls_Manager::SWITCHER,
-				'label'     => esc_html__( 'Site Logo', 'holy-vonsheezy' ),
+				'label'     => esc_html__( 'Site Logo', 'holy-canvas' ),
 				'default'   => 'yes',
-				'label_on'  => esc_html__( 'Show', 'holy-vonsheezy' ),
-				'label_off' => esc_html__( 'Hide', 'holy-vonsheezy' ),
+				'label_on'  => esc_html__( 'Show', 'holy-canvas' ),
+				'label_off' => esc_html__( 'Hide', 'holy-canvas' ),
 			)
 		);
 
@@ -108,10 +108,10 @@ class Settings_Header extends Tab_Base {
 			'vonsheezy_header_tagline_display',
 			array(
 				'type'      => Controls_Manager::SWITCHER,
-				'label'     => esc_html__( 'Tagline', 'holy-vonsheezy' ),
+				'label'     => esc_html__( 'Tagline', 'holy-canvas' ),
 				'default'   => 'yes',
-				'label_on'  => esc_html__( 'Show', 'holy-vonsheezy' ),
-				'label_off' => esc_html__( 'Hide', 'holy-vonsheezy' ),
+				'label_on'  => esc_html__( 'Show', 'holy-canvas' ),
+				'label_off' => esc_html__( 'Hide', 'holy-canvas' ),
 			)
 		);
 
@@ -119,10 +119,10 @@ class Settings_Header extends Tab_Base {
 			'vonsheezy_header_menu_display',
 			array(
 				'type'      => Controls_Manager::SWITCHER,
-				'label'     => esc_html__( 'Menu', 'holy-vonsheezy' ),
+				'label'     => esc_html__( 'Menu', 'holy-canvas' ),
 				'default'   => 'yes',
-				'label_on'  => esc_html__( 'Show', 'holy-vonsheezy' ),
-				'label_off' => esc_html__( 'Hide', 'holy-vonsheezy' ),
+				'label_on'  => esc_html__( 'Show', 'holy-canvas' ),
+				'label_off' => esc_html__( 'Hide', 'holy-canvas' ),
 			)
 		);
 
@@ -132,8 +132,8 @@ class Settings_Header extends Tab_Base {
 				'type'            => Controls_Manager::RAW_HTML,
 				'raw'             => sprintf(
 					/* translators: %s: Link that opens the theme settings page. */
-					__( 'Note: Hiding all the elements, only hides them visually. To disable them completely go to <a href="%s">Theme Settings</a> .', 'holy-vonsheezy' ),
-					admin_url( 'themes.php?page=holy-vonsheezy-theme-settings' )
+					__( 'Note: Hiding all the elements, only hides them visually. To disable them completely go to <a href="%s">Theme Settings</a> .', 'holy-canvas' ),
+					admin_url( 'themes.php?page=holy-canvas-theme-settings' )
 				),
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
 				'condition'       => array(
@@ -148,11 +148,11 @@ class Settings_Header extends Tab_Base {
 			'vonsheezy_header_layout',
 			array(
 				'type'      => Controls_Manager::SELECT,
-				'label'     => esc_html__( 'Layout', 'holy-vonsheezy' ),
+				'label'     => esc_html__( 'Layout', 'holy-canvas' ),
 				'options'   => array(
-					'default'  => esc_html__( 'Default', 'holy-vonsheezy' ),
-					'inverted' => esc_html__( 'Inverted', 'holy-vonsheezy' ),
-					'stacked'  => esc_html__( 'Centered', 'holy-vonsheezy' ),
+					'default'  => esc_html__( 'Default', 'holy-canvas' ),
+					'inverted' => esc_html__( 'Inverted', 'holy-canvas' ),
+					'stacked'  => esc_html__( 'Centered', 'holy-canvas' ),
 				),
 				'selector'  => '.site-header',
 				'default'   => 'default',
@@ -164,10 +164,10 @@ class Settings_Header extends Tab_Base {
 			'vonsheezy_header_width',
 			array(
 				'type'     => Controls_Manager::SELECT,
-				'label'    => esc_html__( 'Width', 'holy-vonsheezy' ),
+				'label'    => esc_html__( 'Width', 'holy-canvas' ),
 				'options'  => array(
-					'boxed'      => esc_html__( 'Boxed', 'holy-vonsheezy' ),
-					'full-width' => esc_html__( 'Full Width', 'holy-vonsheezy' ),
+					'boxed'      => esc_html__( 'Boxed', 'holy-canvas' ),
+					'full-width' => esc_html__( 'Full Width', 'holy-canvas' ),
 				),
 				'selector' => '.site-header',
 				'default'  => 'boxed',
@@ -178,7 +178,7 @@ class Settings_Header extends Tab_Base {
 			'vonsheezy_header_custom_width',
 			array(
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Content Width', 'holy-vonsheezy' ),
+				'label'      => esc_html__( 'Content Width', 'holy-canvas' ),
 				'size_units' => array( '%', 'px', 'em', 'rem', 'vw', 'custom' ),
 				'range'      => array(
 					'px'  => array(
@@ -204,7 +204,7 @@ class Settings_Header extends Tab_Base {
 			'vonsheezy_header_gap',
 			array(
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Gap', 'holy-vonsheezy' ),
+				'label'      => esc_html__( 'Gap', 'holy-canvas' ),
 				'size_units' => array( '%', 'px', 'em ', 'rem', 'vw', 'custom' ),
 				'default'    => array(
 					'size' => '0',
@@ -240,7 +240,7 @@ class Settings_Header extends Tab_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'vonsheezy_header_background',
-				'label'    => esc_html__( 'Background', 'holy-vonsheezy' ),
+				'label'    => esc_html__( 'Background', 'holy-canvas' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'selector' => '.site-header',
 			)
@@ -252,7 +252,7 @@ class Settings_Header extends Tab_Base {
 			'vonsheezy_header_logo_section',
 			array(
 				'tab'        => 'vonsheezy-settings-header',
-				'label'      => esc_html__( 'Site Logo', 'holy-vonsheezy' ),
+				'label'      => esc_html__( 'Site Logo', 'holy-canvas' ),
 				'conditions' => array(
 					'relation' => 'and',
 					'terms'    => array(
@@ -269,12 +269,12 @@ class Settings_Header extends Tab_Base {
 		$this->add_control(
 			'vonsheezy_header_logo_type',
 			array(
-				'label'              => esc_html__( 'Type', 'holy-vonsheezy' ),
+				'label'              => esc_html__( 'Type', 'holy-canvas' ),
 				'type'               => Controls_Manager::SELECT,
 				'default'            => ( has_custom_logo() ? 'logo' : 'title' ),
 				'options'            => array(
-					'logo'  => esc_html__( 'Logo', 'holy-vonsheezy' ),
-					'title' => esc_html__( 'Title', 'holy-vonsheezy' ),
+					'logo'  => esc_html__( 'Logo', 'holy-canvas' ),
+					'title' => esc_html__( 'Title', 'holy-canvas' ),
 				),
 				'frontend_available' => true,
 			)
@@ -284,10 +284,10 @@ class Settings_Header extends Tab_Base {
 			'vonsheezy_header_logo_width',
 			array(
 				'type'        => Controls_Manager::SLIDER,
-				'label'       => esc_html__( 'Logo Width', 'holy-vonsheezy' ),
+				'label'       => esc_html__( 'Logo Width', 'holy-canvas' ),
 				'description' => sprintf(
 					/* translators: %s: Link that opens Elementor's "Site Identity" panel. */
-					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s logo', 'holy-vonsheezy' ),
+					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s logo', 'holy-canvas' ),
 					"javascript:\$e.route('panel/global/settings-site-identity')"
 				),
 				'size_units'  => array( '%', 'px', 'em', 'rem', 'vw', 'custom' ),
@@ -315,7 +315,7 @@ class Settings_Header extends Tab_Base {
 		$this->add_control(
 			'vonsheezy_header_title_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'holy-vonsheezy' ),
+				'label'     => esc_html__( 'Text Color', 'holy-canvas' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => array(
 					'vonsheezy_header_logo_display' => 'yes',
@@ -331,10 +331,10 @@ class Settings_Header extends Tab_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'        => 'vonsheezy_header_title_typography',
-				'label'       => esc_html__( 'Typography', 'holy-vonsheezy' ),
+				'label'       => esc_html__( 'Typography', 'holy-canvas' ),
 				'description' => sprintf(
 					/* translators: %s: Link that opens Elementor's "Site Identity" panel. */
-					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s title', 'holy-vonsheezy' ),
+					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s title', 'holy-canvas' ),
 					"javascript:\$e.route('panel/global/settings-site-identity')"
 				),
 				'condition'   => array(
@@ -351,7 +351,7 @@ class Settings_Header extends Tab_Base {
 				'type'            => Controls_Manager::RAW_HTML,
 				'raw'             => sprintf(
 					/* translators: %s: Link that opens Elementor's "Site Identity" panel. */
-					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s title', 'holy-vonsheezy' ),
+					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s title', 'holy-canvas' ),
 					"javascript:\$e.route('panel/global/settings-site-identity')"
 				),
 				'content_classes' => 'elementor-control-field-description',
@@ -368,7 +368,7 @@ class Settings_Header extends Tab_Base {
 			'vonsheezy_header_tagline',
 			array(
 				'tab'        => 'vonsheezy-settings-header',
-				'label'      => esc_html__( 'Tagline', 'holy-vonsheezy' ),
+				'label'      => esc_html__( 'Tagline', 'holy-canvas' ),
 				'conditions' => array(
 					'relation' => 'and',
 					'terms'    => array(
@@ -385,7 +385,7 @@ class Settings_Header extends Tab_Base {
 		$this->add_control(
 			'vonsheezy_header_tagline_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'holy-vonsheezy' ),
+				'label'     => esc_html__( 'Text Color', 'holy-canvas' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => array(
 					'vonsheezy_header_tagline_display' => 'yes',
@@ -400,7 +400,7 @@ class Settings_Header extends Tab_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'vonsheezy_header_tagline_typography',
-				'label'     => esc_html__( 'Typography', 'holy-vonsheezy' ),
+				'label'     => esc_html__( 'Typography', 'holy-canvas' ),
 				'condition' => array(
 					'vonsheezy_header_tagline_display' => 'yes',
 				),
@@ -414,7 +414,7 @@ class Settings_Header extends Tab_Base {
 				'type'            => Controls_Manager::RAW_HTML,
 				'raw'             => sprintf(
 					/* translators: %s: Link that opens Elementor's "Site Identity" panel. */
-					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s tagline', 'holy-vonsheezy' ),
+					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s tagline', 'holy-canvas' ),
 					"javascript:\$e.route('panel/global/settings-site-identity')"
 				),
 				'content_classes' => 'elementor-control-field-description',
@@ -427,7 +427,7 @@ class Settings_Header extends Tab_Base {
 			'vonsheezy_header_menu_tab',
 			array(
 				'tab'        => 'vonsheezy-settings-header',
-				'label'      => esc_html__( 'Menu', 'holy-vonsheezy' ),
+				'label'      => esc_html__( 'Menu', 'holy-canvas' ),
 				'conditions' => array(
 					'relation' => 'and',
 					'terms'    => array(
@@ -443,7 +443,7 @@ class Settings_Header extends Tab_Base {
 
 		$available_menus = wp_get_nav_menus();
 
-		$menus = array( '0' => esc_html__( '— Select a Menu —', 'holy-vonsheezy' ) );
+		$menus = array( '0' => esc_html__( '— Select a Menu —', 'holy-canvas' ) );
 		foreach ( $available_menus as $available_menu ) {
 			$menus[ $available_menu->term_id ] = $available_menu->name;
 		}
@@ -454,7 +454,7 @@ class Settings_Header extends Tab_Base {
 				array(
 					'type'            => Controls_Manager::RAW_HTML,
 					/* translators: %s: A link to edit navigation menus. */
-					'raw'             => '<strong>' . esc_html__( 'There are no menus in your site.', 'holy-vonsheezy' ) . '</strong><br>' . sprintf( __( 'Go to <a href="%s" target="_blank">Menus screen</a> to create one.', 'holy-vonsheezy' ), admin_url( 'nav-menus.php?action=edit&menu=0' ) ),
+					'raw'             => '<strong>' . esc_html__( 'There are no menus in your site.', 'holy-canvas' ) . '</strong><br>' . sprintf( __( 'Go to <a href="%s" target="_blank">Menus screen</a> to create one.', 'holy-canvas' ), admin_url( 'nav-menus.php?action=edit&menu=0' ) ),
 					'separator'       => 'after',
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 				)
@@ -463,12 +463,12 @@ class Settings_Header extends Tab_Base {
 			$this->add_control(
 				'vonsheezy_header_menu',
 				array(
-					'label'       => esc_html__( 'Menu', 'holy-vonsheezy' ),
+					'label'       => esc_html__( 'Menu', 'holy-canvas' ),
 					'type'        => Controls_Manager::SELECT,
 					'options'     => $menus,
 					'default'     => array_keys( $menus )[0],
 					/* translators: %s: A link to edit navigation menus. */
-					'description' => sprintf( __( 'Go to the <a href="%s" target="_blank">Menus screen</a> to manage your menus.', 'holy-vonsheezy' ), admin_url( 'nav-menus.php' ) ),
+					'description' => sprintf( __( 'Go to the <a href="%s" target="_blank">Menus screen</a> to manage your menus.', 'holy-canvas' ), admin_url( 'nav-menus.php' ) ),
 				)
 			);
 
@@ -476,7 +476,7 @@ class Settings_Header extends Tab_Base {
 				'vonsheezy_header_menu_warning',
 				array(
 					'type'            => Controls_Manager::RAW_HTML,
-					'raw'             => esc_html__( 'Changes will be reflected in the preview only after the page reloads.', 'holy-vonsheezy' ),
+					'raw'             => esc_html__( 'Changes will be reflected in the preview only after the page reloads.', 'holy-canvas' ),
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 				)
 			);
@@ -484,12 +484,12 @@ class Settings_Header extends Tab_Base {
 			$this->add_control(
 				'vonsheezy_header_menu_layout',
 				array(
-					'label'              => esc_html__( 'Menu Layout', 'holy-vonsheezy' ),
+					'label'              => esc_html__( 'Menu Layout', 'holy-canvas' ),
 					'type'               => Controls_Manager::SELECT,
 					'default'            => 'horizontal',
 					'options'            => array(
-						'horizontal' => esc_html__( 'Horizontal', 'holy-vonsheezy' ),
-						'dropdown'   => esc_html__( 'Dropdown', 'holy-vonsheezy' ),
+						'horizontal' => esc_html__( 'Horizontal', 'holy-canvas' ),
+						'dropdown'   => esc_html__( 'Dropdown', 'holy-canvas' ),
 					),
 					'frontend_available' => true,
 				)
@@ -500,15 +500,15 @@ class Settings_Header extends Tab_Base {
 			$this->add_control(
 				'vonsheezy_header_menu_dropdown',
 				array(
-					'label'     => esc_html__( 'Breakpoint', 'holy-vonsheezy' ),
+					'label'     => esc_html__( 'Breakpoint', 'holy-canvas' ),
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'tablet',
 					'options'   => array(
 						/* translators: %d: Breakpoint number. */
-						'mobile' => sprintf( esc_html__( 'Mobile (< %dpx)', 'holy-vonsheezy' ), $breakpoints['md'] ),
+						'mobile' => sprintf( esc_html__( 'Mobile (< %dpx)', 'holy-canvas' ), $breakpoints['md'] ),
 						/* translators: %d: Breakpoint number. */
-						'tablet' => sprintf( esc_html__( 'Tablet (< %dpx)', 'holy-vonsheezy' ), $breakpoints['lg'] ),
-						'none'   => esc_html__( 'None', 'holy-vonsheezy' ),
+						'tablet' => sprintf( esc_html__( 'Tablet (< %dpx)', 'holy-canvas' ), $breakpoints['lg'] ),
+						'none'   => esc_html__( 'None', 'holy-canvas' ),
 					),
 					'selector'  => '.site-header',
 					'condition' => array(
@@ -520,7 +520,7 @@ class Settings_Header extends Tab_Base {
 			$this->add_control(
 				'vonsheezy_header_menu_color',
 				array(
-					'label'     => esc_html__( 'Color', 'holy-vonsheezy' ),
+					'label'     => esc_html__( 'Color', 'holy-canvas' ),
 					'type'      => Controls_Manager::COLOR,
 					'condition' => array(
 						'vonsheezy_header_menu_display' => 'yes',
@@ -534,7 +534,7 @@ class Settings_Header extends Tab_Base {
 			$this->add_control(
 				'vonsheezy_header_menu_toggle_color',
 				array(
-					'label'     => esc_html__( 'Toggle Color', 'holy-vonsheezy' ),
+					'label'     => esc_html__( 'Toggle Color', 'holy-canvas' ),
 					'type'      => Controls_Manager::COLOR,
 					'condition' => array(
 						'vonsheezy_header_menu_display' => 'yes',
@@ -549,7 +549,7 @@ class Settings_Header extends Tab_Base {
 				Group_Control_Typography::get_type(),
 				array(
 					'name'      => 'vonsheezy_header_menu_typography',
-					'label'     => esc_html__( 'Typography', 'holy-vonsheezy' ),
+					'label'     => esc_html__( 'Typography', 'holy-canvas' ),
 					'condition' => array(
 						'vonsheezy_header_menu_display' => 'yes',
 					),
@@ -588,7 +588,7 @@ class Settings_Header extends Tab_Base {
 	 */
 	public function get_additional_tab_content(): string {
 		$content_template = '
-			<div class="holy-vonsheezy elementor-nerd-box">
+			<div class="holy-canvas elementor-nerd-box">
 				<img src="%1$s" class="elementor-nerd-box-icon" alt="%2$s">
 				<p class="elementor-nerd-box-title">%3$s</p>
 				<p class="elementor-nerd-box-message">%4$s</p>
@@ -599,21 +599,21 @@ class Settings_Header extends Tab_Base {
 			return sprintf(
 				$content_template,
 				get_template_directory_uri() . '/assets/images/go-pro.svg',
-				esc_attr__( 'Get Elementor Pro', 'holy-vonsheezy' ),
-				esc_html__( 'Create a custom header with multiple options', 'holy-vonsheezy' ),
-				esc_html__( 'Upgrade to Elementor Pro and enjoy free design and many more features', 'holy-vonsheezy' ),
-				'https://go.elementor.com/holy-vonsheezy-theme-header/',
-				esc_html__( 'Upgrade', 'holy-vonsheezy' )
+				esc_attr__( 'Get Elementor Pro', 'holy-canvas' ),
+				esc_html__( 'Create a custom header with multiple options', 'holy-canvas' ),
+				esc_html__( 'Upgrade to Elementor Pro and enjoy free design and many more features', 'holy-canvas' ),
+				'https://go.elementor.com/holy-canvas-theme-header/',
+				esc_html__( 'Upgrade', 'holy-canvas' )
 			);
 		} else {
 			return sprintf(
 				$content_template,
 				get_template_directory_uri() . '/assets/images/go-pro.svg',
-				esc_attr__( 'Elementor Pro', 'holy-vonsheezy' ),
-				esc_html__( 'Create a custom header with the Theme Builder', 'holy-vonsheezy' ),
-				esc_html__( 'With the Theme Builder you can jump directly into each part of your site', 'holy-vonsheezy' ),
+				esc_attr__( 'Elementor Pro', 'holy-canvas' ),
+				esc_html__( 'Create a custom header with the Theme Builder', 'holy-canvas' ),
+				esc_html__( 'With the Theme Builder you can jump directly into each part of your site', 'holy-canvas' ),
 				get_admin_url( null, 'admin.php?page=elementor-app#/site-editor/templates/header' ),
-				esc_html__( 'Create Header', 'holy-vonsheezy' )
+				esc_html__( 'Create Header', 'holy-canvas' )
 			);
 		}
 	}

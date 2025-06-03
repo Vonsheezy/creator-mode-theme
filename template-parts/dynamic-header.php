@@ -40,7 +40,7 @@ $header_nav_menu = wp_nav_menu(
 			if ( $site_name && ( 'logo' !== Elementor_Integration::get_setting( 'vonsheezy_header_logo_type' ) || $is_editor ) ) :
 				?>
 				<h1 class="site-title <?php echo esc_attr( Elementor_Integration::show_or_hide( 'vonsheezy_header_logo_display' ) ); ?>">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr__( 'Home', 'holy-vonsheezy' ); ?>" rel="home">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr__( 'Home', 'holy-canvas' ); ?>" rel="home">
 						<?php echo esc_html( $site_name ); ?>
 					</a>
 				</h1>
@@ -65,7 +65,7 @@ $header_nav_menu = wp_nav_menu(
 			<div class="site-navigation-toggle-holder <?php echo esc_attr( show_or_hide( 'vonsheezy_header_menu_display' ) ); ?>">
 				<div class="site-navigation-toggle" role="button" tabindex="0">
 					<i class="eicon-menu-bar" aria-hidden="true"></i>
-					<span class="screen-reader-text"><?php echo esc_html__( 'Menu', 'holy-vonsheezy' ); ?></span>
+					<span class="screen-reader-text"><?php echo esc_html__( 'Menu', 'holy-canvas' ); ?></span>
 				</div>
 			</div>
 			<nav class="site-navigation-dropdown <?php echo esc_attr( show_or_hide( 'vonsheezy_header_menu_display' ) ); ?>">

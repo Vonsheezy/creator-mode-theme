@@ -43,66 +43,66 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 
 	$is_elementor_installed = isset( $installed_plugins[ $plugin ] );
 
-	$message = esc_html__( 'The HolyCanvas Theme is a lightweight starter theme that works perfectly with the Elementor award-winning site builder plugin.', 'holy-vonsheezy' );
+	$message = esc_html__( 'The HolyCanvas Theme is a lightweight starter theme that works perfectly with the Elementor award-winning site builder plugin.', 'holy-canvas' );
 
 	if ( $is_elementor_installed ) {
 		if ( ! current_user_can( 'activate_plugins' ) ) {
 			return;
 		}
 
-		$message .= ' ' . esc_html__( 'Once you activate the plugin, you are only one click away from building an amazing website.', 'holy-vonsheezy' );
+		$message .= ' ' . esc_html__( 'Once you activate the plugin, you are only one click away from building an amazing website.', 'holy-canvas' );
 
-		$button_text = esc_html__( 'Activate Elementor', 'holy-vonsheezy' );
+		$button_text = esc_html__( 'Activate Elementor', 'holy-canvas' );
 		$button_link = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin );
 	} else {
 		if ( ! current_user_can( 'install_plugins' ) ) {
 			return;
 		}
 
-		$message .= ' ' . esc_html__( 'Once you download and activate the plugin, you are only one click away from building an amazing website.', 'holy-vonsheezy' );
+		$message .= ' ' . esc_html__( 'Once you download and activate the plugin, you are only one click away from building an amazing website.', 'holy-canvas' );
 
-		$button_text = esc_html__( 'Install Elementor', 'holy-vonsheezy' );
+		$button_text = esc_html__( 'Install Elementor', 'holy-canvas' );
 		$button_link = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ), 'install-plugin_elementor' );
 	}
 
 	?>
 	<style>
-		.notice.holy-vonsheezy-notice {
+		.notice.holy-canvas-notice {
 			border: 1px solid #ccd0d4;
 			border-inline-start: 4px solid #9b0a46 !important;
 			box-shadow: 0 1px 4px rgba(0,0,0,0.15);
 			display: flex;
 			padding: 0;
 		}
-		.notice.holy-vonsheezy-notice.holy-vonsheezy-install-elementor {
+		.notice.holy-canvas-notice.holy-canvas-install-elementor {
 			padding: 0;
 		}
-		.notice.holy-vonsheezy-notice .holy-vonsheezy-notice-aside {
+		.notice.holy-canvas-notice .holy-canvas-notice-aside {
 			display: flex;
 			align-items: start;
 			justify-content: center;
 			padding: 20px 10px;
 			background: rgba(215,43,63,0.04);
 		}
-		.notice.holy-vonsheezy-notice .holy-vonsheezy-notice-aside img {
+		.notice.holy-canvas-notice .holy-canvas-notice-aside img {
 			width: 1.5rem;
 		}
-		.notice.holy-vonsheezy-notice .holy-vonsheezy-notice-content {
+		.notice.holy-canvas-notice .holy-canvas-notice-content {
 			display: flex;
 			flex-direction: column;
 			gap: 5px;
 			padding: 20px;
 			width: 100%;
 		}
-		.notice.holy-vonsheezy-notice .holy-vonsheezy-notice-content h3,
-		.notice.holy-vonsheezy-notice .holy-vonsheezy-notice-content p {
+		.notice.holy-canvas-notice .holy-canvas-notice-content h3,
+		.notice.holy-canvas-notice .holy-canvas-notice-content p {
 			padding: 0;
 			margin: 0;
 		}
-		.notice.holy-vonsheezy-notice .holy-vonsheezy-information-link {
+		.notice.holy-canvas-notice .holy-canvas-information-link {
 			align-self: start;
 		}
-		.notice.holy-vonsheezy-notice .holy-vonsheezy-install-button {
+		.notice.holy-canvas-notice .holy-canvas-install-button {
 			align-self: start;
 			background-color: #127DB8;
 			border-radius: 3px;
@@ -113,14 +113,14 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 			padding: 0.4375rem 0.75rem;
 			margin-block-start: 15px;
 		}
-		.notice.holy-vonsheezy-notice .holy-vonsheezy-install-button:active {
+		.notice.holy-canvas-notice .holy-canvas-install-button:active {
 			transform: translateY(1px);
 		}
 		@media (max-width: 767px) {
-			.notice.holy-vonsheezy-notice .holy-vonsheezy-notice-aside {
+			.notice.holy-canvas-notice .holy-canvas-notice-aside {
 				padding: 10px;
 			}
-			.notice.holy-vonsheezy-notice .holy-vonsheezy-notice-content {
+			.notice.holy-canvas-notice .holy-canvas-notice-content {
 				gap: 10px;
 				padding: 10px;
 			}
@@ -128,7 +128,7 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 	</style>
 	<script>
 		window.addEventListener( 'load', () => {
-			const dismissNotice = document.querySelector( '.notice.holy-vonsheezy-install-elementor button.notice-dismiss' );
+			const dismissNotice = document.querySelector( '.notice.holy-canvas-install-elementor button.notice-dismiss' );
 			dismissNotice.addEventListener( 'click', async ( event ) => {
 				event.preventDefault();
 
@@ -140,15 +140,15 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 			} );
 		} );
 	</script>
-	<div class="notice updated is-dismissible holy-vonsheezy-notice holy-vonsheezy-install-elementor">
-		<div class="holy-vonsheezy-notice-aside">
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/elementor-notice-icon.svg' ); ?>" alt="<?php echo esc_attr__( 'Get Elementor', 'holy-vonsheezy' ); ?>" />
+	<div class="notice updated is-dismissible holy-canvas-notice holy-canvas-install-elementor">
+		<div class="holy-canvas-notice-aside">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/elementor-notice-icon.svg' ); ?>" alt="<?php echo esc_attr__( 'Get Elementor', 'holy-canvas' ); ?>" />
 		</div>
-		<div class="holy-vonsheezy-notice-content">
-			<h3><?php echo esc_html__( 'Thanks for installing the HolyCanvas Theme!', 'holy-vonsheezy' ); ?></h3>
+		<div class="holy-canvas-notice-content">
+			<h3><?php echo esc_html__( 'Thanks for installing the HolyCanvas Theme!', 'holy-canvas' ); ?></h3>
 			<p><?php echo esc_html( $message ); ?></p>
-			<a class="holy-vonsheezy-information-link" href="https://vonsheezy.com/" target="_blank"><?php echo esc_html__( 'Explore Elementor Site Builder Plugin', 'holy-vonsheezy' ); ?></a>
-			<a class="holy-vonsheezy-install-button" href="<?php echo esc_attr( $button_link ); ?>"><?php echo esc_html( $button_text ); ?></a>
+			<a class="holy-canvas-information-link" href="https://vonsheezy.com/" target="_blank"><?php echo esc_html__( 'Explore Elementor Site Builder Plugin', 'holy-canvas' ); ?></a>
+			<a class="holy-canvas-install-button" href="<?php echo esc_attr( $button_link ); ?>"><?php echo esc_html( $button_text ); ?></a>
 		</div>
 	</div>
 	<?php

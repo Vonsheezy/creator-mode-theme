@@ -20,7 +20,7 @@ class _default extends $e.modules.ComponentBase {
     (0, _defineProperty2.default)(this, "pages", {});
   }
   getNamespace() {
-    return 'holy-vonsheezy';
+    return 'holy-canvas';
   }
   defaultHooks() {
     return this.importHooks({
@@ -49,7 +49,7 @@ class ControlsHook extends $e.modules.hookUI.After {
   }
   getId() {
     // Unique id for the hook.
-    return 'holy-vonsheezy-editor-controls-handler';
+    return 'holy-canvas-editor-controls-handler';
   }
 
   /**

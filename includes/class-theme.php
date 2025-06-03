@@ -29,10 +29,10 @@ class Theme {
         $menu_hook = '';
 
         $menu_hook = add_theme_page(
-            esc_html__( 'HolyCanvas Theme Settings', 'holy-vonsheezy' ),
-            esc_html__( 'Theme Settings', 'holy-vonsheezy' ),
+            esc_html__( 'HolyCanvas Theme Settings', 'holy-canvas' ),
+            esc_html__( 'Theme Settings', 'holy-canvas' ),
             'manage_options',
-            'holy-vonsheezy-theme-settings',
+            'holy-canvas-theme-settings',
             [$this, 'settings_page_render']
         );
 
@@ -51,7 +51,7 @@ class Theme {
      */
     function settings_page_render() {
         ?>
-        <div id="holy-vonsheezy-settings"></div>
+        <div id="holy-canvas-settings"></div>
         <?php
     }
 
@@ -70,7 +70,7 @@ class Theme {
         $asset_url  = get_template_directory_uri() . '/assets/js';
 
         if ( ! file_exists( $asset_path ) ) {
-            throw new Error( 'You need to run `npm run build` for the "holy-vonsheezy-theme" first.' );
+            throw new Error( 'You need to run `npm run build` for the "holy-canvas-theme" first.' );
         }
         $script_asset = require $asset_path;
 
@@ -82,7 +82,7 @@ class Theme {
             true
         );
 
-        wp_set_script_translations( $handle, 'holy-vonsheezy' );
+        wp_set_script_translations( $handle, 'holy-canvas' );
 
         wp_enqueue_style(
             $handle,
@@ -269,8 +269,8 @@ class Theme {
         }
 
         if ( apply_filters( 'vonsheezy_elementor_register_menus', true ) ) {
-            register_nav_menus( array( 'menu-1' => esc_html__( 'Header', 'holy-vonsheezy' ) ) );
-            register_nav_menus( array( 'menu-2' => esc_html__( 'Footer', 'holy-vonsheezy' ) ) );
+            register_nav_menus( array( 'menu-1' => esc_html__( 'Header', 'holy-canvas' ) ) );
+            register_nav_menus( array( 'menu-2' => esc_html__( 'Footer', 'holy-canvas' ) ) );
         }
 
         if ( apply_filters( 'vonsheezy_elementor_post_type_support', true ) ) {
@@ -390,7 +390,7 @@ class Theme {
 
         if ( apply_filters( 'vonsheezy_elementor_enqueue_style', true ) ) {
             wp_enqueue_style(
-                'holy-vonsheezy',
+                'holy-canvas',
                 get_template_directory_uri() . '/style' . $min_suffix . '.css',
                 array(),
                 HELLO_ELEMENTOR_VERSION
@@ -399,7 +399,7 @@ class Theme {
 
         if ( apply_filters( 'vonsheezy_elementor_enqueue_theme_style', true ) ) {
             wp_enqueue_style(
-                'holy-vonsheezy-theme-style',
+                'holy-canvas-theme-style',
                 get_template_directory_uri() . '/theme' . $min_suffix . '.css',
                 array(),
                 HELLO_ELEMENTOR_VERSION
@@ -408,7 +408,7 @@ class Theme {
 
         if ( $this->display_header_footer() ) {
             wp_enqueue_style(
-                'holy-vonsheezy-header-footer',
+                'holy-canvas-header-footer',
                 get_template_directory_uri() . '/header-footer' . $min_suffix . '.css',
                 array(),
                 HELLO_ELEMENTOR_VERSION

@@ -55,7 +55,7 @@ class Elementor_Integration {
                 $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
                 wp_enqueue_script(
-                    'holy-vonsheezy-theme-frontend',
+                    'holy-canvas-theme-frontend',
                     get_template_directory_uri() . '/assets/js/vonsheezy-frontend' . $suffix . '.js',
                     array(),
                     HELLO_ELEMENTOR_VERSION,
@@ -74,13 +74,13 @@ class Elementor_Integration {
             function ( \Elementor\Core\Experiments\Manager $experiments_manager ) {
                 $experiments_manager->add_feature(
                     array(
-                        'name'           => 'holy-vonsheezy-theme-header-footer',
-                        'title'          => esc_html__( 'HolyCanvas Theme Header & Footer', 'holy-vonsheezy' ),
+                        'name'           => 'holy-canvas-theme-header-footer',
+                        'title'          => esc_html__( 'HolyCanvas Theme Header & Footer', 'holy-canvas' ),
                         'description'    => sprintf(
                             '%1$s <a href="%2$s" target="_blank">%3$s</a>',
-                            esc_html__( 'Customize and style the builtin HolyCanvas Theme’s cross-site header & footer from the Elementor "Site Settings" panel.', 'holy-vonsheezy' ),
+                            esc_html__( 'Customize and style the builtin HolyCanvas Theme’s cross-site header & footer from the Elementor "Site Settings" panel.', 'holy-canvas' ),
                             'https://go.elementor.com/wp-dash-header-footer',
-                            esc_html__( 'Learn More', 'holy-vonsheezy' )
+                            esc_html__( 'Learn More', 'holy-canvas' )
                         ),
                         'release_status' => $experiments_manager::RELEASE_STATUS_STABLE,
                         'new_site'       => array(
@@ -285,6 +285,6 @@ class Elementor_Integration {
             return false;
         }
 
-        return (bool) ( \Elementor\Plugin::$instance->experiments->is_feature_active( 'holy-vonsheezy-theme-header-footer' ) );
+        return (bool) ( \Elementor\Plugin::$instance->experiments->is_feature_active( 'holy-canvas-theme-header-footer' ) );
     }
 }

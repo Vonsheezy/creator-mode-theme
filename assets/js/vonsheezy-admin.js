@@ -103,7 +103,7 @@ const SettingsPage = () => {
     Object.values(SETTINGS).forEach(value => data[`${settingsPrefix}${value}`] = settingsData[value] ? 'true' : '');
     const settings = new _api.default.models.Settings(data);
     settings.save();
-    (0, _data.dispatch)('core/notices').createNotice('success', (0, _i18n.__)('Settings Saved', 'holy-vonsheezy'), {
+    (0, _data.dispatch)('core/notices').createNotice('success', (0, _i18n.__)('Settings Saved', 'holy-canvas'), {
       type: 'snackbar',
       isDismissible: true
     });
@@ -137,7 +137,7 @@ const SettingsPage = () => {
     className: "vonsheezy_elementor__container"
   }, /*#__PURE__*/React.createElement("div", {
     className: "vonsheezy_elementor__title"
-  }, /*#__PURE__*/React.createElement("h1", null, (0, _i18n.__)('HolyCanvas Theme Settings', 'holy-vonsheezy'))))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("h1", null, (0, _i18n.__)('HolyCanvas Theme Settings', 'holy-canvas'))))), /*#__PURE__*/React.createElement("div", {
     className: "vonsheezy_elementor__main"
   }, /*#__PURE__*/React.createElement(_components.Panel, null, /*#__PURE__*/React.createElement(_settingsPanel.SettingsPanel, {
     SETTINGS,
@@ -146,7 +146,7 @@ const SettingsPage = () => {
   }), /*#__PURE__*/React.createElement(_components.Button, {
     isPrimary: true,
     onClick: saveSettings
-  }, (0, _i18n.__)('Save Settings', 'holy-vonsheezy'))), /*#__PURE__*/React.createElement(_actionLinksPanel.ActionLinksPanel, null)), /*#__PURE__*/React.createElement("div", {
+  }, (0, _i18n.__)('Save Settings', 'holy-canvas'))), /*#__PURE__*/React.createElement(_actionLinksPanel.ActionLinksPanel, null)), /*#__PURE__*/React.createElement("div", {
     className: "vonsheezy_elementor__notices"
   }, /*#__PURE__*/React.createElement(Notices, null)));
 };
@@ -169,34 +169,34 @@ var _actionLinks = __webpack_require__(696);
 const actionLinks = {
   'install-elementor': {
     image: vonsheezyAdminData.templateDirectoryURI + '/assets/images/elementor.svg',
-    alt: (0, _i18n.__)('Elementor', 'holy-vonsheezy'),
-    title: (0, _i18n.__)('Install Elementor', 'holy-vonsheezy'),
-    message: (0, _i18n.__)('Create cross-site header & footer using Elementor.', 'holy-vonsheezy'),
-    button: (0, _i18n.__)('Install Elementor', 'holy-vonsheezy'),
+    alt: (0, _i18n.__)('Elementor', 'holy-canvas'),
+    title: (0, _i18n.__)('Install Elementor', 'holy-canvas'),
+    message: (0, _i18n.__)('Create cross-site header & footer using Elementor.', 'holy-canvas'),
+    button: (0, _i18n.__)('Install Elementor', 'holy-canvas'),
     link: vonsheezyAdminData.actionLinkURL
   },
   'activate-elementor': {
     image: vonsheezyAdminData.templateDirectoryURI + '/assets/images/elementor.svg',
-    alt: (0, _i18n.__)('Elementor', 'holy-vonsheezy'),
-    title: (0, _i18n.__)('Activate Elementor', 'holy-vonsheezy'),
-    message: (0, _i18n.__)('Create cross-site header & footer using Elementor.', 'holy-vonsheezy'),
-    button: (0, _i18n.__)('Activate Elementor', 'holy-vonsheezy'),
+    alt: (0, _i18n.__)('Elementor', 'holy-canvas'),
+    title: (0, _i18n.__)('Activate Elementor', 'holy-canvas'),
+    message: (0, _i18n.__)('Create cross-site header & footer using Elementor.', 'holy-canvas'),
+    button: (0, _i18n.__)('Activate Elementor', 'holy-canvas'),
     link: vonsheezyAdminData.actionLinkURL
   },
   'activate-header-footer-experiment': {
     image: vonsheezyAdminData.templateDirectoryURI + '/assets/images/elementor.svg',
-    alt: (0, _i18n.__)('Elementor', 'holy-vonsheezy'),
-    title: (0, _i18n.__)('Style using Elementor', 'holy-vonsheezy'),
-    message: (0, _i18n.__)('Design your cross-site header & footer from Elementor’s "Site Settings" panel.', 'holy-vonsheezy'),
-    button: (0, _i18n.__)('Activate header & footer experiment', 'holy-vonsheezy'),
+    alt: (0, _i18n.__)('Elementor', 'holy-canvas'),
+    title: (0, _i18n.__)('Style using Elementor', 'holy-canvas'),
+    message: (0, _i18n.__)('Design your cross-site header & footer from Elementor’s "Site Settings" panel.', 'holy-canvas'),
+    button: (0, _i18n.__)('Activate header & footer experiment', 'holy-canvas'),
     link: vonsheezyAdminData.actionLinkURL
   },
   'style-header-footer': {
     image: vonsheezyAdminData.templateDirectoryURI + '/assets/images/elementor.svg',
-    alt: (0, _i18n.__)('Elementor', 'holy-vonsheezy'),
-    title: (0, _i18n.__)('Style cross-site header & footer', 'holy-vonsheezy'),
-    message: (0, _i18n.__)('Customize your cross-site header & footer from Elementor’s "Site Settings" panel.', 'holy-vonsheezy'),
-    button: (0, _i18n.__)('Start Designing', 'holy-vonsheezy'),
+    alt: (0, _i18n.__)('Elementor', 'holy-canvas'),
+    title: (0, _i18n.__)('Style cross-site header & footer', 'holy-canvas'),
+    message: (0, _i18n.__)('Customize your cross-site header & footer from Elementor’s "Site Settings" panel.', 'holy-canvas'),
+    button: (0, _i18n.__)('Start Designing', 'holy-canvas'),
     link: vonsheezyAdminData.actionLinkURL
   }
 };
@@ -231,29 +231,29 @@ const SettingsPanel = ({
   const hostname = window.location.hostname || 'example.com';
   const prefix = protocol + '//' + hostname;
   return /*#__PURE__*/React.createElement(_components.PanelBody, {
-    title: (0, _i18n.__)('HolyCanvas Theme Settings', 'holy-vonsheezy')
+    title: (0, _i18n.__)('HolyCanvas Theme Settings', 'holy-canvas')
   }, /*#__PURE__*/React.createElement(_components.Notice, {
     status: "warning",
     isDismissible: "false"
   }, /*#__PURE__*/React.createElement(_components.Dashicon, {
     icon: "flag"
-  }), (0, _i18n.__)('Be cautious, disabling some of the following options may break your website.', 'holy-vonsheezy')), /*#__PURE__*/React.createElement(_components.ToggleControl, {
-    label: (0, _i18n.__)('Disable description meta tag', 'holy-vonsheezy'),
-    help: (0, _i18n.__)('Remove the description meta tag in singular content pages that contain an excerpt.', 'holy-vonsheezy'),
+  }), (0, _i18n.__)('Be cautious, disabling some of the following options may break your website.', 'holy-canvas')), /*#__PURE__*/React.createElement(_components.ToggleControl, {
+    label: (0, _i18n.__)('Disable description meta tag', 'holy-canvas'),
+    help: (0, _i18n.__)('Remove the description meta tag in singular content pages that contain an excerpt.', 'holy-canvas'),
     checked: !!settingsData[SETTINGS.DESCRIPTION_META_TAG] || false,
     onChange: value => updateSettings(SETTINGS.DESCRIPTION_META_TAG, value)
   }), /*#__PURE__*/React.createElement("code", {
     className: "code-example"
   }, " <meta name=\"description\" content=\"...\" /> "), /*#__PURE__*/React.createElement(_components.ToggleControl, {
-    label: (0, _i18n.__)('Disable skip link', 'holy-vonsheezy'),
-    help: (0, _i18n.__)('Remove the "Skip to content" link used by screen-readers and users navigating with a keyboard.', 'holy-vonsheezy'),
+    label: (0, _i18n.__)('Disable skip link', 'holy-canvas'),
+    help: (0, _i18n.__)('Remove the "Skip to content" link used by screen-readers and users navigating with a keyboard.', 'holy-canvas'),
     checked: !!settingsData[SETTINGS.SKIP_LINK] || false,
     onChange: value => updateSettings(SETTINGS.SKIP_LINK, value)
   }), /*#__PURE__*/React.createElement("code", {
     className: "code-example"
   }, " <a class=\"skip-link screen-reader-text\" href=\"#content\"> Skip to content </a> "), /*#__PURE__*/React.createElement(_components.ToggleControl, {
-    label: (0, _i18n.__)('Disable cross-site header & footer', 'holy-vonsheezy'),
-    help: (0, _i18n.__)('Remove the header & footer sections from all pages, and their CSS/JS files.', 'holy-vonsheezy'),
+    label: (0, _i18n.__)('Disable cross-site header & footer', 'holy-canvas'),
+    help: (0, _i18n.__)('Remove the header & footer sections from all pages, and their CSS/JS files.', 'holy-canvas'),
     checked: !!settingsData[SETTINGS.HEADER_FOOTER] || false,
     onChange: value => updateSettings(SETTINGS.HEADER_FOOTER, value)
   }), /*#__PURE__*/React.createElement("code", {
@@ -261,27 +261,27 @@ const SettingsPanel = ({
   }, " <header id=\"site-header\" class=\"site-header\"> ... </header> "), /*#__PURE__*/React.createElement("code", {
     className: "code-example"
   }, " <footer id=\"site-footer\" class=\"site-footer\"> ... </footer> "), /*#__PURE__*/React.createElement(_components.ToggleControl, {
-    label: (0, _i18n.__)('Disable page title', 'holy-vonsheezy'),
-    help: (0, _i18n.__)('Remove the section above the content that contains the main heading of the page.', 'holy-vonsheezy'),
+    label: (0, _i18n.__)('Disable page title', 'holy-canvas'),
+    help: (0, _i18n.__)('Remove the section above the content that contains the main heading of the page.', 'holy-canvas'),
     checked: !!settingsData[SETTINGS.PAGE_TITLE] || false,
     onChange: value => updateSettings(SETTINGS.PAGE_TITLE, value)
   }), /*#__PURE__*/React.createElement("code", {
     className: "code-example"
   }, " <header class=\"page-header\"> <h1 class=\"entry-title\"> Post title </h1> </header> "), /*#__PURE__*/React.createElement(_components.ToggleControl, {
-    label: (0, _i18n.__)('Unregister HolyCanvas style.css', 'holy-vonsheezy'),
-    help: (0, _i18n.__)("Disable HolyCanvas theme's style.css file which contains CSS reset rules for unified cross-browser view.", 'holy-vonsheezy'),
+    label: (0, _i18n.__)('Unregister HolyCanvas style.css', 'holy-canvas'),
+    help: (0, _i18n.__)("Disable HolyCanvas theme's style.css file which contains CSS reset rules for unified cross-browser view.", 'holy-canvas'),
     checked: !!settingsData[SETTINGS.HELLO_STYLE] || false,
     onChange: value => updateSettings(SETTINGS.HELLO_STYLE, value)
   }), /*#__PURE__*/React.createElement("code", {
     className: "code-example"
-  }, " <link rel=\"stylesheet\" href=\"", prefix, "/wp-content/themes/holy-vonsheezy/style.min.css\" /> "), /*#__PURE__*/React.createElement(_components.ToggleControl, {
-    label: (0, _i18n.__)('Unregister HolyCanvas theme.css', 'holy-vonsheezy'),
-    help: (0, _i18n.__)("Disable HolyCanvas theme's theme.css file which contains CSS rules that style WordPress elements.", 'holy-vonsheezy'),
+  }, " <link rel=\"stylesheet\" href=\"", prefix, "/wp-content/themes/holy-canvas/style.min.css\" /> "), /*#__PURE__*/React.createElement(_components.ToggleControl, {
+    label: (0, _i18n.__)('Unregister HolyCanvas theme.css', 'holy-canvas'),
+    help: (0, _i18n.__)("Disable HolyCanvas theme's theme.css file which contains CSS rules that style WordPress elements.", 'holy-canvas'),
     checked: !!settingsData[SETTINGS.HELLO_THEME] || false,
     onChange: value => updateSettings(SETTINGS.HELLO_THEME, value)
   }), /*#__PURE__*/React.createElement("code", {
     className: "code-example"
-  }, " <link rel=\"stylesheet\" href=\"", prefix, "/wp-content/themes/holy-vonsheezy/theme.min.css\" /> "));
+  }, " <link rel=\"stylesheet\" href=\"", prefix, "/wp-content/themes/holy-canvas/theme.min.css\" /> "));
 };
 exports.SettingsPanel = SettingsPanel;
 
@@ -417,7 +417,7 @@ const App = () => {
   return /*#__PURE__*/React.createElement(_settingsPage.SettingsPage, null);
 };
 document.addEventListener('DOMContentLoaded', () => {
-  const rootElement = document.getElementById('holy-vonsheezy-settings');
+  const rootElement = document.getElementById('holy-canvas-settings');
   if (rootElement) {
     (0, _element.render)( /*#__PURE__*/React.createElement(App, null), rootElement);
   }

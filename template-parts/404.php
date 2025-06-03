@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php if ( apply_filters( 'vonsheezy_elementor_page_title', true ) ) : ?>
 		<header class="page-header">
-			<h1 class="entry-title"><?php echo esc_html__( 'The page can&rsquo;t be found.', 'holy-vonsheezy' ); ?></h1>
+			<h1 class="entry-title"><?php echo esc_html__( 'The page can&rsquo;t be found.', 'holy-canvas' ); ?></h1>
 		</header>
 	<?php endif; ?>
 
 	<div class="page-content">
-		<p><?php echo esc_html__( 'It looks like nothing was found at this location.', 'holy-vonsheezy' ); ?></p>
+		<p><?php echo esc_html__( 'It looks like nothing was found at this location.', 'holy-canvas' ); ?></p>
 	</div>
 
 </main>

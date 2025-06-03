@@ -36,7 +36,7 @@ $footer_nav_menu = wp_nav_menu(
 			if ( $site_name && ( 'logo' !== Elementor_Integration::get_setting( 'vonsheezy_footer_logo_type' ) ) || $is_editor ) :
 				?>
 				<h4 class="site-title <?php echo esc_attr( Elementor_Integration::show_or_hide( 'vonsheezy_footer_logo_display' ) ); ?>">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr__( 'Home', 'holy-vonsheezy' ); ?>" rel="home">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr__( 'Home', 'holy-canvas' ); ?>" rel="home">
 						<?php echo esc_html( $site_name ); ?>
 					</a>
 				</h4>

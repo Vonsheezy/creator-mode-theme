@@ -32,7 +32,7 @@ if ( comments_open() && get_option( 'thread_comments' ) ) {
 			<?php
 			$comments_number = get_comments_number();
 			if ( '1' === $comments_number ) {
-				printf( esc_html_x( 'One Response', 'comments title', 'holy-vonsheezy' ) );
+				printf( esc_html_x( 'One Response', 'comments title', 'holy-canvas' ) );
 			} else {
 				printf(
 					esc_html( /* translators: 1: number of comments */
@@ -41,7 +41,7 @@ if ( comments_open() && get_option( 'thread_comments' ) ) {
 							'%1$s Responses',
 							$comments_number,
 							'comments title',
-							'holy-vonsheezy'
+							'holy-canvas'
 						)
 					),
 					esc_html( number_format_i18n( $comments_number ) )

@@ -28,7 +28,7 @@ class Customizer {
         $wp_customize->add_section(
             'vonsheezy-options',
             array(
-                'title'      => esc_html__( 'Header & Footer', 'holy-vonsheezy' ),
+                'title'      => esc_html__( 'Header & Footer', 'holy-canvas' ),
                 'capability' => 'edit_theme_options',
             )
         );
@@ -63,7 +63,7 @@ class Customizer {
         $min_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
         wp_enqueue_style(
-            'holy-vonsheezy-customizer',
+            'holy-canvas-customizer',
             get_template_directory_uri() . '/customizer' . $min_suffix . '.css',
             array(),
             HELLO_ELEMENTOR_VERSION

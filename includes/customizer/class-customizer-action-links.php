@@ -73,10 +73,10 @@ class Customizer_Action_Links extends \WP_Customize_Control {
 			case 'install-elementor':
 				$action_link_data = array(
 					'image'   => get_template_directory_uri() . '/assets/images/elementor.svg',
-					'alt'     => esc_attr__( 'Elementor', 'holy-vonsheezy' ),
-					'title'   => esc_html__( 'Install Elementor', 'holy-vonsheezy' ),
-					'message' => esc_html__( 'Create cross-site header & footer using Elementor.', 'holy-vonsheezy' ),
-					'button'  => esc_html__( 'Install Elementor', 'holy-vonsheezy' ),
+					'alt'     => esc_attr__( 'Elementor', 'holy-canvas' ),
+					'title'   => esc_html__( 'Install Elementor', 'holy-canvas' ),
+					'message' => esc_html__( 'Create cross-site header & footer using Elementor.', 'holy-canvas' ),
+					'button'  => esc_html__( 'Install Elementor', 'holy-canvas' ),
 					'link'    => wp_nonce_url(
 						add_query_arg(
 							array(
@@ -92,30 +92,30 @@ class Customizer_Action_Links extends \WP_Customize_Control {
 			case 'activate-elementor':
 				$action_link_data = array(
 					'image'   => get_template_directory_uri() . '/assets/images/elementor.svg',
-					'alt'     => esc_attr__( 'Elementor', 'holy-vonsheezy' ),
-					'title'   => esc_html__( 'Activate Elementor', 'holy-vonsheezy' ),
-					'message' => esc_html__( 'Create cross-site header & footer using Elementor.', 'holy-vonsheezy' ),
-					'button'  => esc_html__( 'Activate Elementor', 'holy-vonsheezy' ),
+					'alt'     => esc_attr__( 'Elementor', 'holy-canvas' ),
+					'title'   => esc_html__( 'Activate Elementor', 'holy-canvas' ),
+					'message' => esc_html__( 'Create cross-site header & footer using Elementor.', 'holy-canvas' ),
+					'button'  => esc_html__( 'Activate Elementor', 'holy-canvas' ),
 					'link'    => wp_nonce_url( 'plugins.php?action=activate&plugin=elementor/elementor.php', 'activate-plugin_elementor/elementor.php' ),
 				);
 				break;
 			case 'activate-header-footer-experiment':
 				$action_link_data = array(
 					'image'   => get_template_directory_uri() . '/assets/images/elementor.svg',
-					'alt'     => esc_attr__( 'Elementor', 'holy-vonsheezy' ),
-					'title'   => esc_html__( 'Style using Elementor', 'holy-vonsheezy' ),
-					'message' => esc_html__( 'Design your cross-site header & footer from Elementor’s "Site Settings" panel.', 'holy-vonsheezy' ),
-					'button'  => esc_html__( 'Activate header & footer experiment', 'holy-vonsheezy' ),
+					'alt'     => esc_attr__( 'Elementor', 'holy-canvas' ),
+					'title'   => esc_html__( 'Style using Elementor', 'holy-canvas' ),
+					'message' => esc_html__( 'Design your cross-site header & footer from Elementor’s "Site Settings" panel.', 'holy-canvas' ),
+					'button'  => esc_html__( 'Activate header & footer experiment', 'holy-canvas' ),
 					'link'    => wp_nonce_url( 'admin.php?page=elementor#tab-experiments' ),
 				);
 				break;
 			case 'style-header-footer':
 				$action_link_data = array(
 					'image'   => get_template_directory_uri() . '/assets/images/elementor.svg',
-					'alt'     => esc_attr__( 'Elementor', 'holy-vonsheezy' ),
-					'title'   => esc_html__( 'Style cross-site header & footer', 'holy-vonsheezy' ),
-					'message' => esc_html__( 'Customize your cross-site header & footer from Elementor’s "Site Settings" panel.', 'holy-vonsheezy' ),
-					'button'  => esc_html__( 'Start Designing', 'holy-vonsheezy' ),
+					'alt'     => esc_attr__( 'Elementor', 'holy-canvas' ),
+					'title'   => esc_html__( 'Style cross-site header & footer', 'holy-canvas' ),
+					'message' => esc_html__( 'Customize your cross-site header & footer from Elementor’s "Site Settings" panel.', 'holy-canvas' ),
+					'button'  => esc_html__( 'Start Designing', 'holy-canvas' ),
 					'link'    => wp_nonce_url( 'post.php?post=' . get_option( 'elementor_active_kit' ) . '&action=elementor' ),
 				);
 				break;
