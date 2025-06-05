@@ -1,1 +1,1 @@
-# holy-canvas-theme
+# creator-mode-theme
