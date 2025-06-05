@@ -2,7 +2,7 @@
 /**
  * The template for displaying singular post-types: posts, pages and user-defined custom post types.
  *
- * @package HolyCanvas
+ * @package CreatorMode
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +24,7 @@ while ( have_posts() ) :
 	<div class="page-content">
 		<?php the_content(); ?>
 		<div class="post-tags">
-			<?php the_tags( '<span class="tag-links">' . esc_html__( 'Tagged ', 'holy-canvas' ), null, '</span>' ); ?>
+			<?php the_tags( '<span class="tag-links">' . esc_html__( 'Tagged ', 'creator-mode' ), null, '</span>' ); ?>
 		</div>
 		<?php wp_link_pages(); ?>
 	</div>

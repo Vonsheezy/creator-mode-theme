@@ -4,11 +4,11 @@
  *
  * Contains the body & html closing tags.
  *
- * @package HolyCanvas
+ * @package CreatorMode
  */
 
-use HolyCanvas\Includes\Elementor_Integration;
-use HolyCanvas\Includes\Theme;
+use CreatorMode\Includes\Elementor_Integration;
+use CreatorMode\Includes\Theme;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

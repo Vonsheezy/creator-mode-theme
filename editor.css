@@ -1,12 +1,12 @@
 /**
  * Elementor editor styling
  */
-.holy-canvas.elementor-nerd-box .elementor-nerd-box-title {
+.creator-mode.elementor-nerd-box .elementor-nerd-box-title {
 	margin-block-start: 24px;
 }
-.holy-canvas.elementor-nerd-box .elementor-nerd-box-message {
+.creator-mode.elementor-nerd-box .elementor-nerd-box-message {
 	margin-block-start: 12px;
 }
-.holy-canvas.elementor-nerd-box .elementor-nerd-box-link {
+.creator-mode.elementor-nerd-box .elementor-nerd-box-link {
 	margin-block-start: 24px;
 }

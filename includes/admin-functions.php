@@ -2,10 +2,10 @@
 /**
  *  File that contains functions for elementor admin notices
  *
- * @package HolyCanvas\Includes
+ * @package CreatorMode\Includes
  */
 
-namespace HolyCanvas\Includes;
+namespace CreatorMode\Includes;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * - Elementor Pro is not already managing the plugin.
  * - The notice has not been previously dismissed by the user.
  *
- * The notice includes a message about the compatibility of the HolyCanvas Theme with the Elementor plugin. It also provides actionable buttons to install or activate Elementor, depending on its installation status. If dismissed, it triggers an AJAX request to mark the notice as viewed.
+ * The notice includes a message about the compatibility of the CreatorMode Theme with the Elementor plugin. It also provides actionable buttons to install or activate Elementor, depending on its installation status. If dismissed, it triggers an AJAX request to mark the notice as viewed.
  *
  * @return void
  */
@@ -43,66 +43,66 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 
 	$is_elementor_installed = isset( $installed_plugins[ $plugin ] );
 
-	$message = esc_html__( 'The HolyCanvas Theme is a lightweight starter theme that works perfectly with the Elementor award-winning site builder plugin.', 'holy-canvas' );
+	$message = esc_html__( 'The CreatorMode Theme is a lightweight starter theme that works perfectly with the Elementor award-winning site builder plugin.', 'creator-mode' );
 
 	if ( $is_elementor_installed ) {
 		if ( ! current_user_can( 'activate_plugins' ) ) {
 			return;
 		}
 
-		$message .= ' ' . esc_html__( 'Once you activate the plugin, you are only one click away from building an amazing website.', 'holy-canvas' );
+		$message .= ' ' . esc_html__( 'Once you activate the plugin, you are only one click away from building an amazing website.', 'creator-mode' );
 
-		$button_text = esc_html__( 'Activate Elementor', 'holy-canvas' );
+		$button_text = esc_html__( 'Activate Elementor', 'creator-mode' );
 		$button_link = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin );
 	} else {
 		if ( ! current_user_can( 'install_plugins' ) ) {
 			return;
 		}
 
-		$message .= ' ' . esc_html__( 'Once you download and activate the plugin, you are only one click away from building an amazing website.', 'holy-canvas' );
+		$message .= ' ' . esc_html__( 'Once you download and activate the plugin, you are only one click away from building an amazing website.', 'creator-mode' );
 
-		$button_text = esc_html__( 'Install Elementor', 'holy-canvas' );
+		$button_text = esc_html__( 'Install Elementor', 'creator-mode' );
 		$button_link = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ), 'install-plugin_elementor' );
 	}
 
 	?>
 	<style>
-		.notice.holy-canvas-notice {
+		.notice.creator-mode-notice {
 			border: 1px solid #ccd0d4;
 			border-inline-start: 4px solid #9b0a46 !important;
 			box-shadow: 0 1px 4px rgba(0,0,0,0.15);
 			display: flex;
 			padding: 0;
 		}
-		.notice.holy-canvas-notice.holy-canvas-install-elementor {
+		.notice.creator-mode-notice.creator-mode-install-elementor {
 			padding: 0;
 		}
-		.notice.holy-canvas-notice .holy-canvas-notice-aside {
+		.notice.creator-mode-notice .creator-mode-notice-aside {
 			display: flex;
 			align-items: start;
 			justify-content: center;
 			padding: 20px 10px;
 			background: rgba(215,43,63,0.04);
 		}
-		.notice.holy-canvas-notice .holy-canvas-notice-aside img {
+		.notice.creator-mode-notice .creator-mode-notice-aside img {
 			width: 1.5rem;
 		}
-		.notice.holy-canvas-notice .holy-canvas-notice-content {
+		.notice.creator-mode-notice .creator-mode-notice-content {
 			display: flex;
 			flex-direction: column;
 			gap: 5px;
 			padding: 20px;
 			width: 100%;
 		}
-		.notice.holy-canvas-notice .holy-canvas-notice-content h3,
-		.notice.holy-canvas-notice .holy-canvas-notice-content p {
+		.notice.creator-mode-notice .creator-mode-notice-content h3,
+		.notice.creator-mode-notice .creator-mode-notice-content p {
 			padding: 0;
 			margin: 0;
 		}
-		.notice.holy-canvas-notice .holy-canvas-information-link {
+		.notice.creator-mode-notice .creator-mode-information-link {
 			align-self: start;
 		}
-		.notice.holy-canvas-notice .holy-canvas-install-button {
+		.notice.creator-mode-notice .creator-mode-install-button {
 			align-self: start;
 			background-color: #127DB8;
 			border-radius: 3px;
@@ -113,14 +113,14 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 			padding: 0.4375rem 0.75rem;
 			margin-block-start: 15px;
 		}
-		.notice.holy-canvas-notice .holy-canvas-install-button:active {
+		.notice.creator-mode-notice .creator-mode-install-button:active {
 			transform: translateY(1px);
 		}
 		@media (max-width: 767px) {
-			.notice.holy-canvas-notice .holy-canvas-notice-aside {
+			.notice.creator-mode-notice .creator-mode-notice-aside {
 				padding: 10px;
 			}
-			.notice.holy-canvas-notice .holy-canvas-notice-content {
+			.notice.creator-mode-notice .creator-mode-notice-content {
 				gap: 10px;
 				padding: 10px;
 			}
@@ -128,7 +128,7 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 	</style>
 	<script>
 		window.addEventListener( 'load', () => {
-			const dismissNotice = document.querySelector( '.notice.holy-canvas-install-elementor button.notice-dismiss' );
+			const dismissNotice = document.querySelector( '.notice.creator-mode-install-elementor button.notice-dismiss' );
 			dismissNotice.addEventListener( 'click', async ( event ) => {
 				event.preventDefault();
 
@@ -140,15 +140,15 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 			} );
 		} );
 	</script>
-	<div class="notice updated is-dismissible holy-canvas-notice holy-canvas-install-elementor">
-		<div class="holy-canvas-notice-aside">
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/elementor-notice-icon.svg' ); ?>" alt="<?php echo esc_attr__( 'Get Elementor', 'holy-canvas' ); ?>" />
+	<div class="notice updated is-dismissible creator-mode-notice creator-mode-install-elementor">
+		<div class="creator-mode-notice-aside">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/elementor-notice-icon.svg' ); ?>" alt="<?php echo esc_attr__( 'Get Elementor', 'creator-mode' ); ?>" />
 		</div>
-		<div class="holy-canvas-notice-content">
-			<h3><?php echo esc_html__( 'Thanks for installing the HolyCanvas Theme!', 'holy-canvas' ); ?></h3>
+		<div class="creator-mode-notice-content">
+			<h3><?php echo esc_html__( 'Thanks for installing the CreatorMode Theme!', 'creator-mode' ); ?></h3>
 			<p><?php echo esc_html( $message ); ?></p>
-			<a class="holy-canvas-information-link" href="https://vonsheezy.com/" target="_blank"><?php echo esc_html__( 'Explore Elementor Site Builder Plugin', 'holy-canvas' ); ?></a>
-			<a class="holy-canvas-install-button" href="<?php echo esc_attr( $button_link ); ?>"><?php echo esc_html( $button_text ); ?></a>
+			<a class="creator-mode-information-link" href="https://vonsheezy.com/" target="_blank"><?php echo esc_html__( 'Explore Elementor Site Builder Plugin', 'creator-mode' ); ?></a>
+			<a class="creator-mode-install-button" href="<?php echo esc_attr( $button_link ); ?>"><?php echo esc_html( $button_text ); ?></a>
 		</div>
 	</div>
 	<?php

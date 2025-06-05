@@ -2,7 +2,7 @@
 /**
  * The template for displaying sidebar.
  *
- * @package HolyCanvas
+ * @package CreatorMode
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

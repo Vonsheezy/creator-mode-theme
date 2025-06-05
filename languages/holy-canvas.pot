@@ -57,7 +57,7 @@ msgid "Skip to content"
 msgstr ""
 
 #: includes/admin-functions.php:46
-msgid "The HolyCanvas Theme is a lightweight starter theme that works perfectly with the Elementor award-winning site builder plugin."
+msgid "The CreatorMode Theme is a lightweight starter theme that works perfectly with the Elementor award-winning site builder plugin."
 msgstr ""
 
 #: includes/admin-functions.php:53
@@ -89,7 +89,7 @@ msgid "Get Elementor"
 msgstr ""
 
 #: includes/admin-functions.php:148
-msgid "Thanks for installing the HolyCanvas Theme!"
+msgid "Thanks for installing the CreatorMode Theme!"
 msgstr ""
 
 #: includes/admin-functions.php:150
@@ -97,11 +97,11 @@ msgid "Explore Elementor Site Builder Plugin"
 msgstr ""
 
 #: includes/class-elementor-integration.php:78
-msgid "HolyCanvas Theme Header & Footer"
+msgid "CreatorMode Theme Header & Footer"
 msgstr ""
 
 #: includes/class-elementor-integration.php:81
-msgid "Customize and style the builtin HolyCanvas Theme’s cross-site header & footer from the Elementor \"Site Settings\" panel."
+msgid "Customize and style the builtin CreatorMode Theme’s cross-site header & footer from the Elementor \"Site Settings\" panel."
 msgstr ""
 
 #: includes/class-elementor-integration.php:83
@@ -111,7 +111,7 @@ msgstr ""
 #: includes/class-theme.php:32
 #: assets/js/vonsheezy-admin.js:140
 #: assets/js/vonsheezy-admin.js:234
-msgid "HolyCanvas Theme Settings"
+msgid "CreatorMode Theme Settings"
 msgstr ""
 
 #: includes/class-theme.php:33
@@ -181,7 +181,7 @@ msgid "Header & Footer"
 msgstr ""
 
 #: includes/settings/class-settings-footer.php:46
-msgid "HolyCanvas Theme Footer"
+msgid "CreatorMode Theme Footer"
 msgstr ""
 
 #: includes/settings/class-settings-footer.php:100
@@ -421,7 +421,7 @@ msgid "Create Footer"
 msgstr ""
 
 #: includes/settings/class-settings-header.php:50
-msgid "HolyCanvas Theme Header"
+msgid "CreatorMode Theme Header"
 msgstr ""
 
 #: includes/settings/class-settings-header.php:487
@@ -553,17 +553,17 @@ msgid "Remove the section above the content that contains the main heading of th
 msgstr ""
 
 #: assets/js/vonsheezy-admin.js:271
-msgid "Unregister HolyCanvas style.css"
+msgid "Unregister CreatorMode style.css"
 msgstr ""
 
 #: assets/js/vonsheezy-admin.js:272
-msgid "Disable HolyCanvas theme's style.css file which contains CSS reset rules for unified cross-browser view."
+msgid "Disable CreatorMode theme's style.css file which contains CSS reset rules for unified cross-browser view."
 msgstr ""
 
 #: assets/js/vonsheezy-admin.js:278
-msgid "Unregister HolyCanvas theme.css"
+msgid "Unregister CreatorMode theme.css"
 msgstr ""
 
 #: assets/js/vonsheezy-admin.js:279
-msgid "Disable HolyCanvas theme's theme.css file which contains CSS rules that style WordPress elements."
+msgid "Disable CreatorMode theme's theme.css file which contains CSS rules that style WordPress elements."
 msgstr ""

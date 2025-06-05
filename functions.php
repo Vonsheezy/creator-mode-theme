@@ -4,13 +4,13 @@ declare(strict_types=1);
 /**
  * Theme functions and definitions
  *
- * @package HolyCanvas
+ * @package CreatorMode
  */
-namespace HolyCanvas;
+namespace CreatorMode;
 
-use HolyCanvas\Includes\Customizer\Customizer;
-use HolyCanvas\Includes\Elementor_Integration;
-use HolyCanvas\Includes\Theme;
+use CreatorMode\Includes\Customizer\Customizer;
+use CreatorMode\Includes\Elementor_Integration;
+use CreatorMode\Includes\Theme;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
