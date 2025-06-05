@@ -1,0 +1,23 @@
+/.wordpress-org export-ignore
+/.github export-ignore
+
+# === Prevent merge conflicts in minified files ===
+*.min.js   merge=ours
+*.min.css  merge=ours
+
+# === Exclude dev files from git archive (e.g., for ZIP deployment) ===
+composer.json     export-ignore
+composer.lock     export-ignore
+readme.md         export-ignore
+package.json      export-ignore
+package-lock.json export-ignore
+webpack.config.js export-ignore
+postcss.config.js export-ignore
+.vscode/          export-ignore
+node_modules/     export-ignore
+src/              export-ignore
+tests/            export-ignore
+*.map             export-ignore
+
+/.gitattributes export-ignore
+/.gitignore export-ignore
