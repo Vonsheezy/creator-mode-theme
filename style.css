@@ -45,7 +45,7 @@ body {
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
-	color: #333333;
+	color: #0a0a0a;
 	background-color: #fff;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -120,7 +120,7 @@ pre {
 a {
 	background-color: transparent;
 	text-decoration: none;
-	color: #CC3366;
+	color: #7D8B97;
 }
 a:hover, a:active {
 	color: #333366;
@@ -406,14 +406,14 @@ button,
 [type=button] {
 	display: inline-block;
 	font-weight: 400;
-	color: #CC3366;
+	color: #7D8B97;
 	text-align: center;
 	white-space: nowrap;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 			user-select: none;
 	background-color: transparent;
-	border: 1px solid #CC3366;
+	border: 1px solid #7D8B97;
 	padding: 0.5rem 1rem;
 	font-size: 1rem;
 	border-radius: 3px;
@@ -430,7 +430,7 @@ button:hover, button:focus,
 [type=button]:hover,
 [type=button]:focus {
 	color: #ffffff;
-	background-color: #CC3366;
+	background-color: #7D8B97;
 	text-decoration: none;
 }
 button:not(:disabled),

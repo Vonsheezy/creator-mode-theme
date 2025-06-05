@@ -215,6 +215,7 @@
 .site-navigation ul.menu li a {
 	display: block;
 	padding: 8px 15px;
+	font-weight: 500;
 }
 .site-navigation ul.menu li.menu-item-has-children {
 	padding-inline-end: 15px;
