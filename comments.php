@@ -5,7 +5,7 @@
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @package HolyCanvas
+ * @package CreatorMode
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -32,7 +32,7 @@ if ( comments_open() && get_option( 'thread_comments' ) ) {
 			<?php
 			$comments_number = get_comments_number();
 			if ( '1' === $comments_number ) {
-				printf( esc_html_x( 'One Response', 'comments title', 'holy-canvas' ) );
+				printf( esc_html_x( 'One Response', 'comments title', 'creator-mode' ) );
 			} else {
 				printf(
 					esc_html( /* translators: 1: number of comments */
@@ -41,7 +41,7 @@ if ( comments_open() && get_option( 'thread_comments' ) ) {
 							'%1$s Responses',
 							$comments_number,
 							'comments title',
-							'holy-canvas'
+							'creator-mode'
 						)
 					),
 					esc_html( number_format_i18n( $comments_number ) )

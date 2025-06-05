@@ -4,13 +4,12 @@
  *
  * This is the template that displays all of the <head> section, opens the <body> tag and adds the site's header.
  *
- * @package HolyCanvas
+ * @package CreatorMode
  */
 
 
-use HolyCanvas\Includes\Elementor_Integration;
-use HolyCanvas\Includes\Theme;
-use function HolyCanvas\Includes\header_footer_experiment_active;
+use CreatorMode\Includes\Elementor_Integration;
+use CreatorMode\Includes\Theme;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -32,7 +31,7 @@ $skip_link_url    = apply_filters( 'vonsheezy_elementor_skip_link_url', '#conten
 <?php wp_body_open(); ?>
 
 <?php if ( $enable_skip_link ) { ?>
-<a class="skip-link screen-reader-text" href="<?php echo esc_url( $skip_link_url ); ?>"><?php echo esc_html__( 'Skip to content', 'holy-canvas' ); ?></a>
+<a class="skip-link screen-reader-text" href="<?php echo esc_url( $skip_link_url ); ?>"><?php echo esc_html__( 'Skip to content', 'creator-mode' ); ?></a>
 <?php } ?>
 
 <?php

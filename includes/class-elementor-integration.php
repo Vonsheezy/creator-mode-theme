@@ -1,16 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace HolyCanvas\Includes;
+namespace CreatorMode\Includes;
 
-use HolyCanvas\Includes\Settings\Settings_Footer;
-use HolyCanvas\Includes\Settings\Settings_Header;
+use CreatorMode\Includes\Settings\Settings_Footer;
+use CreatorMode\Includes\Settings\Settings_Header;
+use Elementor\Core\Experiments\Manager;
 
 
 const EDITOR_STYLE = 'vonsheezy-editor';
 class Elementor_Integration {
     const ELEMENTOR_EDITOR_AFTER_ENQUEUE_SCRIPTS = 'elementor/editor/after_enqueue_scripts';
-    const THEME_EDITOR_SCRIPT = 'holy-canvas-theme-editor';
+    const THEME_EDITOR_SCRIPT = 'creator-mode-theme-editor';
     const ELEMENTOR_EXPERIMENTS_DEFAULT_FEATURES_REGISTERED = 'elementor/experiments/default-features-registered';
     private static $instance = null;
     private function __construct(){
@@ -55,7 +56,7 @@ class Elementor_Integration {
                 $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
                 wp_enqueue_script(
-                    'holy-canvas-theme-frontend',
+                    'creator-mode-theme-frontend',
                     get_template_directory_uri() . '/assets/js/vonsheezy-frontend' . $suffix . '.js',
                     array(),
                     HELLO_ELEMENTOR_VERSION,
@@ -71,16 +72,16 @@ class Elementor_Integration {
          */
         add_action(
             self::ELEMENTOR_EXPERIMENTS_DEFAULT_FEATURES_REGISTERED,
-            function ( \Elementor\Core\Experiments\Manager $experiments_manager ) {
+            function ( Manager $experiments_manager ) {
                 $experiments_manager->add_feature(
                     array(
-                        'name'           => 'holy-canvas-theme-header-footer',
-                        'title'          => esc_html__( 'HolyCanvas Theme Header & Footer', 'holy-canvas' ),
+                        'name'           => 'creator-mode-theme-header-footer',
+                        'title'          => esc_html__( 'CreatorMode Theme Header & Footer', 'creator-mode' ),
                         'description'    => sprintf(
                             '%1$s <a href="%2$s" target="_blank">%3$s</a>',
-                            esc_html__( 'Customize and style the builtin HolyCanvas Theme’s cross-site header & footer from the Elementor "Site Settings" panel.', 'holy-canvas' ),
+                            esc_html__( 'Customize and style the builtin CreatorMode Theme’s cross-site header & footer from the Elementor "Site Settings" panel.', 'creator-mode' ),
                             'https://go.elementor.com/wp-dash-header-footer',
-                            esc_html__( 'Learn More', 'holy-canvas' )
+                            esc_html__( 'Learn More', 'creator-mode' )
                         ),
                         'release_status' => $experiments_manager::RELEASE_STATUS_STABLE,
                         'new_site'       => array(
@@ -285,6 +286,6 @@ class Elementor_Integration {
             return false;
         }
 
-        return (bool) ( \Elementor\Plugin::$instance->experiments->is_feature_active( 'holy-canvas-theme-header-footer' ) );
+        return (bool) ( \Elementor\Plugin::$instance->experiments->is_feature_active( 'creator-mode-theme-header-footer' ) );
     }
 }

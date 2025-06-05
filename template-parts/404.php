@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package HolyCanvas
+ * @package CreatorMode
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php if ( apply_filters( 'vonsheezy_elementor_page_title', true ) ) : ?>
 		<header class="page-header">
-			<h1 class="entry-title"><?php echo esc_html__( 'The page can&rsquo;t be found.', 'holy-canvas' ); ?></h1>
+			<h1 class="entry-title"><?php echo esc_html__( 'The page can&rsquo;t be found.', 'creator-mode' ); ?></h1>
 		</header>
 	<?php endif; ?>
 
 	<div class="page-content">
-		<p><?php echo esc_html__( 'It looks like nothing was found at this location.', 'holy-canvas' ); ?></p>
+		<p><?php echo esc_html__( 'It looks like nothing was found at this location.', 'creator-mode' ); ?></p>
 	</div>
 
 </main>

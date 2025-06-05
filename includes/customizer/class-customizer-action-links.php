@@ -1,15 +1,15 @@
 <?php
 /**
- * Class Holy_VonsheezyCustomizer_Action_Links
+ * Class CreatorMode Customizer_Action_Links
  *
  * Extends WP_Customize_Control for rendering customizer action links.
  *
- * @package HolyCanvas\Includes\Customizer\Customizer_Action_Links
+ * @package CreatorMode\Includes\Customizer\Customizer_Action_Links
  */
 
-namespace HolyCanvas\Includes\Customizer;
+namespace CreatorMode\Includes\Customizer;
 
-use HolyCanvas\Includes\Elementor_Integration;
+use CreatorMode\Includes\Elementor_Integration;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -73,10 +73,10 @@ class Customizer_Action_Links extends \WP_Customize_Control {
 			case 'install-elementor':
 				$action_link_data = array(
 					'image'   => get_template_directory_uri() . '/assets/images/elementor.svg',
-					'alt'     => esc_attr__( 'Elementor', 'holy-canvas' ),
-					'title'   => esc_html__( 'Install Elementor', 'holy-canvas' ),
-					'message' => esc_html__( 'Create cross-site header & footer using Elementor.', 'holy-canvas' ),
-					'button'  => esc_html__( 'Install Elementor', 'holy-canvas' ),
+					'alt'     => esc_attr__( 'Elementor', 'creator-mode' ),
+					'title'   => esc_html__( 'Install Elementor', 'creator-mode' ),
+					'message' => esc_html__( 'Create cross-site header & footer using Elementor.', 'creator-mode' ),
+					'button'  => esc_html__( 'Install Elementor', 'creator-mode' ),
 					'link'    => wp_nonce_url(
 						add_query_arg(
 							array(
@@ -92,30 +92,30 @@ class Customizer_Action_Links extends \WP_Customize_Control {
 			case 'activate-elementor':
 				$action_link_data = array(
 					'image'   => get_template_directory_uri() . '/assets/images/elementor.svg',
-					'alt'     => esc_attr__( 'Elementor', 'holy-canvas' ),
-					'title'   => esc_html__( 'Activate Elementor', 'holy-canvas' ),
-					'message' => esc_html__( 'Create cross-site header & footer using Elementor.', 'holy-canvas' ),
-					'button'  => esc_html__( 'Activate Elementor', 'holy-canvas' ),
+					'alt'     => esc_attr__( 'Elementor', 'creator-mode' ),
+					'title'   => esc_html__( 'Activate Elementor', 'creator-mode' ),
+					'message' => esc_html__( 'Create cross-site header & footer using Elementor.', 'creator-mode' ),
+					'button'  => esc_html__( 'Activate Elementor', 'creator-mode' ),
 					'link'    => wp_nonce_url( 'plugins.php?action=activate&plugin=elementor/elementor.php', 'activate-plugin_elementor/elementor.php' ),
 				);
 				break;
 			case 'activate-header-footer-experiment':
 				$action_link_data = array(
 					'image'   => get_template_directory_uri() . '/assets/images/elementor.svg',
-					'alt'     => esc_attr__( 'Elementor', 'holy-canvas' ),
-					'title'   => esc_html__( 'Style using Elementor', 'holy-canvas' ),
-					'message' => esc_html__( 'Design your cross-site header & footer from Elementor’s "Site Settings" panel.', 'holy-canvas' ),
-					'button'  => esc_html__( 'Activate header & footer experiment', 'holy-canvas' ),
+					'alt'     => esc_attr__( 'Elementor', 'creator-mode' ),
+					'title'   => esc_html__( 'Style using Elementor', 'creator-mode' ),
+					'message' => esc_html__( 'Design your cross-site header & footer from Elementor’s "Site Settings" panel.', 'creator-mode' ),
+					'button'  => esc_html__( 'Activate header & footer experiment', 'creator-mode' ),
 					'link'    => wp_nonce_url( 'admin.php?page=elementor#tab-experiments' ),
 				);
 				break;
 			case 'style-header-footer':
 				$action_link_data = array(
 					'image'   => get_template_directory_uri() . '/assets/images/elementor.svg',
-					'alt'     => esc_attr__( 'Elementor', 'holy-canvas' ),
-					'title'   => esc_html__( 'Style cross-site header & footer', 'holy-canvas' ),
-					'message' => esc_html__( 'Customize your cross-site header & footer from Elementor’s "Site Settings" panel.', 'holy-canvas' ),
-					'button'  => esc_html__( 'Start Designing', 'holy-canvas' ),
+					'alt'     => esc_attr__( 'Elementor', 'creator-mode' ),
+					'title'   => esc_html__( 'Style cross-site header & footer', 'creator-mode' ),
+					'message' => esc_html__( 'Customize your cross-site header & footer from Elementor’s "Site Settings" panel.', 'creator-mode' ),
+					'button'  => esc_html__( 'Start Designing', 'creator-mode' ),
 					'link'    => wp_nonce_url( 'post.php?post=' . get_option( 'elementor_active_kit' ) . '&action=elementor' ),
 				);
 				break;

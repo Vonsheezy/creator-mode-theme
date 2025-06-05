@@ -2,7 +2,7 @@
 /**
  * The template for displaying archive pages.
  *
- * @package HolyCanvas
+ * @package CreatorMode
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -46,9 +46,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 		<nav class="pagination">
 			<?php /* Translators: HTML arrow */ ?>
-			<div class="nav-previous"><?php next_posts_link( sprintf( __( '%s older', 'holy-canvas' ), '<span class="meta-nav">&larr;</span>' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( sprintf( __( '%s older', 'creator-mode' ), '<span class="meta-nav">&larr;</span>' ) ); ?></div>
 			<?php /* Translators: HTML arrow */ ?>
-			<div class="nav-next"><?php previous_posts_link( sprintf( __( 'newer %s', 'holy-canvas' ), '<span class="meta-nav">&rarr;</span>' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( sprintf( __( 'newer %s', 'creator-mode' ), '<span class="meta-nav">&rarr;</span>' ) ); ?></div>
 		</nav>
 	<?php endif; ?>
 

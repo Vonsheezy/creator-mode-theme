@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results.
  *
- * @package HolyCanvas
+ * @package CreatorMode
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php if ( apply_filters( 'vonsheezy_elementor_page_title', true ) ) : ?>
 		<header class="page-header">
 			<h1 class="entry-title">
-				<?php echo esc_html__( 'Search results for: ', 'holy-canvas' ); ?>
+				<?php echo esc_html__( 'Search results for: ', 'creator-mode' ); ?>
 				<span><?php echo get_search_query(); ?></span>
 			</h1>
 		</header>
@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			endwhile;
 			?>
 		<?php else : ?>
-			<p><?php echo esc_html__( 'It seems we can\'t find what you\'re looking for.', 'holy-canvas' ); ?></p>
+			<p><?php echo esc_html__( 'It seems we can\'t find what you\'re looking for.', 'creator-mode' ); ?></p>
 		<?php endif; ?>
 	</div>
 
@@ -52,9 +52,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 		<nav class="pagination">
 			<?php /* Translators: HTML arrow */ ?>
-			<div class="nav-previous"><?php next_posts_link( sprintf( __( '%s older', 'holy-canvas' ), '<span class="meta-nav">&larr;</span>' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( sprintf( __( '%s older', 'creator-mode' ), '<span class="meta-nav">&larr;</span>' ) ); ?></div>
 			<?php /* Translators: HTML arrow */ ?>
-			<div class="nav-next"><?php previous_posts_link( sprintf( __( 'newer %s', 'holy-canvas' ), '<span class="meta-nav">&rarr;</span>' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( sprintf( __( 'newer %s', 'creator-mode' ), '<span class="meta-nav">&rarr;</span>' ) ); ?></div>
 		</nav>
 	<?php endif; ?>
 

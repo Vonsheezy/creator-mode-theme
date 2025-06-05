@@ -1,13 +1,17 @@
 <?php
 /**
+ * A class module for the Customizer
  *
- * @package HolyCanvas\Includes\Customizer
- *
+ * @package CreatorMode\Includes\Customizer
  */
+
 declare(strict_types=1);
 
-namespace HolyCanvas\Includes\Customizer;
+namespace CreatorMode\Includes\Customizer;
 
+/**
+ * A class that keeps all Customizer registration and customization.
+ */
 class Customizer {
     private static ?Customizer $instance = null;
 
@@ -17,6 +21,11 @@ class Customizer {
         add_action( 'admin_enqueue_scripts', [$this, 'customizer_styles'] );
     }
 
+    /**
+     * A singleton method of the Customizer module
+     *
+     * @return Customizer
+     */
     public static function instance(): Customizer
     {
         if( null === self::$instance ) {
@@ -24,11 +33,18 @@ class Customizer {
         }
         return self::$instance;
     }
+
+    /**
+     * A method that registers customizer sections and settings
+     *
+     * @param $wp_customize
+     * @return void
+     */
     public function register( $wp_customize ){
         $wp_customize->add_section(
             'vonsheezy-options',
             array(
-                'title'      => esc_html__( 'Header & Footer', 'holy-canvas' ),
+                'title'      => esc_html__( 'Header & Footer', 'creator-mode' ),
                 'capability' => 'edit_theme_options',
             )
         );
@@ -63,7 +79,7 @@ class Customizer {
         $min_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
         wp_enqueue_style(
-            'holy-canvas-customizer',
+            'creator-mode-customizer',
             get_template_directory_uri() . '/customizer' . $min_suffix . '.css',
             array(),
             HELLO_ELEMENTOR_VERSION

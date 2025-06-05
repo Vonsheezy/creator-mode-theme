@@ -4,12 +4,12 @@
  *
  * Handles the customization options for the footer section of the Holy Canvas theme.
  *
- * @package HolyCanvas\Includes\Settings\Settings_Footer
+ * @package CreatorMode\Includes\Settings\Settings_Footer
  */
 
 declare(strict_types=1);
 
-namespace HolyCanvas\Includes\Settings;
+namespace CreatorMode\Includes\Settings;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
@@ -34,7 +34,7 @@ class Settings_Footer extends Tab_Base {
 	 * @return string The unique identifier for the settings footer.
 	 */
 	public function get_id() {
-		return 'holy-canvas-settings-footer';
+		return 'creator-mode-settings-footer';
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Settings_Footer extends Tab_Base {
 	 * @return string Returns the escaped HTML title of the Holy Canvas theme footer.
 	 */
 	public function get_title(): string {
-		return esc_html__( 'HolyCanvas Theme Footer', 'holy-canvas' );
+		return esc_html__( 'CreatorMode Theme Footer', 'creator-mode' );
 	}
 
 	/**
@@ -89,7 +89,7 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_section',
 			array(
 				'tab'   => 'vonsheezy-settings-footer',
-				'label' => esc_html__( 'Footer', 'holy-canvas' ),
+				'label' => esc_html__( 'Footer', 'creator-mode' ),
 			)
 		);
 
@@ -97,10 +97,10 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_logo_display',
 			array(
 				'type'      => Controls_Manager::SWITCHER,
-				'label'     => esc_html__( 'Site Logo', 'holy-canvas' ),
+				'label'     => esc_html__( 'Site Logo', 'creator-mode' ),
 				'default'   => 'yes',
-				'label_on'  => esc_html__( 'Show', 'holy-canvas' ),
-				'label_off' => esc_html__( 'Hide', 'holy-canvas' ),
+				'label_on'  => esc_html__( 'Show', 'creator-mode' ),
+				'label_off' => esc_html__( 'Hide', 'creator-mode' ),
 				'selector'  => '.site-footer .site-branding',
 			)
 		);
@@ -109,10 +109,10 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_tagline_display',
 			array(
 				'type'      => Controls_Manager::SWITCHER,
-				'label'     => esc_html__( 'Tagline', 'holy-canvas' ),
+				'label'     => esc_html__( 'Tagline', 'creator-mode' ),
 				'default'   => 'yes',
-				'label_on'  => esc_html__( 'Show', 'holy-canvas' ),
-				'label_off' => esc_html__( 'Hide', 'holy-canvas' ),
+				'label_on'  => esc_html__( 'Show', 'creator-mode' ),
+				'label_off' => esc_html__( 'Hide', 'creator-mode' ),
 				'selector'  => '.site-footer .site-description',
 			)
 		);
@@ -121,10 +121,10 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_menu_display',
 			array(
 				'type'      => Controls_Manager::SWITCHER,
-				'label'     => esc_html__( 'Menu', 'holy-canvas' ),
+				'label'     => esc_html__( 'Menu', 'creator-mode' ),
 				'default'   => 'yes',
-				'label_on'  => esc_html__( 'Show', 'holy-canvas' ),
-				'label_off' => esc_html__( 'Hide', 'holy-canvas' ),
+				'label_on'  => esc_html__( 'Show', 'creator-mode' ),
+				'label_off' => esc_html__( 'Hide', 'creator-mode' ),
 				'selector'  => '.site-footer .site-navigation',
 			)
 		);
@@ -133,10 +133,10 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_copyright_display',
 			array(
 				'type'      => Controls_Manager::SWITCHER,
-				'label'     => esc_html__( 'Copyright', 'holy-canvas' ),
+				'label'     => esc_html__( 'Copyright', 'creator-mode' ),
 				'default'   => 'yes',
-				'label_on'  => esc_html__( 'Show', 'holy-canvas' ),
-				'label_off' => esc_html__( 'Hide', 'holy-canvas' ),
+				'label_on'  => esc_html__( 'Show', 'creator-mode' ),
+				'label_off' => esc_html__( 'Hide', 'creator-mode' ),
 				'selector'  => '.site-footer .copyright',
 			)
 		);
@@ -147,8 +147,8 @@ class Settings_Footer extends Tab_Base {
 				'type'            => Controls_Manager::RAW_HTML,
 				'raw'             => sprintf(
 					/* translators: %s: Link that opens the theme settings page. */
-					__( 'Note: Hiding all the elements, only hides them visually. To disable them completely go to <a href="%s">Theme Settings</a> .', 'holy-canvas' ),
-					admin_url( 'themes.php?page=holy-canvas-theme-settings' )
+					__( 'Note: Hiding all the elements, only hides them visually. To disable them completely go to <a href="%s">Theme Settings</a> .', 'creator-mode' ),
+					admin_url( 'themes.php?page=creator-mode-theme-settings' )
 				),
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
 				'condition'       => array(
@@ -164,11 +164,11 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_layout',
 			array(
 				'type'      => Controls_Manager::SELECT,
-				'label'     => esc_html__( 'Layout', 'holy-canvas' ),
+				'label'     => esc_html__( 'Layout', 'creator-mode' ),
 				'options'   => array(
-					'default'  => esc_html__( 'Default', 'holy-canvas' ),
-					'inverted' => esc_html__( 'Inverted', 'holy-canvas' ),
-					'stacked'  => esc_html__( 'Centered', 'holy-canvas' ),
+					'default'  => esc_html__( 'Default', 'creator-mode' ),
+					'inverted' => esc_html__( 'Inverted', 'creator-mode' ),
+					'stacked'  => esc_html__( 'Centered', 'creator-mode' ),
 				),
 				'selector'  => '.site-footer',
 				'default'   => 'default',
@@ -180,10 +180,10 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_width',
 			array(
 				'type'     => Controls_Manager::SELECT,
-				'label'    => esc_html__( 'Width', 'holy-canvas' ),
+				'label'    => esc_html__( 'Width', 'creator-mode' ),
 				'options'  => array(
-					'boxed'      => esc_html__( 'Boxed', 'holy-canvas' ),
-					'full-width' => esc_html__( 'Full Width', 'holy-canvas' ),
+					'boxed'      => esc_html__( 'Boxed', 'creator-mode' ),
+					'full-width' => esc_html__( 'Full Width', 'creator-mode' ),
 				),
 				'selector' => '.site-footer',
 				'default'  => 'boxed',
@@ -194,7 +194,7 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_custom_width',
 			array(
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Content Width', 'holy-canvas' ),
+				'label'      => esc_html__( 'Content Width', 'creator-mode' ),
 				'size_units' => array( '%', 'px', 'em', 'rem', 'vw', 'custom' ),
 				'range'      => array(
 					'px'  => array(
@@ -220,7 +220,7 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_gap',
 			array(
 				'type'       => Controls_Manager::SLIDER,
-				'label'      => esc_html__( 'Gap', 'holy-canvas' ),
+				'label'      => esc_html__( 'Gap', 'creator-mode' ),
 				'size_units' => array( '%', 'px', 'em ', 'rem', 'vw', 'custom' ),
 				'range'      => array(
 					'px'  => array(
@@ -246,7 +246,7 @@ class Settings_Footer extends Tab_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'vonsheezy_footer_background',
-				'label'    => esc_html__( 'Background', 'holy-canvas' ),
+				'label'    => esc_html__( 'Background', 'creator-mode' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'selector' => '.site-footer',
 			)
@@ -258,7 +258,7 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_logo_section',
 			array(
 				'tab'       => 'vonsheezy-settings-footer',
-				'label'     => esc_html__( 'Site Logo', 'holy-canvas' ),
+				'label'     => esc_html__( 'Site Logo', 'creator-mode' ),
 				'condition' => array(
 					'vonsheezy_footer_logo_display!' => '',
 				),
@@ -268,12 +268,12 @@ class Settings_Footer extends Tab_Base {
 		$this->add_control(
 			'vonsheezy_footer_logo_type',
 			array(
-				'label'              => esc_html__( 'Type', 'holy-canvas' ),
+				'label'              => esc_html__( 'Type', 'creator-mode' ),
 				'type'               => Controls_Manager::SELECT,
 				'default'            => 'logo',
 				'options'            => array(
-					'logo'  => esc_html__( 'Logo', 'holy-canvas' ),
-					'title' => esc_html__( 'Title', 'holy-canvas' ),
+					'logo'  => esc_html__( 'Logo', 'creator-mode' ),
+					'title' => esc_html__( 'Title', 'creator-mode' ),
 				),
 				'frontend_available' => true,
 			)
@@ -283,10 +283,10 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_logo_width',
 			array(
 				'type'        => Controls_Manager::SLIDER,
-				'label'       => esc_html__( 'Logo Width', 'holy-canvas' ),
+				'label'       => esc_html__( 'Logo Width', 'creator-mode' ),
 				'description' => sprintf(
 					/* translators: %s: Link that opens Elementor's "Site Identity" panel. */
-					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s logo', 'holy-canvas' ),
+					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s logo', 'creator-mode' ),
 					"javascript:\$e.route('panel/global/settings-site-identity')"
 				),
 				'size_units'  => array( '%', 'px', 'em', 'rem', 'vw', 'custom' ),
@@ -314,7 +314,7 @@ class Settings_Footer extends Tab_Base {
 		$this->add_control(
 			'vonsheezy_footer_title_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'holy-canvas' ),
+				'label'     => esc_html__( 'Text Color', 'creator-mode' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => array(
 					'vonsheezy_footer_logo_display' => 'yes',
@@ -330,7 +330,7 @@ class Settings_Footer extends Tab_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'vonsheezy_footer_title_typography',
-				'label'     => esc_html__( 'Typography', 'holy-canvas' ),
+				'label'     => esc_html__( 'Typography', 'creator-mode' ),
 				'condition' => array(
 					'vonsheezy_footer_logo_display' => 'yes',
 					'vonsheezy_footer_logo_type'    => 'title',
@@ -346,7 +346,7 @@ class Settings_Footer extends Tab_Base {
 				'type'            => Controls_Manager::RAW_HTML,
 				'raw'             => sprintf(
 					/* translators: %s: Link that opens Elementor's "Site Identity" panel. */
-					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s title', 'holy-canvas' ),
+					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s title', 'creator-mode' ),
 					"javascript:\$e.route('panel/global/settings-site-identity')"
 				),
 				'content_classes' => 'elementor-control-field-description',
@@ -363,7 +363,7 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_tagline',
 			array(
 				'tab'       => 'vonsheezy-settings-footer',
-				'label'     => esc_html__( 'Tagline', 'holy-canvas' ),
+				'label'     => esc_html__( 'Tagline', 'creator-mode' ),
 				'condition' => array(
 					'vonsheezy_footer_tagline_display' => 'yes',
 				),
@@ -373,7 +373,7 @@ class Settings_Footer extends Tab_Base {
 		$this->add_control(
 			'vonsheezy_footer_tagline_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'holy-canvas' ),
+				'label'     => esc_html__( 'Text Color', 'creator-mode' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => array(
 					'vonsheezy_footer_tagline_display' => 'yes',
@@ -388,7 +388,7 @@ class Settings_Footer extends Tab_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'vonsheezy_footer_tagline_typography',
-				'label'     => esc_html__( 'Typography', 'holy-canvas' ),
+				'label'     => esc_html__( 'Typography', 'creator-mode' ),
 				'condition' => array(
 					'vonsheezy_footer_tagline_display' => 'yes',
 				),
@@ -402,7 +402,7 @@ class Settings_Footer extends Tab_Base {
 				'type'            => Controls_Manager::RAW_HTML,
 				'raw'             => sprintf(
 					/* translators: %s: Link that opens Elementor's "Site Identity" panel. */
-					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s tagline', 'holy-canvas' ),
+					__( 'Go to <a href="%s">Site Identity</a> to manage your site\'s tagline', 'creator-mode' ),
 					"javascript:\$e.route('panel/global/settings-site-identity')"
 				),
 				'content_classes' => 'elementor-control-field-description',
@@ -415,7 +415,7 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_menu_tab',
 			array(
 				'tab'       => 'vonsheezy-settings-footer',
-				'label'     => esc_html__( 'Menu', 'holy-canvas' ),
+				'label'     => esc_html__( 'Menu', 'creator-mode' ),
 				'condition' => array(
 					'vonsheezy_footer_menu_display' => 'yes',
 				),
@@ -424,7 +424,7 @@ class Settings_Footer extends Tab_Base {
 
 		$available_menus = wp_get_nav_menus();
 
-		$menus = array( '0' => esc_html__( '— Select a Menu —', 'holy-canvas' ) );
+		$menus = array( '0' => esc_html__( '— Select a Menu —', 'creator-mode' ) );
 		foreach ( $available_menus as $available_menu ) {
 			$menus[ $available_menu->term_id ] = $available_menu->name;
 		}
@@ -435,7 +435,7 @@ class Settings_Footer extends Tab_Base {
 				array(
 					'type'            => Controls_Manager::RAW_HTML,
 					/* translators: %s: A link to edit navigation menus. */
-					'raw'             => '<strong>' . esc_html__( 'There are no menus in your site.', 'holy-canvas' ) . '</strong><br>' . sprintf( __( 'Go to <a href="%s" target="_blank">Menus screen</a> to create one.', 'holy-canvas' ), admin_url( 'nav-menus.php?action=edit&menu=0' ) ),
+					'raw'             => '<strong>' . esc_html__( 'There are no menus in your site.', 'creator-mode' ) . '</strong><br>' . sprintf( __( 'Go to <a href="%s" target="_blank">Menus screen</a> to create one.', 'creator-mode' ), admin_url( 'nav-menus.php?action=edit&menu=0' ) ),
 					'separator'       => 'after',
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 				)
@@ -444,12 +444,12 @@ class Settings_Footer extends Tab_Base {
 			$this->add_control(
 				'vonsheezy_footer_menu',
 				array(
-					'label'       => esc_html__( 'Menu', 'holy-canvas' ),
+					'label'       => esc_html__( 'Menu', 'creator-mode' ),
 					'type'        => Controls_Manager::SELECT,
 					'options'     => $menus,
 					'default'     => array_keys( $menus )[0],
 					/* translators: %s: A link to edit navigation menus. */
-					'description' => sprintf( __( 'Go to the <a href="%s" target="_blank">Menus screen</a> to manage your menus.', 'holy-canvas' ), admin_url( 'nav-menus.php' ) ),
+					'description' => sprintf( __( 'Go to the <a href="%s" target="_blank">Menus screen</a> to manage your menus.', 'creator-mode' ), admin_url( 'nav-menus.php' ) ),
 				)
 			);
 
@@ -457,7 +457,7 @@ class Settings_Footer extends Tab_Base {
 				'vonsheezy_footer_menu_warning',
 				array(
 					'type'            => Controls_Manager::RAW_HTML,
-					'raw'             => esc_html__( 'Changes will be reflected in the preview only after the page reloads.', 'holy-canvas' ),
+					'raw'             => esc_html__( 'Changes will be reflected in the preview only after the page reloads.', 'creator-mode' ),
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 				)
 			);
@@ -465,7 +465,7 @@ class Settings_Footer extends Tab_Base {
 			$this->add_control(
 				'vonsheezy_footer_menu_color',
 				array(
-					'label'     => esc_html__( 'Color', 'holy-canvas' ),
+					'label'     => esc_html__( 'Color', 'creator-mode' ),
 					'type'      => Controls_Manager::COLOR,
 					'selectors' => array(
 						'footer .footer-inner .site-navigation a' => 'color: {{VALUE}};',
@@ -477,7 +477,7 @@ class Settings_Footer extends Tab_Base {
 				Group_Control_Typography::get_type(),
 				array(
 					'name'     => 'vonsheezy_footer_menu_typography',
-					'label'    => esc_html__( 'Typography', 'holy-canvas' ),
+					'label'    => esc_html__( 'Typography', 'creator-mode' ),
 					'selector' => 'footer .footer-inner .site-navigation a',
 				)
 			);
@@ -489,7 +489,7 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_copyright_section',
 			array(
 				'tab'        => 'vonsheezy-settings-footer',
-				'label'      => esc_html__( 'Copyright', 'holy-canvas' ),
+				'label'      => esc_html__( 'Copyright', 'creator-mode' ),
 				'conditions' => array(
 					'relation' => 'and',
 					'terms'    => array(
@@ -507,14 +507,14 @@ class Settings_Footer extends Tab_Base {
 			'vonsheezy_footer_copyright_text',
 			array(
 				'type'    => Controls_Manager::TEXTAREA,
-				'default' => esc_html__( 'All rights reserved', 'holy-canvas' ),
+				'default' => esc_html__( 'All rights reserved', 'creator-mode' ),
 			)
 		);
 
 		$this->add_control(
 			'vonsheezy_footer_copyright_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'holy-canvas' ),
+				'label'     => esc_html__( 'Text Color', 'creator-mode' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => array(
 					'vonsheezy_footer_copyright_display' => 'yes',
@@ -529,7 +529,7 @@ class Settings_Footer extends Tab_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'vonsheezy_footer_copyright_typography',
-				'label'     => esc_html__( 'Typography', 'holy-canvas' ),
+				'label'     => esc_html__( 'Typography', 'creator-mode' ),
 				'condition' => array(
 					'vonsheezy_footer_copyright_display' => 'yes',
 				),
@@ -563,7 +563,7 @@ class Settings_Footer extends Tab_Base {
 	 */
 	public function get_additional_tab_content(): string {
 		$content_template = '
-			<div class="holy-canvas elementor-nerd-box">
+			<div class="creator-mode elementor-nerd-box">
 				<img src="%1$s" class="elementor-nerd-box-icon" alt="%2$s">
 				<p class="elementor-nerd-box-title">%3$s</p>
 				<p class="elementor-nerd-box-message">%4$s</p>
@@ -574,21 +574,21 @@ class Settings_Footer extends Tab_Base {
 			return sprintf(
 				$content_template,
 				get_template_directory_uri() . '/assets/images/go-pro.svg',
-				esc_attr__( 'Get Elementor Pro', 'holy-canvas' ),
-				esc_html__( 'Create a custom footer with multiple options', 'holy-canvas' ),
-				esc_html__( 'Upgrade to Elementor Pro and enjoy free design and many more features', 'holy-canvas' ),
-				'https://go.elementor.com/holy-canvas-theme-footer/',
-				esc_html__( 'Upgrade', 'holy-canvas' )
+				esc_attr__( 'Get Elementor Pro', 'creator-mode' ),
+				esc_html__( 'Create a custom footer with multiple options', 'creator-mode' ),
+				esc_html__( 'Upgrade to Elementor Pro and enjoy free design and many more features', 'creator-mode' ),
+				'https://go.elementor.com/creator-mode-theme-footer/',
+				esc_html__( 'Upgrade', 'creator-mode' )
 			);
 		} else {
 			return sprintf(
 				$content_template,
 				get_template_directory_uri() . '/assets/images/go-pro.svg',
-				esc_attr__( 'Elementor Pro', 'holy-canvas' ),
-				esc_html__( 'Create a custom footer with the Theme Builder', 'holy-canvas' ),
-				esc_html__( 'With the Theme Builder you can jump directly into each part of your site', 'holy-canvas' ),
+				esc_attr__( 'Elementor Pro', 'creator-mode' ),
+				esc_html__( 'Create a custom footer with the Theme Builder', 'creator-mode' ),
+				esc_html__( 'With the Theme Builder you can jump directly into each part of your site', 'creator-mode' ),
 				get_admin_url( null, 'admin.php?page=elementor-app#/site-editor/templates/footer' ),
-				esc_html__( 'Create Footer', 'holy-canvas' )
+				esc_html__( 'Create Footer', 'creator-mode' )
 			);
 		}
 	}

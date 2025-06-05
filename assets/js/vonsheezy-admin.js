@@ -137,7 +137,7 @@ const SettingsPage = () => {
     className: "vonsheezy_elementor__container"
   }, /*#__PURE__*/React.createElement("div", {
     className: "vonsheezy_elementor__title"
-  }, /*#__PURE__*/React.createElement("h1", null, (0, _i18n.__)('HolyCanvas Theme Settings', 'holy-canvas'))))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("h1", null, (0, _i18n.__)('CreatorMode Theme Settings', 'holy-canvas'))))), /*#__PURE__*/React.createElement("div", {
     className: "vonsheezy_elementor__main"
   }, /*#__PURE__*/React.createElement(_components.Panel, null, /*#__PURE__*/React.createElement(_settingsPanel.SettingsPanel, {
     SETTINGS,
@@ -231,7 +231,7 @@ const SettingsPanel = ({
   const hostname = window.location.hostname || 'example.com';
   const prefix = protocol + '//' + hostname;
   return /*#__PURE__*/React.createElement(_components.PanelBody, {
-    title: (0, _i18n.__)('HolyCanvas Theme Settings', 'holy-canvas')
+    title: (0, _i18n.__)('CreatorMode Theme Settings', 'holy-canvas')
   }, /*#__PURE__*/React.createElement(_components.Notice, {
     status: "warning",
     isDismissible: "false"
@@ -268,15 +268,15 @@ const SettingsPanel = ({
   }), /*#__PURE__*/React.createElement("code", {
     className: "code-example"
   }, " <header class=\"page-header\"> <h1 class=\"entry-title\"> Post title </h1> </header> "), /*#__PURE__*/React.createElement(_components.ToggleControl, {
-    label: (0, _i18n.__)('Unregister HolyCanvas style.css', 'holy-canvas'),
-    help: (0, _i18n.__)("Disable HolyCanvas theme's style.css file which contains CSS reset rules for unified cross-browser view.", 'holy-canvas'),
+    label: (0, _i18n.__)('Unregister CreatorMode style.css', 'holy-canvas'),
+    help: (0, _i18n.__)("Disable CreatorMode theme's style.css file which contains CSS reset rules for unified cross-browser view.", 'holy-canvas'),
     checked: !!settingsData[SETTINGS.HELLO_STYLE] || false,
     onChange: value => updateSettings(SETTINGS.HELLO_STYLE, value)
   }), /*#__PURE__*/React.createElement("code", {
     className: "code-example"
   }, " <link rel=\"stylesheet\" href=\"", prefix, "/wp-content/themes/holy-canvas/style.min.css\" /> "), /*#__PURE__*/React.createElement(_components.ToggleControl, {
-    label: (0, _i18n.__)('Unregister HolyCanvas theme.css', 'holy-canvas'),
-    help: (0, _i18n.__)("Disable HolyCanvas theme's theme.css file which contains CSS rules that style WordPress elements.", 'holy-canvas'),
+    label: (0, _i18n.__)('Unregister CreatorMode theme.css', 'holy-canvas'),
+    help: (0, _i18n.__)("Disable CreatorMode theme's theme.css file which contains CSS rules that style WordPress elements.", 'holy-canvas'),
     checked: !!settingsData[SETTINGS.HELLO_THEME] || false,
     onChange: value => updateSettings(SETTINGS.HELLO_THEME, value)
   }), /*#__PURE__*/React.createElement("code", {
