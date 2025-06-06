@@ -50,6 +50,7 @@ jobs:
       - name: Run only when no SVN credentials are set
         if: steps.is_svn_credentials_available.outputs.available == 'false'
         run: |
+          git fetch origin
           git checkout prod
           composer install --no-dev --optimize-autoloader
           git merge main --strategy-option theirs --no-edit || true
