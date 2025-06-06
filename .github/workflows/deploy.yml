@@ -62,6 +62,7 @@ jobs:
           git fetch origin || echo "Unable to fetch branches"
           git checkout prod
           composer install --no-dev --optimize-autoloader
+          git diff main || echo "No difference"
           git merge main --strategy-option theirs --no-edit || true
           git add . || echo "No merge conflict resolved"
           git commit -m "Auto-resolved conflicts using 'theirs'" || echo "No conflicts to resolve"
