@@ -1,0 +1,50 @@
+name: Maybe deploy to WordPress.org
+on:
+  push:
+    tags:
+      - "*"
+
+    branches:
+      - main        # Triggers on push to main
+jobs:
+  build_or_publish:
+    name: New tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+#      - name: Build # Remove or modify this step as needed
+#        run: |
+#          npm install
+#          npm run build
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          tools: composer
+      - name: Verify Composer version
+        run: composer --version
+
+      - name: Install composer
+        run: composer install --no-dev --optimize-autoloader
+      - name: Check if SVN credentials are set
+        if: secrets.SVN_USERNAME != '' && secrets.SVN_PASSWORD != ''
+        id: is_svn_credentials_available
+        run: echo "SNV condition is being checked"
+      - name: WordPress Theme Deploy
+        if: steps.is_svn_credentials_available.outcome == 'success'
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SLUG: creator-mode
+      - name: Run only when no SVN credentials are set
+        if: steps.is_svn_credentials_available.outcome != 'success'
+        run: |
+          git checkout prod
+          composer install --no-dev --optimize-autoloader
+          git merge main --strategy-option theirs --no-edit || true
+          git add . || echo "No merge conflict resolved"
+          git commit -m "Auto-resolved conflicts using 'theirs'" || echo "No conflicts to resolve"
+      - name: Push changes
+        if: steps.is_svn_credentials_available.outcome != 'success'
+        run: git push origin prod
