@@ -27,18 +27,28 @@ jobs:
       - name: Install composer
         run: composer install --no-dev --optimize-autoloader
       - name: Check if SVN credentials are set
-        if: secrets.SVN_USERNAME != '' && secrets.SVN_PASSWORD != ''
         id: is_svn_credentials_available
-        run: echo "SNV condition is being checked"
+        run: |
+          if [ -n "${{ secrets.SVN_USERNAME }}" ] && [ -n "${{ secrets.SVN_PASSWORD }}" ]; then
+            echo "SVN credentials are set"
+            echo "available=true" >> $GITHUB_OUTPUT
+          else
+            echo "SVN credentials are NOT set"
+            echo "available=false" >> $GITHUB_OUTPUT
+          fi
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+
       - name: WordPress Theme Deploy
-        if: steps.is_svn_credentials_available.outcome == 'success'
+        if: steps.is_svn_credentials_available.outputs.available == 'true'
         uses: 10up/action-wordpress-plugin-deploy@stable
         env:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SLUG: creator-mode
       - name: Run only when no SVN credentials are set
-        if: steps.is_svn_credentials_available.outcome != 'success'
+        if: steps.is_svn_credentials_available.outputs.available == 'false'
         run: |
           git checkout prod
           composer install --no-dev --optimize-autoloader
@@ -46,5 +56,5 @@ jobs:
           git add . || echo "No merge conflict resolved"
           git commit -m "Auto-resolved conflicts using 'theirs'" || echo "No conflicts to resolve"
       - name: Push changes
-        if: steps.is_svn_credentials_available.outcome != 'success'
+        if: steps.is_svn_credentials_available.outputs.available == 'false'
         run: git push origin prod
