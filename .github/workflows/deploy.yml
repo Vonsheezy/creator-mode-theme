@@ -50,7 +50,8 @@ jobs:
       - name: Run only when no SVN credentials are set
         if: steps.is_svn_credentials_available.outputs.available == 'false'
         run: |
-          git fetch origin
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} || echo "Unable to set remote"
+          git fetch origin || echo "Unable to fetch branches"
           git checkout prod
           composer install --no-dev --optimize-autoloader
           git merge main --strategy-option theirs --no-edit || true
