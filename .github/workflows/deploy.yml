@@ -6,6 +6,9 @@ on:
 
     branches:
       - main        # Triggers on push to main
+permissions:
+  contents: write
+
 jobs:
   build_or_publish:
     name: New tag
