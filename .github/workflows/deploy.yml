@@ -24,6 +24,12 @@ jobs:
       - name: Verify Composer version
         run: composer --version
 
+      - name: Configure Git for push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
       - name: Install composer
         run: composer install --no-dev --optimize-autoloader
       - name: Check if SVN credentials are set
@@ -50,7 +56,6 @@ jobs:
       - name: Run only when no SVN credentials are set
         if: steps.is_svn_credentials_available.outputs.available == 'false'
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} || echo "Unable to set remote"
           git fetch origin || echo "Unable to fetch branches"
           git checkout prod
           composer install --no-dev --optimize-autoloader
