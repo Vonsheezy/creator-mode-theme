@@ -8,6 +8,7 @@ on:
       - main        # Triggers on push to main
 permissions:
   contents: write
+
 jobs:
   build_or_publish:
     name: New tag
@@ -25,17 +26,6 @@ jobs:
           tools: composer
       - name: Verify Composer version
         run: composer --version
-      - name: Configure Git for push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-
-      - name: Configure Git for push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
       - name: Configure Git for push
         run: |
@@ -71,8 +61,8 @@ jobs:
         run: |
           git fetch origin || echo "Unable to fetch branches"
           git checkout prod
-          git diff main || echo "No difference"
-          git merge main || echo "No conflict found"
+          composer install --no-dev --optimize-autoloader
+          git merge main --strategy-option theirs --no-edit || echo "No conflict found"
           git add . || echo "No merge conflict resolved"
           git commit -m "Auto-resolved conflicts using 'theirs'" || echo "No conflicts to resolve"
       - name: Push changes
