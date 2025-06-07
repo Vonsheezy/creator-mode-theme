@@ -321,7 +321,7 @@ class Theme {
             /*
              * Add support for wp block styles.
              */
-            add_theme_support( "wp-block-styles" );
+            //add_theme_support( "wp-block-styles" );
 
             /*
              * WooCommerce.
@@ -398,11 +398,18 @@ class Theme {
     {
         $min_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
+        wp_enqueue_style(
+            'creator-mode-fonts',
+            get_template_directory_uri() . '/assets/font' . $min_suffix . '.css',
+            array(),
+            HELLO_ELEMENTOR_VERSION
+        );
+
         if ( apply_filters( 'vonsheezy_elementor_enqueue_style', true ) ) {
             wp_enqueue_style(
                 'creator-mode',
                 get_template_directory_uri() . '/style' . $min_suffix . '.css',
-                array(),
+                array('creator-mode-fonts'),
                 HELLO_ELEMENTOR_VERSION
             );
         }
@@ -411,7 +418,7 @@ class Theme {
             wp_enqueue_style(
                 'creator-mode-theme-style',
                 get_template_directory_uri() . '/theme' . $min_suffix . '.css',
-                array(),
+                array('creator-mode-fonts'),
                 HELLO_ELEMENTOR_VERSION
             );
         }
@@ -420,7 +427,7 @@ class Theme {
             wp_enqueue_style(
                 'creator-mode-header-footer',
                 get_template_directory_uri() . '/header-footer' . $min_suffix . '.css',
-                array(),
+                array('creator-mode-fonts'),
                 HELLO_ELEMENTOR_VERSION
             );
         }
