@@ -8,12 +8,12 @@ class ComposerStaticInitf38678fe6077d24dfc4b4f1762038683
 {
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'HolyCanvas\\Includes\\Customizer\\Customizer' => __DIR__ . '/../..' . '/includes/customizer/class-customizer.php',
-        'HolyCanvas\\Includes\\Customizer\\Customizer_Action_Links' => __DIR__ . '/../..' . '/includes/customizer/class-customizer-action-links.php',
-        'HolyCanvas\\Includes\\Elementor_Integration' => __DIR__ . '/../..' . '/includes/class-elementor-integration.php',
-        'HolyCanvas\\Includes\\Settings\\Settings_Footer' => __DIR__ . '/../..' . '/includes/settings/class-settings-footer.php',
-        'HolyCanvas\\Includes\\Settings\\Settings_Header' => __DIR__ . '/../..' . '/includes/settings/class-settings-header.php',
-        'HolyCanvas\\Includes\\Theme' => __DIR__ . '/../..' . '/includes/class-theme.php',
+        'CreatorMode\\Includes\\Customizer\\Customizer' => __DIR__ . '/../..' . '/includes/customizer/class-customizer.php',
+        'CreatorMode\\Includes\\Customizer\\Customizer_Action_Links' => __DIR__ . '/../..' . '/includes/customizer/class-customizer-action-links.php',
+        'CreatorMode\\Includes\\Elementor_Integration' => __DIR__ . '/../..' . '/includes/class-elementor-integration.php',
+        'CreatorMode\\Includes\\Settings\\Settings_Footer' => __DIR__ . '/../..' . '/includes/settings/class-settings-footer.php',
+        'CreatorMode\\Includes\\Settings\\Settings_Header' => __DIR__ . '/../..' . '/includes/settings/class-settings-header.php',
+        'CreatorMode\\Includes\\Theme' => __DIR__ . '/../..' . '/includes/class-theme.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

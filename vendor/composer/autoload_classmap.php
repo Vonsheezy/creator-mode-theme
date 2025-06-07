@@ -7,10 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
-    'HolyCanvas\\Includes\\Customizer\\Customizer' => $baseDir . '/includes/customizer/class-customizer.php',
-    'HolyCanvas\\Includes\\Customizer\\Customizer_Action_Links' => $baseDir . '/includes/customizer/class-customizer-action-links.php',
-    'HolyCanvas\\Includes\\Elementor_Integration' => $baseDir . '/includes/class-elementor-integration.php',
-    'HolyCanvas\\Includes\\Settings\\Settings_Footer' => $baseDir . '/includes/settings/class-settings-footer.php',
-    'HolyCanvas\\Includes\\Settings\\Settings_Header' => $baseDir . '/includes/settings/class-settings-header.php',
-    'HolyCanvas\\Includes\\Theme' => $baseDir . '/includes/class-theme.php',
+    'CreatorMode\\Includes\\Customizer\\Customizer' => $baseDir . '/includes/customizer/class-customizer.php',
+    'CreatorMode\\Includes\\Customizer\\Customizer_Action_Links' => $baseDir . '/includes/customizer/class-customizer-action-links.php',
+    'CreatorMode\\Includes\\Elementor_Integration' => $baseDir . '/includes/class-elementor-integration.php',
+    'CreatorMode\\Includes\\Settings\\Settings_Footer' => $baseDir . '/includes/settings/class-settings-footer.php',
+    'CreatorMode\\Includes\\Settings\\Settings_Header' => $baseDir . '/includes/settings/class-settings-header.php',
+    'CreatorMode\\Includes\\Theme' => $baseDir . '/includes/class-theme.php',
 );
