@@ -1,0 +1,17 @@
+/**
+ * Form styling
+ */
+
+.wp-block-button__link{
+  border-radius: 3px;
+  border: 1px solid #1F1F1F;
+  background: #A9C8E5;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+input[type=submit]{
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: #1F1F1F;
+}

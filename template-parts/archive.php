@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			the_post();
 			$post_link = get_permalink();
 			?>
-			<article class="post">
+			<article <?php post_class(); ?>>
 				<?php
 				printf( '<h2 class="%s"><a href="%s">%s</a></h2>', 'entry-title', esc_url( $post_link ), wp_kses_post( get_the_title() ) );
 				if ( has_post_thumbnail() ) {

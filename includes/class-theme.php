@@ -63,10 +63,10 @@ class Theme {
      */
     public function settings_page_scripts() {
 
-        $dir        = get_template_directory() . '/assets/js';
+        $dir        = CREATIVE_MODE_ASSETS_PATH. '/js';
         $suffix     = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-        $handle     = 'vonsheezy-admin';
-        $asset_path = "$dir/vonsheezy-admin.asset.php";
+        $handle     = 'creative-mode-home-app';
+        $asset_path = "$dir/$handle.asset.php";
         $asset_url  = get_template_directory_uri() . '/assets/js';
 
         if ( ! file_exists( $asset_path ) ) {
@@ -84,12 +84,12 @@ class Theme {
 
         wp_set_script_translations( $handle, 'creator-mode' );
 
-        wp_enqueue_style(
-            $handle,
-            "$asset_url/$handle$suffix.css",
-            array( 'wp-components' ),
-            $script_asset['version']
-        );
+//        wp_enqueue_style(
+//            $handle,
+//            "$asset_url/$handle.css",
+//            array( 'wp-components' ),
+//            $script_asset['version']
+//        );
 
         $plugins = get_plugins();
 
@@ -396,39 +396,42 @@ class Theme {
 
     public function register_assets()
     {
-        $min_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+        $font_slug = require CREATIVE_MODE_ASSETS_PATH. '/css/font.asset.php';
+        $theme_slug = require CREATIVE_MODE_ASSETS_PATH . '/css/theme.asset.php';
+        $header_footer_slug = require CREATIVE_MODE_ASSETS_PATH . '/css/header-footer.asset.php';
 
         wp_enqueue_style(
             'creator-mode-fonts',
-            get_template_directory_uri() . '/assets/font' . $min_suffix . '.css',
-            array(),
-            HELLO_ELEMENTOR_VERSION
+            CREATIVE_MODE_STYLE_URL . '/font.css',
+            $font_slug['dependencies'],
+            $font_slug['version']
         );
 
         if ( apply_filters( 'vonsheezy_elementor_enqueue_style', true ) ) {
             wp_enqueue_style(
                 'creator-mode',
-                get_template_directory_uri() . '/style' . $min_suffix . '.css',
+                CREATIVE_MODE_THEME_URL . '/style.css',
                 array('creator-mode-fonts'),
-                HELLO_ELEMENTOR_VERSION
+                CREATIVE_MODE_VERSION
             );
         }
 
         if ( apply_filters( 'vonsheezy_elementor_enqueue_theme_style', true ) ) {
             wp_enqueue_style(
                 'creator-mode-theme-style',
-                get_template_directory_uri() . '/theme' . $min_suffix . '.css',
-                array('creator-mode-fonts'),
-                HELLO_ELEMENTOR_VERSION
+                CREATIVE_MODE_STYLE_URL . '/theme.css',
+                array_merge(array('creator-mode-fonts'), $theme_slug['dependencies']),
+                $theme_slug['version']
             );
         }
 
         if ( $this->display_header_footer() ) {
             wp_enqueue_style(
                 'creator-mode-header-footer',
-                get_template_directory_uri() . '/header-footer' . $min_suffix . '.css',
-                array('creator-mode-fonts'),
-                HELLO_ELEMENTOR_VERSION
+                CREATIVE_MODE_STYLE_URL  . '/header-footer.css',
+                array_merge(array('creator-mode-fonts' ), $header_footer_slug['dependencies']),
+                $header_footer_slug['version'],
+
             );
         }
     }

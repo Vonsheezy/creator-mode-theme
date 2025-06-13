@@ -6,6 +6,7 @@ namespace CreatorMode\Includes;
 use CreatorMode\Includes\Settings\Settings_Footer;
 use CreatorMode\Includes\Settings\Settings_Header;
 use Elementor\Core\Experiments\Manager;
+use Elementor\Plugin;
 
 
 const EDITOR_STYLE = 'vonsheezy-editor';
@@ -57,13 +58,13 @@ class Elementor_Integration {
 
                 wp_enqueue_script(
                     'creator-mode-theme-frontend',
-                    get_template_directory_uri() . '/assets/js/vonsheezy-frontend' . $suffix . '.js',
+                    CREATIVE_MODE_ASSETS_URL . '/js/creative-mode-frontend' . $suffix . '.js',
                     array(),
-                    HELLO_ELEMENTOR_VERSION,
+                    CREATIVE_MODE_VERSION,
                     true
                 );
 
-                \Elementor\Plugin::$instance->kits_manager->frontend_before_enqueue_styles();
+                Plugin::$instance->kits_manager->frontend_before_enqueue_styles();
             }
         );
 
@@ -112,9 +113,10 @@ class Elementor_Integration {
      *
      * @return bool
      */
-    public function check_hide_title( $val ) {
+    public function check_hide_title( $val ): bool
+    {
         if ( defined( 'ELEMENTOR_VERSION' ) ) {
-            $current_doc = \Elementor\Plugin::instance()->documents->get( get_the_ID() );
+            $current_doc = Plugin::instance()->documents->get( get_the_ID() );
             if ( $current_doc && 'yes' === $current_doc->get_settings( 'hide_title' ) ) {
                 $val = false;
             }
@@ -147,7 +149,7 @@ class Elementor_Integration {
         $return = '';
 
         if ( ! isset( $vonsheezy_elementor_settings['kit_settings'] ) ) {
-            $kit = \Elementor\Plugin::$instance->kits_manager->get_active_kit();
+            $kit = Plugin::$instance->kits_manager->get_active_kit();
             $vonsheezy_elementor_settings['kit_settings'] = $kit->get_settings();
         }
 
@@ -198,7 +200,7 @@ class Elementor_Integration {
         $return = '';
 
         if ( ! isset( $vonsheezy_elementor_settings['kit_settings'] ) ) {
-            $kit = \Elementor\Plugin::$instance->kits_manager->get_active_kit();
+            $kit = Plugin::$instance->kits_manager->get_active_kit();
             $vonsheezy_elementor_settings['kit_settings'] = $kit->get_settings();
         }
 
@@ -282,10 +284,10 @@ class Elementor_Integration {
             return false;
         }
         // Backwards compat.
-        if ( ! method_exists( \Elementor\Plugin::$instance->experiments, 'is_feature_active' ) ) {
+        if ( ! method_exists( Plugin::$instance->experiments, 'is_feature_active' ) ) {
             return false;
         }
 
-        return (bool) ( \Elementor\Plugin::$instance->experiments->is_feature_active( 'creator-mode-theme-header-footer' ) );
+        return (bool) ( Plugin::$instance->experiments->is_feature_active( 'creator-mode-theme-header-footer' ) );
     }
 }
