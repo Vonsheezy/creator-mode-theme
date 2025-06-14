@@ -16,6 +16,7 @@
   padding-block-start: 1rem;
   padding-block-end: 1rem;
   position: relative;
+  margin-bottom: 4rem;
 }
 .site-header .site-title {
   font-size: 2.5rem;
@@ -69,6 +70,7 @@
   padding-block-end: 1rem;
   position: relative;
   margin-top: 4rem;
+  border-top: 1px solid #cccccc;
 }
 .site-footer .site-title {
   font-size: 1.5rem;
@@ -85,7 +87,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  color: #cccccc;
+  font-size: 0.7rem;
+  color: #333333;
 }
 .site-footer .footer-inner .custom-logo-link {
   display: block;
@@ -207,6 +210,8 @@
 .site-navigation ul.menu {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: end;
 }
 .site-navigation ul.menu li {
   position: relative;
@@ -215,6 +220,9 @@
 .site-navigation ul.menu li a {
   display: block;
   padding: 8px 15px;
+  text-transform: uppercase;
+  color: #333333;
+  font-weight: 500;
 }
 .site-navigation ul.menu li.menu-item-has-children {
   padding-inline-end: 15px;
@@ -259,7 +267,6 @@
 .site-navigation ul.menu li:hover > ul {
   display: block;
 }
-
 footer .site-navigation ul.menu li ul {
   top: auto;
   bottom: 100%;

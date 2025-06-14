@@ -2,13 +2,30 @@
  * Form styling
  */
 
-.wp-block-button__link{
+.wp-block-button__link {
   border-radius: 3px;
   border: 1px solid #1F1F1F;
   background: #A9C8E5;
   padding: 10px 30px;
   text-transform: uppercase;
   font-weight: 600;
+}
+.highlight-nav-button{
+  border-radius: 3px;
+  border: 1px solid #1F1F1F;
+  background: #A9C8E5;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  a{
+    color: #0a0a0a;
+  }
+}
+.is-style-outline{
+  .wp-block-button__link{
+    padding: 9px 30px !important;
+  }
 }
 input[type=submit]{
   text-transform: uppercase;

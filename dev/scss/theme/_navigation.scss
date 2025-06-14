@@ -82,6 +82,8 @@
 	ul.menu {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: center;
+		justify-content: end;
 
 		li {
 			position: relative;
@@ -90,6 +92,9 @@
 			a {
 				display: block;
 				padding: 8px 15px;
+				text-transform: uppercase;
+				color: variables.$gray-dark;
+				font-weight: 500;
 			}
 
 			&.menu-item-has-children {
@@ -154,6 +159,10 @@
 				}
 			}
 		}
+	}
+
+	.highlight-nav-button{
+
 	}
 }
 
