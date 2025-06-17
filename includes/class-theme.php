@@ -76,20 +76,13 @@ class Theme {
 
         wp_enqueue_script(
             $handle,
-            "$asset_url/$handle$suffix.js",
+            "$asset_url/$handle.js",
             $script_asset['dependencies'],
             $script_asset['version'],
             true
         );
 
         wp_set_script_translations( $handle, 'creator-mode' );
-
-//        wp_enqueue_style(
-//            $handle,
-//            "$asset_url/$handle.css",
-//            array( 'wp-components' ),
-//            $script_asset['version']
-//        );
 
         $plugins = get_plugins();
 
