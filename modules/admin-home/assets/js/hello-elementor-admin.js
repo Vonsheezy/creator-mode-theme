@@ -17,7 +17,7 @@ const App = () => {
 };
 
 document.addEventListener( 'DOMContentLoaded', () => {
-	const container = document.getElementById( 'ehe-admin-home' );
+	const container = document.getElementById( 'creator-mode-settings' );
 
 	if ( container ) {
 		const root = createRoot( container );
