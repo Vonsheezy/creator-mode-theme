@@ -22,10 +22,6 @@ const entryPoints = {
     'js/creative-mode-editor': path.resolve( __dirname, './dev/js/editor', 'hello-editor.js' ),
     'js/creative-mode-frontend': path.resolve( __dirname, './dev/js/frontend', 'hello-frontend.js' ),
     'js/creative-mode-home-app': path.resolve( modulesDir, 'admin-home/assets/js', 'hello-elementor-admin.js' ),
-    'js/creative-mode-menu': path.resolve( modulesDir, 'admin-home/assets/js', 'hello-elementor-menu.js' ),
-    'js/creative-mode-settings': path.resolve( modulesDir, 'admin-home/assets/js', 'hello-elementor-settings.js' ),
-    'js/creative-mode-topbar': path.resolve( modulesDir, 'admin-home/assets/js', 'hello-elementor-topbar.js' ),
-    'js/creative-mode-conversion-banner': path.resolve( modulesDir, 'admin-home/assets/js', 'hello-elementor-conversion-banner.js' ),
 };
 
 module.exports = {
@@ -46,10 +42,6 @@ module.exports = {
                 patterns: [
                     {
                         from: path.resolve( modulesDir, 'admin-home/assets/images' ),
-                        to: imagesPath,
-                    },
-                    {
-                        from: path.resolve( __dirname, 'dev/images' ),
                         to: imagesPath,
                     },
                 ],

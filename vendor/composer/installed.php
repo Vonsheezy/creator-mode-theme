@@ -3,7 +3,7 @@
         'name' => 'eliasu/holy-canvas',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '92e808b8b21298932af4804b7a3f03058164ab67',
+        'reference' => '0101f8aa0bb12f2f88ce71bd1d40ff8b7975e43a',
         'type' => 'wordpress-theme',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'eliasu/holy-canvas' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '92e808b8b21298932af4804b7a3f03058164ab67',
+            'reference' => '0101f8aa0bb12f2f88ce71bd1d40ff8b7975e43a',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
