@@ -89,13 +89,13 @@ class Theme {
 		}
 		$script_asset = require $asset_path;
 
-        wp_enqueue_script(
-            $handle,
-            "$asset_url/$handle.js",
-            $script_asset['dependencies'],
-            $script_asset['version'],
-            true
-        );
+		wp_enqueue_script(
+			$handle,
+			"$asset_url/$handle$suffix.js",
+			$script_asset['dependencies'],
+			$script_asset['version'],
+			true
+		);
 
 		wp_set_script_translations( $handle, 'creator-mode' );
 
