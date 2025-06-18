@@ -7,7 +7,6 @@
  * @package CreatorMode
  */
 
-
 use CreatorMode\Includes\Elementor_Integration;
 use CreatorMode\Includes\Theme;
 

@@ -1,11 +1,12 @@
 <?php
-declare(strict_types=1);
-
 /**
  * Theme functions and definitions
  *
  * @package CreatorMode
  */
+
+declare(strict_types=1);
+
 namespace CreatorMode;
 
 use CreatorMode\Includes\Customizer\Customizer;
@@ -18,10 +19,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'HELLO_ELEMENTOR_VERSION', '3.0.2' );
 
-if(file_exists(get_template_directory() . '/vendor/autoload.php')) {
-    require_once get_template_directory() . '/vendor/autoload.php';
-}else{
-    return;
+if ( file_exists( get_template_directory() . '/vendor/autoload.php' ) ) {
+	require_once get_template_directory() . '/vendor/autoload.php';
+} else {
+	return;
 }
 define( 'CREATIVE_MODE_VERSION', '1.0.0' );
 define( 'CREATIVE_MODE_THEME_URL', get_template_directory_uri() );
@@ -35,11 +36,4 @@ Customizer::instance();
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 800; // Pixels.
-}
-
-
-
-// Admin notice.
-if ( is_admin() ) {
-	//require get_template_directory() . '/includes/admin-functions.php';
 }
