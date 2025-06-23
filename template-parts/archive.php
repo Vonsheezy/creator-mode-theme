@@ -28,9 +28,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 			<article <?php post_class(); ?>>
 				<?php
-				printf( '<h2 class="%s"><a href="%s">%s</a></h2>', 'entry-title', esc_url( $post_link ), wp_kses_post( get_the_title() ) );
+				printf(
+                    '<h2 class="%s"><a href="%s" title="%s">%s</a></h2>',
+                    'entry-title',
+                    esc_url( $post_link ),
+                    the_title_attribute(['echo' => false]),
+                    wp_kses_post( get_the_title() ),
+                );
 				if ( has_post_thumbnail() ) {
-					printf( '<a href="%s">%s</a>', esc_url( $post_link ), get_the_post_thumbnail( $post, 'large' ) );
+					printf(
+                        '<a href="%s" title="%s">%s</a>',
+                        esc_url( $post_link ),
+                        the_title_attribute(['echo' => false]),
+                        get_the_post_thumbnail( $post, 'large' ),
+                    );
 				}
 				the_excerpt();
 				?>
