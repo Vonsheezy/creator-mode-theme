@@ -29,9 +29,10 @@ Font Awesome icons for theme screenshot
 License: SIL Open Font License, version 1.1.
 Source: https://fontawesome.com/v4.7.0/
 
-Photo by Unsplash user @wkphoto
-License: Unsplash License
-Source: https://unsplash.com/photos/a-building-with-a-painting-on-the-wall-3DyvohSLvi0
+Screenshot Image Credit
+Photo by AXP Photography
+License: Pexels License – Free for commercial use, no attribution required.
+Source: https://www.pexels.com/photo/decoration-on-wall-of-house-in-village-in-egypt-18991599/
 
 
 == Changelog ==
