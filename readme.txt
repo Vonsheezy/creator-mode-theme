@@ -1,16 +1,18 @@
 === Creator Mode ===
-Contributors: Vonsheezy
 
 URI: https://vonsheezy.com
 Author: Vonsheezy
 Author URI: https://profiles.wordpress.org/vonsheezy/
 Theme URI: https://vonsheezy.com/themes/creator-mode
-Version: 1.0.2
+Version: 1.0.3
+
 
 == Description ==
 Creator Mode is a super lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor Pro site builder plugin. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
 
 A lightweight and minimalist WordPress theme for Elementor site builder.
+
+Creator Mode Theme, Copyright 2025 Vonsheezy is distributed under the terms of the GNU GPL
 
 == Frequently Asked Questions ==
 
@@ -22,7 +24,7 @@ A lightweight and minimalist WordPress theme for Elementor site builder.
 4. Install Creator Mode.
 5. Click on the 'Activate' button to customize your new theme right away.
 
-== Resources ==
+== Copyright ==
 Creator Mode bundles the following third-party resources:
 
 Font Awesome icons for theme screenshot
