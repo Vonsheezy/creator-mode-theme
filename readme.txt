@@ -1,9 +1,9 @@
 === Creator Mode ===
 
-URI: https://vonsheezy.com
+Contributors: Vonsheezy, sabali33
 Author: Vonsheezy
-Author URI: https://profiles.wordpress.org/vonsheezy/
-Theme URI: https://vonsheezy.com/themes/creator-mode
+Author URI: https://profiles.wordpress.org/vonsheezy
+Theme URI: https://vonsheezy.com/themes/creator-mode/
 Version: 1.0.3
 
 == Description ==

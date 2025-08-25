@@ -22,7 +22,8 @@
  * Prevent adjustments of font size after orientation changes in iOS.
  * Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`.
 
- * @package Holy Canvas
+ * @package Creative Mode
+ *
  **/
 
 html {
