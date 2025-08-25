@@ -2,10 +2,10 @@
 Contributors: Vonsheezy
 
 URI: https://vonsheezy.com
-Author: Vonsheezy Team
-Author URI: https://vonsheezy.com
-Theme URI: https://vonsheezy.com/create-mode
-Version: 1.0.1
+Author: Vonsheezy
+Author URI: https://profiles.wordpress.org/vonsheezy/
+Theme URI: https://vonsheezy.com/themes/creator-mode
+Version: 1.0.2
 
 == Description ==
 Creator Mode is a super lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor Pro site builder plugin. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
