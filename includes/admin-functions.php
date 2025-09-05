@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @return void
  */
-function vonsheezy_elementor_fail_load_admin_notice() {
+function creative_mode_fail_load_admin_notice() {
 	// Leave to Elementor Pro to manage this.
 	if ( function_exists( 'elementor_pro_load_plugin' ) ) {
 		return;
@@ -33,7 +33,7 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 		return;
 	}
 
-	if ( 'true' === get_user_meta( get_current_user_id(), '_vonsheezy_elementor_install_notice', true ) ) {
+	if ( 'true' === get_user_meta( get_current_user_id(), '_creative_mode_install_notice', true ) ) {
 		return;
 	}
 
@@ -133,8 +133,8 @@ function vonsheezy_elementor_fail_load_admin_notice() {
 				event.preventDefault();
 
 				var formData = new FormData();
-				formData.append( 'action', 'vonsheezy_elementor_set_admin_notice_viewed' );
-				formData.append( 'dismiss_nonce', '<?php echo esc_js( wp_create_nonce( 'vonsheezy_elementor_dismiss_install_notice' ) ); ?>' );
+				formData.append( 'action', 'creative_mode_set_admin_notice_viewed' );
+				formData.append( 'dismiss_nonce', '<?php echo esc_js( wp_create_nonce( 'creative_mode_dismiss_install_notice' ) ); ?>' );
 
 				await fetch( ajaxurl, { method: 'POST', body: formData } );
 			} );
@@ -159,14 +159,14 @@ function vonsheezy_elementor_fail_load_admin_notice() {
  *
  * @return void
  */
-function ajax_vonsheezy_elementor_set_admin_notice_viewed() {
-	check_ajax_referer( 'vonsheezy_elementor_dismiss_install_notice', 'dismiss_nonce' );
+function ajax_creative_mode_set_admin_notice_viewed() {
+	check_ajax_referer( 'creative_mode_dismiss_install_notice', 'dismiss_nonce' );
 
-	update_user_meta( get_current_user_id(), '_vonsheezy_elementor_install_notice', 'true' );
+	update_user_meta( get_current_user_id(), '_creative_mode_install_notice', 'true' );
 	die;
 }
-add_action( 'wp_ajax_vonsheezy_elementor_set_admin_notice_viewed', 'ajax_vonsheezy_elementor_set_admin_notice_viewed' );
+add_action( 'wp_ajax_creative_mode_set_admin_notice_viewed', 'ajax_creative_mode_set_admin_notice_viewed' );
 
 if ( ! did_action( 'elementor/loaded' ) ) {
-	add_action( 'admin_notices', __NAMESPACE__ . '\vonsheezy_elementor_fail_load_admin_notice' );
+	add_action( 'admin_notices', __NAMESPACE__ . '\creative_mode_fail_load_admin_notice' );
 }
