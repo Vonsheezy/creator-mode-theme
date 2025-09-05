@@ -64,7 +64,7 @@ class Elementor_Integration {
 					self::THEME_EDITOR_SCRIPT,
 					get_template_directory_uri() . '/assets/js/vonsheezy-editor' . $suffix . '.js',
 					array( 'jquery', 'elementor-editor' ),
-                    CREATOR_MODE_VERSION,
+					CREATOR_MODE_VERSION,
 					true
 				);
 
@@ -72,7 +72,7 @@ class Elementor_Integration {
 					EDITOR_STYLE,
 					get_template_directory_uri() . '/editor' . $suffix . '.css',
 					array(),
-                    CREATOR_MODE_VERSION
+					CREATOR_MODE_VERSION
 				);
 			}
 		);

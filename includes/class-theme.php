@@ -152,8 +152,8 @@ class Theme {
 			'SKIP_LINK'            => '_skip_link',
 			'HEADER_FOOTER'        => '_header_footer',
 			'PAGE_TITLE'           => '_page_title',
-			'CREATIVE_STYLE'          => '_creator_mode_style',
-			'CREATIVE_THEME'          => '_creator_mode_theme',
+			'CREATIVE_STYLE'       => '_creator_mode_style',
+			'CREATIVE_THEME'       => '_creator_mode_theme',
 		);
 
 		$this->register_settings( $settings_group, $settings );
@@ -368,7 +368,7 @@ class Theme {
 
 		// If the 'vonsheezy_theme_version' option does not exist in the DB, or the version needs to be updated, do the update.
 		if ( ! $vonsheezy_theme_db_version || version_compare( $vonsheezy_theme_db_version, CREATOR_MODE_VERSION, '<' ) ) {
-			update_option( $theme_version_option_name,CREATOR_MODE_VERSION );
+			update_option( $theme_version_option_name, CREATOR_MODE_VERSION );
 		}
 	}
 
