@@ -8,7 +8,7 @@ import Alert from '@elementor/ui/Alert';
 
 export const Theme = () => {
 	const {
-		themeSettings: { HELLO_THEME: helloTheme, HELLO_STYLE: helloStyle },
+		themeSettings: { CREATIVE_THEME: helloTheme, CREATIVE_STYLE: helloStyle },
 		updateSetting,
 		isLoading,
 	} = useSettingsContext();
@@ -21,14 +21,14 @@ export const Theme = () => {
 		<Stack gap={ 2 }>
 			<Typography
 				variant="subtitle2">
-				{ __( 'These settings allow you to change or remove default Hello Elementor theme styles.', 'hello-elementor' ) }
+				{ __( 'These settings allow you to change or remove default Hello Elementor theme styles.', 'creative-mode' ) }
 			</Typography>
 			<Alert severity="warning" sx={ { mb: 2 } }>
-				{ __( 'Be careful, disabling these settings could break your website.', 'hello-elementor' ) }
+				{ __( 'Be careful, disabling these settings could break your website.', 'creative-mode' ) }
 			</Alert>
 			<Setting
 				value={ helloStyle }
-				label={ __( 'Deregister Hello reset.css', 'hello-elementor' ) }
+				label={ __( 'Deregister Hello reset.css', 'creative-mode' ) }
 				onSwitchClick={ () => updateSetting( 'HELLO_STYLE', ! helloStyle ) }
 				description={ __( 'What it does: Turns off CSS reset rules by disabling the theme’s reset stylesheet. CSS reset rules make sure your website looks the same in different browsers.', 'hello-elementor' ) }
 				code={ `<link rel="stylesheet" href="${ window.location.origin }/wp-content/themes/hello-elementor/assets/css/reset.css" />` }
@@ -36,7 +36,7 @@ export const Theme = () => {
 			/>
 			<Setting
 				value={ helloTheme }
-				label={ __( 'Deregister Hello theme.css', 'hello-elementor' ) }
+				label={ __( 'Deregister Hello theme.css', 'creative-mode' ) }
 				onSwitchClick={ () => updateSetting( 'HELLO_THEME', ! helloTheme ) }
 				description={ __( 'What it does: Turns off CSS reset rules by disabling the theme’s reset stylesheet. CSS reset rules make sure your website looks the same in different browsers.', 'hello-elementor' ) }
 				code={ `<link rel="stylesheet" href="${ window.location.origin }/wp-content/themes/hello-elementor/assets/css/theme.css" />` }

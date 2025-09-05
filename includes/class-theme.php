@@ -368,7 +368,7 @@ class Theme {
 
 		// If the 'vonsheezy_theme_version' option does not exist in the DB, or the version needs to be updated, do the update.
 		if ( ! $vonsheezy_theme_db_version || version_compare( $vonsheezy_theme_db_version, CREATIVE_MODE_VERSION, '<' ) ) {
-			update_option( $theme_version_option_name,CREATIVE_MODE_VERSIONN );
+			update_option( $theme_version_option_name,CREATIVE_MODE_VERSION );
 		}
 	}
 
