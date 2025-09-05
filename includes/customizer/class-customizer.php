@@ -92,7 +92,7 @@ class Customizer {
 			'creator-mode-customizer',
 			get_template_directory_uri() . '/customizer' . $min_suffix . '.css',
 			array(),
-			HELLO_ELEMENTOR_VERSION
+            CREATIVE_MODE_VERSION
 		);
 	}
 }
