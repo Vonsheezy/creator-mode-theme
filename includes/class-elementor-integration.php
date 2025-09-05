@@ -64,7 +64,7 @@ class Elementor_Integration {
 					self::THEME_EDITOR_SCRIPT,
 					get_template_directory_uri() . '/assets/js/vonsheezy-editor' . $suffix . '.js',
 					array( 'jquery', 'elementor-editor' ),
-                    CREATIVE_MODE_VERSION,
+                    CREATOR_MODE_VERSION,
 					true
 				);
 
@@ -72,7 +72,7 @@ class Elementor_Integration {
 					EDITOR_STYLE,
 					get_template_directory_uri() . '/editor' . $suffix . '.css',
 					array(),
-                    CREATIVE_MODE_VERSION
+                    CREATOR_MODE_VERSION
 				);
 			}
 		);
@@ -92,9 +92,9 @@ class Elementor_Integration {
 
 				wp_enqueue_script(
 					'creator-mode-theme-frontend',
-					CREATIVE_MODE_ASSETS_URL . '/js/creative-mode-frontend' . $suffix . '.js',
+					CREATOR_MODE_ASSETS_URL . '/js/creative-mode-frontend' . $suffix . '.js',
 					array(),
-					CREATIVE_MODE_VERSION,
+					CREATOR_MODE_VERSION,
 					true
 				);
 
@@ -128,7 +128,7 @@ class Elementor_Integration {
 			}
 		);
 
-		add_filter( 'creative_mode_page_title', array( $this, 'check_hide_title' ) );
+		add_filter( 'creator_mode_page_title', array( $this, 'check_hide_title' ) );
 	}
 
 	/**
@@ -212,7 +212,7 @@ class Elementor_Integration {
 			$return = $vonsheezy_elementor_settings['kit_settings'][ $setting_id ];
 		}
 
-		return apply_filters( 'creative_mode_' . $setting_id, $return );
+		return apply_filters( 'creator_mode_' . $setting_id, $return );
 	}
 
 	/**
@@ -283,7 +283,7 @@ class Elementor_Integration {
 			$return = $vonsheezy_elementor_settings['kit_settings'][ $setting_id ];
 		}
 
-		return apply_filters( 'creative_mode_' . $setting_id, $return );
+		return apply_filters( 'creator_mode_' . $setting_id, $return );
 	}
 
 	/**

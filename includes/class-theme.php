@@ -78,7 +78,7 @@ class Theme {
 	 */
 	public function settings_page_scripts() {
 
-		$dir        = CREATIVE_MODE_ASSETS_PATH . '/js';
+		$dir        = CREATOR_MODE_ASSETS_PATH . '/js';
 		$suffix     = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		$handle     = 'creative-mode-home-app';
 		$asset_path = "$dir/$handle.asset.php";
@@ -145,15 +145,15 @@ class Theme {
 	 */
 	public function tweak_settings() {
 
-		$settings_group = 'creative_mode_settings';
+		$settings_group = 'creator_mode_settings';
 
 		$settings = array(
 			'DESCRIPTION_META_TAG' => '_description_meta_tag',
 			'SKIP_LINK'            => '_skip_link',
 			'HEADER_FOOTER'        => '_header_footer',
 			'PAGE_TITLE'           => '_page_title',
-			'CREATIVE_STYLE'          => '_creative_mode_style',
-			'CREATIVE_THEME'          => '_creative_mode_theme',
+			'CREATIVE_STYLE'          => '_creator_mode_style',
+			'CREATIVE_THEME'          => '_creator_mode_theme',
 		);
 
 		$this->register_settings( $settings_group, $settings );
@@ -196,42 +196,42 @@ class Theme {
 		$this->do_tweak(
 			$settings_group . $settings['DESCRIPTION_META_TAG'],
 			function () {
-				remove_action( 'wp_head', 'creative_mode_add_description_meta_tag' );
+				remove_action( 'wp_head', 'creator_mode_add_description_meta_tag' );
 			}
 		);
 
 		$this->do_tweak(
 			$settings_group . $settings['SKIP_LINK'],
 			function () {
-				add_filter( 'creative_mode_enable_skip_link', '__return_false' );
+				add_filter( 'creator_mode_enable_skip_link', '__return_false' );
 			}
 		);
 
 		$this->do_tweak(
 			$settings_group . $settings['HEADER_FOOTER'],
 			function () {
-				add_filter( 'creative_mode_header_footer', '__return_false' );
+				add_filter( 'creator_mode_header_footer', '__return_false' );
 			}
 		);
 
 		$this->do_tweak(
 			$settings_group . $settings['PAGE_TITLE'],
 			function () {
-				add_filter( 'creative_mode_page_title', '__return_false' );
+				add_filter( 'creator_mode_page_title', '__return_false' );
 			}
 		);
 
 		$this->do_tweak(
 			$settings_group . $settings['CREATIVE_STYLE'],
 			function () {
-				add_filter( 'creative_mode_enqueue_style', '__return_false' );
+				add_filter( 'creator_mode_enqueue_style', '__return_false' );
 			}
 		);
 
 		$this->do_tweak(
 			$settings_group . $settings['CREATIVE_THEME'],
 			function () {
-				add_filter( 'creative_mode_enqueue_theme_style', '__return_false' );
+				add_filter( 'creator_mode_enqueue_theme_style', '__return_false' );
 			}
 		);
 	}
@@ -281,16 +281,16 @@ class Theme {
 			$this->maybe_update_theme_version_in_db();
 		}
 
-		if ( apply_filters( 'creative_mode_register_menus', true ) ) {
+		if ( apply_filters( 'creator_mode_register_menus', true ) ) {
 			register_nav_menus( array( 'menu-1' => esc_html__( 'Header', 'creator-mode' ) ) );
 			register_nav_menus( array( 'menu-2' => esc_html__( 'Footer', 'creator-mode' ) ) );
 		}
 
-		if ( apply_filters( 'creative_mode_post_type_support', true ) ) {
+		if ( apply_filters( 'creator_mode_post_type_support', true ) ) {
 			add_post_type_support( 'page', 'excerpt' );
 		}
 
-		if ( apply_filters( 'creative_moder_add_theme_support', true ) ) {
+		if ( apply_filters( 'creator_moder_add_theme_support', true ) ) {
 			add_theme_support( 'post-thumbnails' );
 			add_theme_support( 'automatic-feed-links' );
 			add_theme_support( 'title-tag' );
@@ -338,7 +338,7 @@ class Theme {
 			/*
 			 * WooCommerce.
 			 */
-			if ( apply_filters( 'creative_mode_add_woocommerce_support', true ) ) {
+			if ( apply_filters( 'creator_mode_add_woocommerce_support', true ) ) {
 				// WooCommerce in general.
 				add_theme_support( 'woocommerce' );
 				// Enabling WooCommerce product gallery features (are off by default since WC 3.0.0).
@@ -362,13 +362,13 @@ class Theme {
 	 * @return void
 	 */
 	public function maybe_update_theme_version_in_db() {
-		$theme_version_option_name = 'create_mode_theme_version';
+		$theme_version_option_name = 'creator_mode_theme_version';
 		// The theme version saved in the database.
 		$vonsheezy_theme_db_version = get_option( $theme_version_option_name );
 
 		// If the 'vonsheezy_theme_version' option does not exist in the DB, or the version needs to be updated, do the update.
-		if ( ! $vonsheezy_theme_db_version || version_compare( $vonsheezy_theme_db_version, CREATIVE_MODE_VERSION, '<' ) ) {
-			update_option( $theme_version_option_name,CREATIVE_MODE_VERSIONN );
+		if ( ! $vonsheezy_theme_db_version || version_compare( $vonsheezy_theme_db_version, CREATOR_MODE_VERSION, '<' ) ) {
+			update_option( $theme_version_option_name,CREATOR_MODE_VERSION );
 		}
 	}
 
@@ -378,7 +378,7 @@ class Theme {
 	 * @return void
 	 */
 	public function add_description_meta_tag() {
-		if ( ! apply_filters( 'creative_mode_description_meta_tag', true ) ) {
+		if ( ! apply_filters( 'creator_mode_description_meta_tag', true ) ) {
 			return;
 		}
 
@@ -400,7 +400,7 @@ class Theme {
 	 * @return mixed|null
 	 */
 	public static function display_header_footer() {
-		return apply_filters( 'creative_mode_header_footer', true );
+		return apply_filters( 'creator_mode_header_footer', true );
 	}
 
 	/**
@@ -409,7 +409,7 @@ class Theme {
 	 * @return void
 	 */
 	public function content_width() {
-		$GLOBALS['content_width'] = apply_filters( 'creative_mode_content_width', 800 );
+		$GLOBALS['content_width'] = apply_filters( 'creator_mode_content_width', 800 );
 	}
 
 	/**
@@ -418,30 +418,30 @@ class Theme {
 	 * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
 	 */
 	public function register_assets() {
-		$font_slug          = require CREATIVE_MODE_ASSETS_PATH . '/css/font.asset.php';
-		$theme_slug         = require CREATIVE_MODE_ASSETS_PATH . '/css/theme.asset.php';
-		$header_footer_slug = require CREATIVE_MODE_ASSETS_PATH . '/css/header-footer.asset.php';
+		$font_slug          = require CREATOR_MODE_ASSETS_PATH . '/css/font.asset.php';
+		$theme_slug         = require CREATOR_MODE_ASSETS_PATH . '/css/theme.asset.php';
+		$header_footer_slug = require CREATOR_MODE_ASSETS_PATH . '/css/header-footer.asset.php';
 
 		wp_enqueue_style(
 			'creator-mode-fonts',
-			CREATIVE_MODE_STYLE_URL . '/font.css',
+			CREATOR_MODE_STYLE_URL . '/font.css',
 			$font_slug['dependencies'],
 			$font_slug['version']
 		);
 
-		if ( apply_filters( 'creative_mode_enqueue_style', true ) ) {
+		if ( apply_filters( 'creator_mode_enqueue_style', true ) ) {
 			wp_enqueue_style(
 				'creator-mode',
-				CREATIVE_MODE_THEME_URL . '/style.css',
+				CREATOR_MODE_THEME_URL . '/style.css',
 				array( 'creator-mode-fonts' ),
-				CREATIVE_MODE_VERSION
+				CREATOR_MODE_VERSION
 			);
 		}
 
-		if ( apply_filters( 'creative_mode_enqueue_theme_style', true ) ) {
+		if ( apply_filters( 'creator_mode_enqueue_theme_style', true ) ) {
 			wp_enqueue_style(
 				'creator-mode-theme-style',
-				CREATIVE_MODE_STYLE_URL . '/theme.css',
+				CREATOR_MODE_STYLE_URL . '/theme.css',
 				array_merge( array( 'creator-mode-fonts' ), $theme_slug['dependencies'] ),
 				$theme_slug['version']
 			);
@@ -450,7 +450,7 @@ class Theme {
 		if ( $this->display_header_footer() ) {
 			wp_enqueue_style(
 				'creator-mode-header-footer',
-				CREATIVE_MODE_STYLE_URL . '/header-footer.css',
+				CREATOR_MODE_STYLE_URL . '/header-footer.css',
 				array_merge( array( 'creator-mode-fonts' ), $header_footer_slug['dependencies'] ),
 				$header_footer_slug['version'],
 			);
