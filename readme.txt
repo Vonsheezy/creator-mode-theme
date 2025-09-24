@@ -5,6 +5,8 @@ Author: Vonsheezy
 Author URI: https://profiles.wordpress.org/vonsheezy
 Theme URI: https://vonsheezy.com/themes/creator-mode/
 Version: 1.0.3
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 Creator Mode is a super lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor Pro site builder plugin. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
@@ -18,13 +20,13 @@ Creator Mode Theme, Copyright 2025 Vonsheezy is distributed under the terms of t
 = Installation =
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Creator Mode in the search form and press the 'Enter' key on your keyboard, than install.
+2. Type in Creator Mode in the search form and press the 'Enter' key on your keyboard, then install.
 3. In your admin panel, go to Appearance -> Themes again, and click the 'Add New' button.
 4. Install Creator Mode.
 5. Click on the 'Activate' button to customize your new theme right away.
 
 == Copyright ==
-Creator Mode bundles the following third-party resources:
+Creator Mode Theme incorporates code from Elementor Hello Theme, Copyright 2020 Elementor Hello Theme is distributed under the terms of the GNU GPL
 
 Font Awesome icons for theme screenshot
 License: SIL Open Font License, version 1.1.
