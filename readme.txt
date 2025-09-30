@@ -4,7 +4,7 @@ Contributors: Vonsheezy, sabali33
 Author: Vonsheezy
 Author URI: https://profiles.wordpress.org/vonsheezy
 Theme URI: https://vonsheezy.com/themes/creator-mode/
-Version: 1.0.3
+Version: 1.0.5
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
